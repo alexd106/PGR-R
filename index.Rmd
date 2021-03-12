@@ -24,12 +24,32 @@ A few notes about this course. We have tried to simplify the content of this cou
 \  
 
 #### How do I use this website?
-How you use this website to support your learning and understanding of R is of course up to you. Having said that here are few pointers that have worked for people in the past. The first thing you will need to do is download and install both R and RStudio on your computer. Take a look at the **<i class="fa fa-cog" aria-hidden="true"></i> Setup** link on the navbar at the top of this page for further instructions on how to set up your computer and download the required datasets. At the heart of this course is our 'Introduction to R book' which you can find by clicking on the **<i class="fa fa-book" aria-hidden="true"></i> R Book** link in the navbar. The book is split into 9 Chapters which cover different aspects of using R and RStudio, from general orientation, basic R operations, importing and manipulating data, plotting data, programming in R, R markdown and using version control. You can test your understanding of each of these components by completing the associated exercises which you can find by clicking on **<i class="fa fa-file-contract" aria-hidden="true"></i> Exercises**. You will also find the solutions to the exercises here but we suggest that you don't peek at the solutions too quickly and only use them to confirm your answers or if you get stuck and feel like throwing your keyboard out of the window! There are also some additional resources such as lecture slides we use during our in person courses, short how-to videos walking you through some important topics which you can find in the **<i class="fa fa-university" aria-hidden="true"></i> Learn R** link. We've also created some stand alone tutorials covering topics such as RStudio Projects, R markdown and version control using Git and GitHub which can be found under the **<i class="fa fa-desktop" aria-hidden="true"></i> Tutorials** link. We suggest that you take a look at the tutorials once you've finished the core part of this course.
+How you use this website to support your learning and understanding of R is of course up to you. Having said that here are few pointers that have worked for people in the past. The first thing you will need to do is download and install both R and RStudio on your computer. Take a look at the **<i class="fa fa-cog" aria-hidden="true"></i> Setup** link on the navbar at the top of this page for further instructions on how to set up your computer and download the required datasets. At the heart of this course is our 'Introduction to R book' which you can find by clicking on the **<i class="fa fa-book" aria-hidden="true"></i> R Book** link in the navbar. The book is split into 9 Chapters which cover different aspects of using R and RStudio, from general orientation, basic R operations, importing and manipulating data, plotting data, programming in R, R markdown and using version control.  During this course we will be covering the first four Chapters only. You can test your understanding of each of these components by completing the associated exercises which you can find by clicking on **<i class="fa fa-file-contract" aria-hidden="true"></i> Exercises**. You will also find the solutions to the exercises here but we suggest that you don't peek at the solutions too quickly and only use them to confirm your answers or if you get stuck and feel like throwing your keyboard out of the window! There are also some additional resources such as lecture slides we use during our in person courses, short how-to videos walking you through some important topics which you can find in the **<i class="fa fa-university" aria-hidden="true"></i> Learn R** link. We've also created some stand alone tutorials covering topics such as RStudio Projects, R markdown and version control using Git and GitHub which can be found under the **<i class="fa fa-desktop" aria-hidden="true"></i> Tutorials** link. We suggest that you take a look at the tutorials once you've finished the core part of this course.
 
 \  
 
 #### What are the pre-requisites for this course?
 This course assumes no previous experience or knowledge of using either R or RStudio. It also doesn't assume any knowledge of programming or using a command-line interface, but if you have some experience, the content won’t come as so much of a shock. But don’t panic. Command-line interfaces and programming languages like R are incredibly powerful and will be utterly transformative to your research. There’s a learning curve, and it’s pretty steep in the beginning, but it’s surmountable and the payoff is worth it!
+
+\  
+
+#### What is the course timetable?
+See the course [syllabus](syllabus.html) for a general outline of the course content and timing. The course will start at 09:30 each morning and finish at 17:00. We will break for a one hour lunch break around 12:30. However, everyone learns R in their own way and at their own pace so this syllabus should be treated as indicative rather than absolute. There will also be plenty of opportunities to take short breaks during the course and we will also have a couple of 30 minute sessions on robust and reproducible research practices.  
+
+\  
+
+#### Where is the course held?
+This course will be run entirely online this year due to National Government Covid-19 restrictions. All interactive live sessions will be run using Blackboard Collaborate via [MyAberdeen](https://abdn.blackboard.com/). During these live sessions you will all be working in the main meeting room as you work through the associated course exercises. If you have a question, or get stuck you'll be able to get 1:1 support from one of the course instructors in a smaller breakout group. More information about this setup will be provided during the first session on Wednesday 7^th^ April 2021.   
+
+\  
+
+#### Do I need my own computer?
+
+<!--
+No. We will provide desktop computers for those who do not wish to bring their own laptops to the course. All of the desktops will have both R and RStudio already installed but please bring along a USB flash drive to save your work. If you require a desktop computer then please make sure you have registered for a UoA visitor computing account prior to the start of the course (contact [Izzie Buchanan](People.html) for further details). Having said that, if you have a laptop (Mac or Windows) we encourage you to bring it to the course. Please take a look at the **[Setup<i class="fa fa-cog" aria-hidden="true"></i>](setup.html)** link on the navbar at the top for further instructions on how to set up your laptop prior to the course starting.
+-->
+
+Yes. As we'll be running the course online this year you'll need your own computer with internet access. Please take a look at the **[Setup<i class="fa fa-cog" aria-hidden="true"></i>](setup.html)** link on the navbar at the top for further instructions on how to set up your computer prior to the course starting. Don't worry, you don't need a particularly powerful computer to install R and RStudio so anything from the last 5 years or so should be fine. What you will need is a reasonably stable internet connection to participate in the live Blackboard Collaborate sessions. If you think that your internet connection may not be up to it then please contact [Alex](People.html) to discuss alternatives.
 
 \  
 
@@ -48,5 +68,3 @@ The only way to get more comfortable using R is to use R! We strongly suggest th
 
 \  
 
-#### Can I give you feedback on this course?
-Yes please do! We welcome any and all constructive feedback to help improve this resource. You can find a short (3 minute) feedback form to complete by following this [link](https://forms.gle/U7MbyhRWyLomjyFY7). All feed back is anonymous and only used to help us improve our course material. Many thanks.
