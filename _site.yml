@@ -1,0 +1,94 @@
+# See http://rmarkdown.rstudio.com/rmarkdown_websites.html
+
+name: "An introduction to R"
+output_dir: "."
+navbar:
+  title: "Intro2R"
+  # type: inverse
+  icon: fa-home
+  left:
+    - text: "Setup"
+      icon: fa-cog
+      href: setup.html
+    - text: "R Book"
+      icon: fa-book
+      menu:
+        - text: "Web book"
+          icon: fa-firefox
+          href: https://intro2r.com
+        - text: "----"
+        - text: "PDF book"
+          icon: fa-file-pdf
+          href: https://github.com/alexd106/Rbook/raw/master/docs/Rbook.pdf
+    - text: "Learn R"
+      icon: fa-university
+      menu:
+        - text: "How-to"
+          icon: fa-tv
+          href: howto.html
+        - text: "----"
+        - text: "Lectures"
+          icon: fa-chalkboard
+          href: lectures.html
+    - text: "Exercises"
+      icon: fa-file-contract
+      menu:
+        - text: "Excercises"
+          icon: fa-folder
+          href: exercises.html
+        - text: "----"
+        - text: "Exercise solutions"
+          icon: fa-folder
+          href: exercise_solutions.html
+    - text: "Data"
+      icon: fa-download
+      href: "data.html"
+    - text: "Tutorials"
+      icon: fa-desktop
+      href: "Tutorials.html"
+    - text: "Info"
+      icon: fa-question-circle
+      menu:
+        - text: "Syllabus"
+          icon: fa-graduation-cap
+          href: syllabus.html
+        - text: "----"
+        - text: "People"
+          icon: fa-user-friends
+          href: "People.html"
+        - text: "----"
+        - text: "Resources"
+          icon: fa-book
+          href: "resources.html"
+        - text: "Feedback"
+          icon: fa-commenting
+          href: https://forms.gle/U7MbyhRWyLomjyFY7
+        - text: "----"
+        - text: "Contact"
+          icon: fa-envelope fa-lg
+          href: People.html
+        - text: "Source code"
+          icon: fa-github fa-lg
+          href: https://github.com/alexd106/intro2R
+        - text: "Twitter"
+          icon: fa-twitter fa-lg
+          href: https://twitter.com/Scedacity
+
+output:
+  html_document:
+    theme: flatly
+    highlight: tango
+    toc: true
+    toc_depth: 2
+    toc_float:
+      collapsed: false
+    fig_align: center
+    # anchor_sections = FALSE
+    includes:
+    #  in_header: GA_script.html
+    # css: 'styles.css'
+    # css:
+    #  - https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css
+    #  - styles.css
+
+exclude: ["LICENSE", "README.md", "*.Rproj", "*.key", "*.psd"]
