@@ -504,7 +504,13 @@ $(document).ready(function () {
         Resources
       </a>
     </li>
-    <li class="dropdown-header">Feedback</li>
+    <li>
+      <a href="https://forms.gle/jR95ZGETrKZvbT5r8">
+        <span class="fa fa-commenting"></span>
+         
+        Feedback
+      </a>
+    </li>
     <li class="divider"></li>
     <li>
       <a href="People.html">
@@ -662,8 +668,8 @@ $(document).ready(function () {
 <span id="cb5-8"><a href="#cb5-8"></a></span>
 <span id="cb5-9"><a href="#cb5-9"></a>whale.subset &lt;-<span class="st"> </span>whale[whale<span class="op">$</span>month <span class="op">==</span><span class="st"> &quot;October&quot;</span> <span class="op">&amp;</span><span class="st"> </span>whale<span class="op">$</span>water.noise <span class="op">==</span><span class="st"> &quot;low&quot;</span> <span class="op">&amp;</span><span class="st"> </span>whale<span class="op">$</span>gradient <span class="op">&gt;</span><span class="st"> </span><span class="dv">132</span>, ]</span>
 <span id="cb5-10"><a href="#cb5-10"></a></span>
-<span id="cb5-11"><a href="#cb5-11"></a>whale.lat.long &lt;-<span class="st"> </span>whale[whale<span class="op">$</span>latitude <span class="op">&gt;</span><span class="st"> </span><span class="dv">60</span> <span class="op">&amp;</span><span class="st"> </span>whale<span class="op">$</span>latitude <span class="op">&lt;</span><span class="st"> </span><span class="dv">61</span> <span class="op">&amp;</span><span class="st"> </span>whale<span class="op">$</span>longitude <span class="op">&gt;</span><span class="st"> </span><span class="dv">-6</span> <span class="op">&amp;</span><span class="st"> </span>whale<span class="op">$</span>longitude <span class="op">&lt;</span><span class="st"> </span></span>
-<span id="cb5-12"><a href="#cb5-12"></a><span class="st">    </span><span class="dv">-4</span>, ]</span>
+<span id="cb5-11"><a href="#cb5-11"></a>whale.lat.long &lt;-<span class="st"> </span>whale[whale<span class="op">$</span>latitude <span class="op">&gt;</span><span class="st"> </span><span class="dv">60</span> <span class="op">&amp;</span><span class="st"> </span>whale<span class="op">$</span>latitude <span class="op">&lt;</span><span class="st"> </span><span class="dv">61</span> <span class="op">&amp;</span><span class="st"> </span>whale<span class="op">$</span>longitude <span class="op">&gt;</span><span class="st"> </span><span class="dv">-6</span> <span class="op">&amp;</span><span class="st"> </span>whale<span class="op">$</span>longitude <span class="op">&lt;</span><span class="st"> </span><span class="dv">-4</span>, </span>
+<span id="cb5-12"><a href="#cb5-12"></a>    ]</span>
 <span id="cb5-13"><a href="#cb5-13"></a></span>
 <span id="cb5-14"><a href="#cb5-14"></a>whale.nomed &lt;-<span class="st"> </span>whale[whale<span class="op">$</span>water.noise <span class="op">!=</span><span class="st"> &quot;medium&quot;</span>, ]</span></code></pre></div></li>
 </ol>
@@ -679,8 +685,8 @@ $(document).ready(function () {
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># results in a dataframe filled with NAs.</span></span>
 <span id="cb7-2"><a href="#cb7-2"></a>whale.new &lt;-<span class="st"> </span>whale[whale<span class="op">$</span>depth <span class="op">&gt;</span><span class="st"> </span><span class="dv">1500</span> <span class="op">&amp;</span><span class="st"> </span>whale<span class="op">$</span>number.whales <span class="op">&gt;</span><span class="st"> </span><span class="kw">mean</span>(whale<span class="op">$</span>number.whales), ]</span>
 <span id="cb7-3"><a href="#cb7-3"></a></span>
-<span id="cb7-4"><a href="#cb7-4"></a><span class="co"># the variable number.whales contains 1 NA value. By default the mean function will return an NA.  use</span></span>
-<span id="cb7-5"><a href="#cb7-5"></a><span class="co"># the na.rm argument to ignore NAs</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="co"># the variable number.whales contains 1 NA value. By default the mean function will return an NA.  use the</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a><span class="co"># na.rm argument to ignore NAs</span></span>
 <span id="cb7-6"><a href="#cb7-6"></a>whale.new &lt;-<span class="st"> </span>whale[whale<span class="op">$</span>depth <span class="op">&gt;</span><span class="st"> </span><span class="dv">1500</span> <span class="op">&amp;</span><span class="st"> </span>whale<span class="op">$</span>number.whales <span class="op">&gt;</span><span class="st"> </span><span class="kw">mean</span>(whale<span class="op">$</span>number.whales, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>), ]</span></code></pre></div></li>
 </ol>
 <p> </p>
@@ -727,13 +733,12 @@ $(document).ready(function () {
 <li><p>Another useful function for summarising dataframes is <code>aggregate()</code>. Refer back to the book (search for <code>aggregate</code>) to look up how to use this function (or see <code>?aggregate</code>). Use the <code>aggregate()</code> function to calculate the mean of time at station, number of whales, depth and gradient for each level of water noise (don’t forget about that sneaky NA value). Next calculate the mean of time at station, number of whales, depth and gradient for each level of water noise for each month. (Optional): For an extra bonus point see if you can figure out how to modify your previous code to display the mean values to 2 decimal places rather than the default of 3 decimal places.</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="kw">aggregate</span>(whale[, <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">8</span>)], <span class="dt">by =</span> <span class="kw">list</span>(<span class="dt">water.noise =</span> whale<span class="op">$</span>water.noise), mean, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</span>
 <span id="cb13-2"><a href="#cb13-2"></a></span>
-<span id="cb13-3"><a href="#cb13-3"></a><span class="kw">aggregate</span>(whale[, <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">8</span>)], <span class="dt">by =</span> <span class="kw">list</span>(<span class="dt">water.noise =</span> whale<span class="op">$</span>water.noise, <span class="dt">month =</span> whale<span class="op">$</span>month), mean, </span>
-<span id="cb13-4"><a href="#cb13-4"></a>    <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb13-5"><a href="#cb13-5"></a></span>
-<span id="cb13-6"><a href="#cb13-6"></a><span class="co"># optional question. Need to specify a function &#39;on the fly&#39; using function(x){}</span></span>
-<span id="cb13-7"><a href="#cb13-7"></a><span class="kw">aggregate</span>(whale[, <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">8</span>)], <span class="dt">by =</span> <span class="kw">list</span>(<span class="dt">water.noise =</span> whale<span class="op">$</span>water.noise, <span class="dt">month =</span> whale<span class="op">$</span>month), <span class="cf">function</span>(x) {</span>
-<span id="cb13-8"><a href="#cb13-8"></a>    <span class="kw">round</span>(<span class="kw">mean</span>(x, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>), <span class="dt">digits =</span> <span class="dv">2</span>)</span>
-<span id="cb13-9"><a href="#cb13-9"></a>})</span></code></pre></div></li>
+<span id="cb13-3"><a href="#cb13-3"></a><span class="kw">aggregate</span>(whale[, <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">8</span>)], <span class="dt">by =</span> <span class="kw">list</span>(<span class="dt">water.noise =</span> whale<span class="op">$</span>water.noise, <span class="dt">month =</span> whale<span class="op">$</span>month), mean, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb13-4"><a href="#cb13-4"></a></span>
+<span id="cb13-5"><a href="#cb13-5"></a><span class="co"># optional question. Need to specify a function &#39;on the fly&#39; using function(x){}</span></span>
+<span id="cb13-6"><a href="#cb13-6"></a><span class="kw">aggregate</span>(whale[, <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">8</span>)], <span class="dt">by =</span> <span class="kw">list</span>(<span class="dt">water.noise =</span> whale<span class="op">$</span>water.noise, <span class="dt">month =</span> whale<span class="op">$</span>month), <span class="cf">function</span>(x) {</span>
+<span id="cb13-7"><a href="#cb13-7"></a>    <span class="kw">round</span>(<span class="kw">mean</span>(x, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>), <span class="dt">digits =</span> <span class="dv">2</span>)</span>
+<span id="cb13-8"><a href="#cb13-8"></a>})</span></code></pre></div></li>
 </ol>
 <p> </p>
 <ol start="17" style="list-style-type: decimal">
