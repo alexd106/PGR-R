@@ -11,8 +11,12 @@ knitr::opts_chunk$set(message=FALSE, warning=FALSE, eval=TRUE, echo=FALSE)
 suppressPackageStartupMessages(library(dplyr))
 ```
 
-```{r zipdir, include=FALSE}
-if (!file.exists("data/all_data.zip")) system("rm data/all_data.zip ; zip -r data/all_data.zip data -x '*.html' -x '*.DS_Store'")
+```{r zipdir2, include=TRUE}
+if (file.exists("data/all_data.zip")){
+  file.remove("data/all_data.zip")
+}
+flist <- list.files('data')
+utils::zip(zipfile = 'data/all_data', files = paste0('data/', flist), extras = c("-x '*.DS_Store'", "-x '*.zip'"))
 ```
 
 \  
