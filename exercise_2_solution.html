@@ -614,45 +614,47 @@ $(document).ready(function () {
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>seq2 &lt;-<span class="st"> </span><span class="kw">rev</span>(<span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">1</span>, <span class="dt">to =</span> <span class="dv">10</span>, <span class="dt">by =</span> <span class="fl">0.5</span>))</span></code></pre></div>
 <p> </p>
 <p>11. Let’s go sequence crazy! Generate the following sequences. You will need to experiment with the arguments to the <code>rep()</code> function to generate these sequences (see <a href="https://intro2r.com/using-functions-in-r.html#using-functions-in-r">Section 2.3</a> for some clues):</p>
-<pre><code>1 2 3 1 2 3 1 2 3
-&quot;a&quot; &quot;a&quot; &quot;a&quot; &quot;c&quot; &quot;c&quot; &quot;c&quot; &quot;e&quot; &quot;e&quot; &quot;e&quot; &quot;g&quot; &quot;g&quot; &quot;g&quot;
-&quot;a&quot; &quot;c&quot; &quot;e&quot; &quot;g&quot; &quot;a&quot; &quot;c&quot; &quot;e&quot; &quot;g&quot; &quot;a&quot; &quot;c&quot; &quot;e&quot; &quot;g&quot;
-1 1 1 2 2 2 3 3 3 1 1 1 2 2 2 3 3 3
-1 1 1 1 1 2 2 2 2 3 3 3 4 4 5
-7 7 7 7 2 2 2 8 1 1 1 1 1</code></pre>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="kw">rep</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="dt">times =</span> <span class="dv">3</span>)</span>
-<span id="cb11-2"><a href="#cb11-2"></a><span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;c&quot;</span>, <span class="st">&quot;e&quot;</span>, <span class="st">&quot;g&quot;</span>), <span class="dt">each =</span> <span class="dv">3</span>)</span>
-<span id="cb11-3"><a href="#cb11-3"></a><span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;c&quot;</span>, <span class="st">&quot;e&quot;</span>, <span class="st">&quot;g&quot;</span>), <span class="dt">times =</span> <span class="dv">3</span>)</span>
-<span id="cb11-4"><a href="#cb11-4"></a><span class="kw">rep</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="dt">each =</span> <span class="dv">3</span>, <span class="dt">times =</span> <span class="dv">2</span>)</span>
-<span id="cb11-5"><a href="#cb11-5"></a><span class="kw">rep</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">times =</span> <span class="dv">5</span><span class="op">:</span><span class="dv">1</span>)</span>
-<span id="cb11-6"><a href="#cb11-6"></a><span class="kw">rep</span>(<span class="kw">c</span>(<span class="dv">7</span>, <span class="dv">2</span>, <span class="dv">8</span>, <span class="dv">1</span>), <span class="dt">times =</span> <span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">5</span>))</span></code></pre></div>
+<ul>
+<li>1 2 3 1 2 3 1 2 3</li>
+<li>“a” “a” “a” “c” “c” “c” “e” “e” “e” “g” “g” “g”</li>
+<li>“a” “c” “e” “g” “a” “c” “e” “g” “a” “c” “e” “g”</li>
+<li>1 1 1 2 2 2 3 3 3 1 1 1 2 2 2 3 3 3</li>
+<li>1 1 1 1 1 2 2 2 2 3 3 3 4 4 5</li>
+<li>7 7 7 7 2 2 2 8 1 1 1 1 1</li>
+</ul>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="kw">rep</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="dt">times =</span> <span class="dv">3</span>)</span>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;c&quot;</span>, <span class="st">&quot;e&quot;</span>, <span class="st">&quot;g&quot;</span>), <span class="dt">each =</span> <span class="dv">3</span>)</span>
+<span id="cb10-3"><a href="#cb10-3"></a><span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;c&quot;</span>, <span class="st">&quot;e&quot;</span>, <span class="st">&quot;g&quot;</span>), <span class="dt">times =</span> <span class="dv">3</span>)</span>
+<span id="cb10-4"><a href="#cb10-4"></a><span class="kw">rep</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="dt">each =</span> <span class="dv">3</span>, <span class="dt">times =</span> <span class="dv">2</span>)</span>
+<span id="cb10-5"><a href="#cb10-5"></a><span class="kw">rep</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">times =</span> <span class="dv">5</span><span class="op">:</span><span class="dv">1</span>)</span>
+<span id="cb10-6"><a href="#cb10-6"></a><span class="kw">rep</span>(<span class="kw">c</span>(<span class="dv">7</span>, <span class="dv">2</span>, <span class="dv">8</span>, <span class="dv">1</span>), <span class="dt">times =</span> <span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">5</span>))</span></code></pre></div>
 <p> </p>
 <p>12. Ok, back to the variable <code>height</code> you created in Q7. Sort the values of <code>height</code> into ascending order (shortest to tallest) and assign the sorted vector to a new variable called <code>height_sorted</code>. See <a href="https://intro2r.com/vectors.html#vec_ord">Section 2.4.3</a> for an introduction to sorting and ordering vectors. Now sort all heights into descending order and assign the new vector a name of your choice.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>height_sorted &lt;-<span class="st"> </span><span class="kw">sort</span>(height)</span>
-<span id="cb12-2"><a href="#cb12-2"></a></span>
-<span id="cb12-3"><a href="#cb12-3"></a>height_rev &lt;-<span class="st"> </span><span class="kw">rev</span>(<span class="kw">sort</span>(height))</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>height_sorted &lt;-<span class="st"> </span><span class="kw">sort</span>(height)</span>
+<span id="cb11-2"><a href="#cb11-2"></a></span>
+<span id="cb11-3"><a href="#cb11-3"></a>height_rev &lt;-<span class="st"> </span><span class="kw">rev</span>(<span class="kw">sort</span>(height))</span></code></pre></div>
 <p> </p>
 <p>13. Let’s give the children some names. Create a new vector called <code>child_names</code> with the following names of the 10 children: <code>"Alfred", "Barbara", "James", "Jane", "John", "Judy", "Louise", "Mary", "Ronald", "William"</code>.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>child_names &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Alfred&quot;</span>, <span class="st">&quot;Barbara&quot;</span>, <span class="st">&quot;James&quot;</span>, <span class="st">&quot;Jane&quot;</span>, <span class="st">&quot;John&quot;</span>, <span class="st">&quot;Judy&quot;</span>, <span class="st">&quot;Louise&quot;</span>, <span class="st">&quot;Mary&quot;</span>, <span class="st">&quot;Ronald&quot;</span>, <span class="st">&quot;William&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>child_names &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Alfred&quot;</span>, <span class="st">&quot;Barbara&quot;</span>, <span class="st">&quot;James&quot;</span>, <span class="st">&quot;Jane&quot;</span>, <span class="st">&quot;John&quot;</span>, <span class="st">&quot;Judy&quot;</span>, <span class="st">&quot;Louise&quot;</span>, <span class="st">&quot;Mary&quot;</span>, <span class="st">&quot;Ronald&quot;</span>, <span class="st">&quot;William&quot;</span>)</span></code></pre></div>
 <p> </p>
 <p>14. A really useful (and common) task is to sort the values of one variable by the order of another variable. To do this you will need to use the <code>order()</code> function in combination with the square bracket notation <code>[ ]</code> (see <a href="https://intro2r.com/vectors.html#vec_ord">Section 2.4.3</a> of the book for more details). Create a new variable called <code>names_sort</code> to store the names of the children sorted by child height (from shortest to tallest). Who is the shortest? who is the tallest child? If you’re not sure how to do this, please ask one of the instructors.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>height_ord &lt;-<span class="st"> </span><span class="kw">order</span>(height)   <span class="co"># get the indexes of the heights, smallest to tallest</span></span>
-<span id="cb14-2"><a href="#cb14-2"></a>names_sort &lt;-<span class="st"> </span>child.names[height_ord]     <span class="co"># Louise is shortest, Ronald is tallest</span></span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>height_ord &lt;-<span class="st"> </span><span class="kw">order</span>(height)   <span class="co"># get the indexes of the heights, smallest to tallest</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a>names_sort &lt;-<span class="st"> </span>child.names[height_ord]     <span class="co"># Louise is shortest, Ronald is tallest</span></span></code></pre></div>
 <p> </p>
 <p>15. Now order the names of the children by descending values of weight and assign the result to a variable called <code>weight_rev</code>. Who is the heaviest? Who is the lightest?</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>weight_ord &lt;-<span class="st"> </span><span class="kw">rev</span>(<span class="kw">order</span>(weight))</span>
-<span id="cb15-2"><a href="#cb15-2"></a>weight_rev &lt;-<span class="st"> </span>child_names[weight_ord]     <span class="co"># Alfred is heaviest, Louise is lightest</span></span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>weight_ord &lt;-<span class="st"> </span><span class="kw">rev</span>(<span class="kw">order</span>(weight))</span>
+<span id="cb14-2"><a href="#cb14-2"></a>weight_rev &lt;-<span class="st"> </span>child_names[weight_ord]     <span class="co"># Alfred is heaviest, Louise is lightest</span></span></code></pre></div>
 <p> </p>
 <p>16. Almost there! In R, missing values are usually represented with an <code>NA</code>. Missing data can be tricky to deal with in R (and in statistics more generally) and cause some surprising behaviour when using some functions (see <a href="https://intro2r.com/vectors.html#na_vals">Section 2.4.5</a> of the Introduction to R book). To explore this a little further let’s create a vector called <code>mydata</code> with the values <code>2, 4, 1, 6, 8, 5, NA, 4, 7</code>. Notice the value of the 7<sup>th</sup> element of <code>mydata</code> is missing and represented with an <code>NA</code>. Now use the <code>mean()</code> function to calculate the mean of the values in <code>mydata</code>. What does R return? Confused? Next, take a look at the help page for the function <code>mean()</code>. Can you figure out how to alter your use of the <code>mean()</code> function to calculate the mean without this missing value?</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>mydata &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">5</span>, <span class="ot">NA</span>, <span class="dv">4</span>, <span class="dv">7</span>)</span>
-<span id="cb16-2"><a href="#cb16-2"></a><span class="kw">mean</span>(mydata)    <span class="co"># returns NA!</span></span>
-<span id="cb16-3"><a href="#cb16-3"></a></span>
-<span id="cb16-4"><a href="#cb16-4"></a><span class="kw">mean</span>(mydata, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)    <span class="co"># returns 4.625</span></span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>mydata &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">5</span>, <span class="ot">NA</span>, <span class="dv">4</span>, <span class="dv">7</span>)</span>
+<span id="cb15-2"><a href="#cb15-2"></a><span class="kw">mean</span>(mydata)    <span class="co"># returns NA!</span></span>
+<span id="cb15-3"><a href="#cb15-3"></a></span>
+<span id="cb15-4"><a href="#cb15-4"></a><span class="kw">mean</span>(mydata, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)    <span class="co"># returns 4.625</span></span></code></pre></div>
 <p> </p>
 <p>17. Finally, list all variables in your workspace that you have created in this exercise. Remove the variable <code>seq1</code> from the workspace using the <code>rm()</code> function.</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="kw">ls</span>()          <span class="co"># list all variables in workspace</span></span>
-<span id="cb17-2"><a href="#cb17-2"></a><span class="kw">rm</span>(seq1)      <span class="co"># remove variable seq1 from the workspace</span></span>
-<span id="cb17-3"><a href="#cb17-3"></a><span class="kw">ls</span>()          <span class="co"># check seq1 has been removed</span></span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="kw">ls</span>()          <span class="co"># list all variables in workspace</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a><span class="kw">rm</span>(seq1)      <span class="co"># remove variable seq1 from the workspace</span></span>
+<span id="cb16-3"><a href="#cb16-3"></a><span class="kw">ls</span>()          <span class="co"># check seq1 has been removed</span></span></code></pre></div>
 <p> </p>
 <p>End of Exercise 2</p>
 </div>

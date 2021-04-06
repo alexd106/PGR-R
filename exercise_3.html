@@ -566,13 +566,15 @@ $(document).ready(function () {
 <p>Finally, extract all rows except the first 10 rows and all columns except the last column. Remember, for some of these questions you can specify the columns you want either by position or by name. Practice both ways. Do you have a preference? If so why?</p>
 <p> </p>
 <p>9. In addition to extracting rows and columns from your dataframe by position you can also use conditional statements to select particular rows based on some logical criteria. This is very useful but takes a bit of practice to get used to (see <a href="https://intro2r.com/wrangling-data-frames.html#logical-indexes">Section 3.4.2</a> for an introduction). Extract rows from your dataframe (all columns by default) based on the following criteria (note: you will need to assign the results of these statements to appropriately named variables, I’ll leave it up to you to use informative names!):</p>
-<pre><code>- at depths greater than 1200 m
-- gradient steeper than 200 degrees
-- water noise level of ‘low’
-- water.noise level of &#39;high&#39; in the month of &#39;May&#39;
-- month of &#39;October&#39;, water noise level of ‘low’ and gradient greater than the median value of gradient (132)
-- all observations from between latitudes 60.0 and 61.0 and longitudes -6.0 and -4.0
-- all rows that do not have a water noise level of medium</code></pre>
+<ul>
+<li>at depths greater than 1200 m</li>
+<li>gradient steeper than 200 degrees</li>
+<li>water noise level of ‘low’</li>
+<li>water.noise level of ‘high’ in the month of ‘May’</li>
+<li>month of ‘October’, water noise level of ‘low’ and gradient greater than the median value of gradient (132)</li>
+<li>all observations from between latitudes 60.0 and 61.0 and longitudes -6.0 and -4.0</li>
+<li>all rows that do not have a water noise level of medium</li>
+</ul>
 <p> </p>
 <p>10. A really neat feature of extracting rows based on conditional statements is that you can include R functions within the statement itself. To practice this, modify your answer to the gradient question in Q9 to use the <code>median()</code> function rather than hard coding the value 132.</p>
 <p> </p>
@@ -586,9 +588,9 @@ $(document).ready(function () {
 <p> </p>
 <p>15. Often, we would like to summarise variables by, for example, calculating a mean, median or counting the number of observations. To do this for a single variable it’s fairly straight forward :</p>
 <p> </p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">mean</span>(whale<span class="op">$</span>time.at.station)     <span class="co"># mean time at station</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="kw">median</span>(whale<span class="op">$</span>depth)             <span class="co"># median depth</span></span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="kw">length</span>(whale<span class="op">$</span>number.whales)     <span class="co"># number of observations</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">mean</span>(whale<span class="op">$</span>time.at.station)     <span class="co"># mean time at station</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="kw">median</span>(whale<span class="op">$</span>depth)             <span class="co"># median depth</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="kw">length</span>(whale<span class="op">$</span>number.whales)     <span class="co"># number of observations</span></span></code></pre></div>
 <p> </p>
 <p>15. (cont) Perhaps more interestingly, you might want summarise one variable conditional on the level of another factor variable. For example, write some R code to calculate the mean number of whales sighted at each of the three levels of water noise (see <a href="https://intro2r.com/summarising-data-frames.html#summarising-data-frames">Section 3.5</a> for a few hints). Next, calculate the median number of whales sighted at each level of water noise and for each month.</p>
 <p> </p>

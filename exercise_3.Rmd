@@ -61,13 +61,13 @@ Finally, extract all rows except the first 10 rows and all columns except the la
 
 9\. In addition to extracting rows and columns from your dataframe by position you can also use conditional statements to select particular rows based on some logical criteria. This is very useful but takes a bit of practice to get used to (see [Section 3.4.2](https://intro2r.com/wrangling-data-frames.html#logical-indexes) for an introduction). Extract rows from your dataframe (all columns by default) based on the following criteria (note: you will need to assign the results of these statements to appropriately named variables, I'll leave it up to you to use informative names!): 
 
-    - at depths greater than 1200 m
-    - gradient steeper than 200 degrees
-    - water noise level of ‘low’
-    - water.noise level of 'high' in the month of 'May'
-    - month of 'October', water noise level of ‘low’ and gradient greater than the median value of gradient (132)
-    - all observations from between latitudes 60.0 and 61.0 and longitudes -6.0 and -4.0
-    - all rows that do not have a water noise level of medium
+- at depths greater than 1200 m
+- gradient steeper than 200 degrees
+- water noise level of ‘low’
+- water.noise level of 'high' in the month of 'May'
+- month of 'October', water noise level of ‘low’ and gradient greater than the median value of gradient (132)
+- all observations from between latitudes 60.0 and 61.0 and longitudes -6.0 and -4.0
+- all rows that do not have a water noise level of medium
 
 \  
 
