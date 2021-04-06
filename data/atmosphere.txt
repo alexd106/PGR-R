@@ -1,4 +1,4 @@
-moisture	treatment
+rainfall	treatment
 300.6	seeded
 302.4	seeded
 298.6	seeded
