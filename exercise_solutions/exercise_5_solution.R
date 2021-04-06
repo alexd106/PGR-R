@@ -151,7 +151,6 @@ par(mfrow = c(2,2))
 plot(growth.lm)  
 
 
-
 ## ----Q7, tidy = TRUE--------------------------------------------------------------------------------------------------------------------
 gigartina <- read.table('workshop/data/Gigartina.CSV', header = TRUE, sep = ",",
                         stringsAsFactors = TRUE)
@@ -188,17 +187,14 @@ boxplot(diameter ~ diatom.treat, data = gigartina, xlab = "diatom treatment", yl
 boxplot(diameter ~ diatom.treat, data = gigartina, xlab = "diatom treatment", ylab = expression(paste("diameter", " (",mu,"m)")))
 
 
-
 ## ---- Q8, results = 'asis'--------------------------------------------------------------------------------------------------------------
 # The null hypothesis Ho: there is no difference in mean diameter 
 # of the spores between the different treatment groups
 
 
-
 ## ----Q9, results = 'asis'---------------------------------------------------------------------------------------------------------------
 
 gigartina.lm <- lm(diameter ~ diatom.treat, data = gigartina)
-
 
 
 ## ----Q10--------------------------------------------------------------------------------------------------------------------------------
@@ -222,7 +218,6 @@ par(mfrow = c(2,2))
 plot(gigartina.lm)
 
 # residual plots look ok to me!
-
 
 
 ## ----Q13, results = 'asis'--------------------------------------------------------------------------------------------------------------
@@ -297,10 +292,9 @@ coplot(beat_rate ~ temp | Facclimitisation_temp, data = temora)
 # scatter plot with different symbols and colours
 
 with(temora, plot(beat_rate ~ temp, xlab = "temperature", ylab = "beat rate", col = as.numeric(Facclimitisation_temp), pch =   as.numeric(Facclimitisation_temp)))
+    
+    legend("topleft", legend = c("5", "10", "20"), pch = unique(as.numeric(temora$Facclimitisation_temp)), col =   unique(as.numeric(temora$Facclimitisation_temp)))
 
-legend("topleft", legend = c("5", "10", "20"), pch = unique(as.numeric(temora$Facclimitisation_temp)), col =   unique(as.numeric(temora$Facclimitisation_temp)))
-
-									
 # or more flexibly
 
 plot(beat_rate ~ temp, xlab = "temperature", ylab = "beat rate", type = "n", data = temora)
@@ -309,7 +303,6 @@ with(temora, points(beat_rate[Facclimitisation_temp == "10"] ~ temp[Facclimitisa
 with(temora, points(beat_rate[Facclimitisation_temp == "20"] ~ temp[Facclimitisation_temp == "20"], pch = 3, col = "blue"))
 
 legend("topleft", legend = c("5", "10", "20"), col = c("black", "red","blue"), pch = c(1,2,3))
-
 
 
 ## ----Q17--------------------------------------------------------------------------------------------------------------------------------
@@ -355,7 +348,6 @@ plot(temora.lm)
 # of count data.
 
 
-
 ## ----Q22, results = 'asis'--------------------------------------------------------------------------------------------------------------
 # we could try square root transforming the variable 
 # beat_rate to stabilise the variance
@@ -387,5 +379,4 @@ anova(temora.lm2)
 
 # model has the same interpretation but the p value for the 
 # interaction term is a bit larger.
-
 

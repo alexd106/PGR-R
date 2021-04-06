@@ -38,6 +38,106 @@
     </style>
 
 
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #c4a000; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #000000; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #000000; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #000000; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+
+.sourceCode .row {
+  width: 100%;
+}
+.sourceCode {
+  overflow-x: auto;
+}
+.code-folding-btn {
+  margin-right: -30px;
+}
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
 
 
 <style type="text/css">
@@ -467,118 +567,108 @@ $(document).ready(function () {
 <p>Read <a href="https://intro2r.com/prog-r.html">Chapter 7</a> to help you complete the questions in this exercise.</p>
 <p> </p>
 <p>1. Create a function to calculate the area of a circle. Test the function by finding the area of a circle with a diameter of 3.4 cm. Can you use it on a vector of data?</p>
-<pre><code>```r
-# area of a circle
-# the equation to calculate the area of a circle is pi * radius^2
-
-circle.area &lt;- function(d){ 
-    pi * (d/2)^2
-}
-
-# to use your new function
-
-circle.area(10)
-# [1] 78.53982
-
-# to test on a vector of diameters
-# first create a vector with diameters ranging from 0 to 50 in steps of 10
-
-cir.diam &lt;- seq(from = 0, to = 50, by = 10)
-
-# test your function
-
-circle.area(cir.diam)
-# [1]    0.00000   78.53982  314.15927  706.85835 1256.63706 1963.49541
-```</code></pre>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># area of a circle</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="co"># the equation to calculate the area of a circle is pi * radius^2</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a></span>
+<span id="cb1-4"><a href="#cb1-4"></a>circle.area &lt;-<span class="st"> </span><span class="cf">function</span>(d){ </span>
+<span id="cb1-5"><a href="#cb1-5"></a>    pi <span class="op">*</span><span class="st"> </span>(d<span class="op">/</span><span class="dv">2</span>)<span class="op">^</span><span class="dv">2</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a>}</span>
+<span id="cb1-7"><a href="#cb1-7"></a></span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="co"># to use your new function</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a></span>
+<span id="cb1-10"><a href="#cb1-10"></a><span class="kw">circle.area</span>(<span class="dv">10</span>)</span>
+<span id="cb1-11"><a href="#cb1-11"></a><span class="co"># [1] 78.53982</span></span>
+<span id="cb1-12"><a href="#cb1-12"></a></span>
+<span id="cb1-13"><a href="#cb1-13"></a><span class="co"># to test on a vector of diameters</span></span>
+<span id="cb1-14"><a href="#cb1-14"></a><span class="co"># first create a vector with diameters ranging from 0 to 50 in steps of 10</span></span>
+<span id="cb1-15"><a href="#cb1-15"></a></span>
+<span id="cb1-16"><a href="#cb1-16"></a>cir.diam &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="dv">50</span>, <span class="dt">by =</span> <span class="dv">10</span>)</span>
+<span id="cb1-17"><a href="#cb1-17"></a></span>
+<span id="cb1-18"><a href="#cb1-18"></a><span class="co"># test your function</span></span>
+<span id="cb1-19"><a href="#cb1-19"></a></span>
+<span id="cb1-20"><a href="#cb1-20"></a><span class="kw">circle.area</span>(cir.diam)</span>
+<span id="cb1-21"><a href="#cb1-21"></a><span class="co"># [1]    0.00000   78.53982  314.15927  706.85835 1256.63706 1963.49541</span></span></code></pre></div>
 <p> </p>
 <p>2. Write a function to convert farenheit to centegrade (oC = (oF - 32) x 5/9). Get your function to print out your result in the following format: “Farenheit : <em>value of oF</em> is equivalent to <em>value oC</em> centigrade.”</p>
-<pre><code>```r
-far.cent &lt;- function(a) {
-    val &lt;- (a - 32) * 5/9
-    print(paste(&quot;Fahrenheit: &quot;, round(a, digits = 3), &quot;oF&quot;, sep = &quot; &quot;), quote = FALSE)  # round 3dp
-    print(paste(&quot;Centigrade: &quot;, round(val, digits = 3), &quot;oC&quot;, sep = &quot; &quot;), quote = FALSE)  # round 3dp
-}
-
-# alternative Fahrenheit to centigrade using cat function
-
-far.cent2 &lt;- function(a) {
-    val &lt;- (a - 32) * 5/9  #calculation
-    cat(&quot;Fahrenheit: &quot;, round(a, digits = 3), &quot;oF&quot;, &quot;\n&quot;)  # use cat function
-    cat(&quot;Centigrade: &quot;, round(val, digits = 3), &quot;oC&quot;, &quot;\n&quot;)
-}
-```</code></pre>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>far.cent &lt;-<span class="st"> </span><span class="cf">function</span>(a) {</span>
+<span id="cb2-2"><a href="#cb2-2"></a>    val &lt;-<span class="st"> </span>(a <span class="op">-</span><span class="st"> </span><span class="dv">32</span>) <span class="op">*</span><span class="st"> </span><span class="dv">5</span><span class="op">/</span><span class="dv">9</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a>    <span class="kw">print</span>(<span class="kw">paste</span>(<span class="st">&quot;Fahrenheit: &quot;</span>, <span class="kw">round</span>(a, <span class="dt">digits =</span> <span class="dv">3</span>), <span class="st">&quot;oF&quot;</span>, <span class="dt">sep =</span> <span class="st">&quot; &quot;</span>), <span class="dt">quote =</span> <span class="ot">FALSE</span>)  <span class="co"># round 3dp</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a>    <span class="kw">print</span>(<span class="kw">paste</span>(<span class="st">&quot;Centigrade: &quot;</span>, <span class="kw">round</span>(val, <span class="dt">digits =</span> <span class="dv">3</span>), <span class="st">&quot;oC&quot;</span>, <span class="dt">sep =</span> <span class="st">&quot; &quot;</span>), <span class="dt">quote =</span> <span class="ot">FALSE</span>)  <span class="co"># round 3dp</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a>}</span>
+<span id="cb2-6"><a href="#cb2-6"></a></span>
+<span id="cb2-7"><a href="#cb2-7"></a><span class="co"># alternative Fahrenheit to centigrade using cat function</span></span>
+<span id="cb2-8"><a href="#cb2-8"></a></span>
+<span id="cb2-9"><a href="#cb2-9"></a>far.cent2 &lt;-<span class="st"> </span><span class="cf">function</span>(a) {</span>
+<span id="cb2-10"><a href="#cb2-10"></a>    val &lt;-<span class="st"> </span>(a <span class="op">-</span><span class="st"> </span><span class="dv">32</span>) <span class="op">*</span><span class="st"> </span><span class="dv">5</span><span class="op">/</span><span class="dv">9</span>  <span class="co">#calculation</span></span>
+<span id="cb2-11"><a href="#cb2-11"></a>    <span class="kw">cat</span>(<span class="st">&quot;Fahrenheit: &quot;</span>, <span class="kw">round</span>(a, <span class="dt">digits =</span> <span class="dv">3</span>), <span class="st">&quot;oF&quot;</span>, <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)  <span class="co"># use cat function</span></span>
+<span id="cb2-12"><a href="#cb2-12"></a>    <span class="kw">cat</span>(<span class="st">&quot;Centigrade: &quot;</span>, <span class="kw">round</span>(val, <span class="dt">digits =</span> <span class="dv">3</span>), <span class="st">&quot;oC&quot;</span>, <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb2-13"><a href="#cb2-13"></a>}</span></code></pre></div>
 <p> </p>
 <p>3. Create a vector of normally distributed data, of length 100, mean 35 and standard deviation of 15. Write a function to calculate the mean, median, and range of the vector, print these values out with appropriate labels. Also get the function to plot a histogram (as a proportion) of the values and add a density curve.</p>
-<pre><code>```r
-# Create a vector of normally distributed data
-# length 100, mean 35 and standard deviation of 29
-
-vals &lt;- rnorm(100, 35, 15)  # create some norm dist data mean 35, sd = 15
-
-summary.fun &lt;- function(dat){
-    mymean &lt;- round(mean(dat), digits = 4)          # calc mean
-    mymedian &lt;- round(median(dat), digits = 4)    # calc median
-    mymin &lt;- round(min(dat), digits = 4)          # calc min
-    mymax &lt;- round(max(dat), digits = 4)          # calc max
-    print(paste(&quot;mean:&quot;, mymean, sep = &quot; &quot;), quote = FALSE)     # print mean
-    print(paste(&quot;median:&quot;, mymedian, sep = &quot; &quot;), quote = FALSE)     # print median
-    print(paste(&quot;range:&quot;, &quot;from:&quot;, mymin, &quot;to&quot;, mymax, sep = &quot; &quot;), quote = FALSE) 
-    dens &lt;- density(dat)                          # estimate density curve
-    hist(dat, main = &quot;&quot;,type = &quot;l&quot;,freq = FALSE)  # plot histogram
-    lines(dens, lty = 1, col = &quot;red&quot;)             # plot density curve
-}
-
-# use the function
-summary.fun(vals)
-```</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># Create a vector of normally distributed data</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="co"># length 100, mean 35 and standard deviation of 29</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a></span>
+<span id="cb3-4"><a href="#cb3-4"></a>vals &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">100</span>, <span class="dv">35</span>, <span class="dv">15</span>)  <span class="co"># create some norm dist data mean 35, sd = 15</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a></span>
+<span id="cb3-6"><a href="#cb3-6"></a>summary.fun &lt;-<span class="st"> </span><span class="cf">function</span>(dat){</span>
+<span id="cb3-7"><a href="#cb3-7"></a>    mymean &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">mean</span>(dat), <span class="dt">digits =</span> <span class="dv">4</span>)          <span class="co"># calc mean</span></span>
+<span id="cb3-8"><a href="#cb3-8"></a>    mymedian &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">median</span>(dat), <span class="dt">digits =</span> <span class="dv">4</span>)    <span class="co"># calc median</span></span>
+<span id="cb3-9"><a href="#cb3-9"></a>    mymin &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">min</span>(dat), <span class="dt">digits =</span> <span class="dv">4</span>)          <span class="co"># calc min</span></span>
+<span id="cb3-10"><a href="#cb3-10"></a>    mymax &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">max</span>(dat), <span class="dt">digits =</span> <span class="dv">4</span>)          <span class="co"># calc max</span></span>
+<span id="cb3-11"><a href="#cb3-11"></a>    <span class="kw">print</span>(<span class="kw">paste</span>(<span class="st">&quot;mean:&quot;</span>, mymean, <span class="dt">sep =</span> <span class="st">&quot; &quot;</span>), <span class="dt">quote =</span> <span class="ot">FALSE</span>)     <span class="co"># print mean</span></span>
+<span id="cb3-12"><a href="#cb3-12"></a>    <span class="kw">print</span>(<span class="kw">paste</span>(<span class="st">&quot;median:&quot;</span>, mymedian, <span class="dt">sep =</span> <span class="st">&quot; &quot;</span>), <span class="dt">quote =</span> <span class="ot">FALSE</span>)     <span class="co"># print median</span></span>
+<span id="cb3-13"><a href="#cb3-13"></a>    <span class="kw">print</span>(<span class="kw">paste</span>(<span class="st">&quot;range:&quot;</span>, <span class="st">&quot;from:&quot;</span>, mymin, <span class="st">&quot;to&quot;</span>, mymax, <span class="dt">sep =</span> <span class="st">&quot; &quot;</span>), <span class="dt">quote =</span> <span class="ot">FALSE</span>) </span>
+<span id="cb3-14"><a href="#cb3-14"></a>    dens &lt;-<span class="st"> </span><span class="kw">density</span>(dat)                          <span class="co"># estimate density curve</span></span>
+<span id="cb3-15"><a href="#cb3-15"></a>    <span class="kw">hist</span>(dat, <span class="dt">main =</span> <span class="st">&quot;&quot;</span>,<span class="dt">type =</span> <span class="st">&quot;l&quot;</span>,<span class="dt">freq =</span> <span class="ot">FALSE</span>)  <span class="co"># plot histogram</span></span>
+<span id="cb3-16"><a href="#cb3-16"></a>    <span class="kw">lines</span>(dens, <span class="dt">lty =</span> <span class="dv">1</span>, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>)             <span class="co"># plot density curve</span></span>
+<span id="cb3-17"><a href="#cb3-17"></a>}</span>
+<span id="cb3-18"><a href="#cb3-18"></a></span>
+<span id="cb3-19"><a href="#cb3-19"></a><span class="co"># use the function</span></span>
+<span id="cb3-20"><a href="#cb3-20"></a><span class="kw">summary.fun</span>(vals)</span></code></pre></div>
 <p> </p>
 <p>4. Write a function to calculate the median value of a vector of numbers (yes I know there’s a <code>median()</code> function already but this is fun!). Be careful with vectors of an even sample size, as you will have to take the average of the two central numbers (hint: use modulo %%2 to determine whether the vector is an odd or an even size). Test your function on vectors with both odd and even sample sizes.</p>
-<pre><code>```r
-# calculate a median
-
-ourmedian &lt;- function(x){
-    n &lt;- length(x)
-    if (n %% 2 == 1)      # odd numbers
-      sort(x)[(n + 1)/2]  # find the middle number by adding 1 to length and div 2
-    else {                # even numbers
-      middletwo &lt;- sort(x)[(n/2) + 0:1]   #find the two middle numbers
-      mean(middletwo)
-      }
-}
-
-# use the function
-mydat &lt;- sample(1:50, size = 10, replace = TRUE )
-
-# our function
-ourmedian(mydat)
-
-# R median function
-median(mydat)
-```</code></pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># calculate a median</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a></span>
+<span id="cb4-3"><a href="#cb4-3"></a>ourmedian &lt;-<span class="st"> </span><span class="cf">function</span>(x){</span>
+<span id="cb4-4"><a href="#cb4-4"></a>    n &lt;-<span class="st"> </span><span class="kw">length</span>(x)</span>
+<span id="cb4-5"><a href="#cb4-5"></a>    <span class="cf">if</span> (n <span class="op">%%</span><span class="st"> </span><span class="dv">2</span> <span class="op">==</span><span class="st"> </span><span class="dv">1</span>)      <span class="co"># odd numbers</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a>      <span class="kw">sort</span>(x)[(n <span class="op">+</span><span class="st"> </span><span class="dv">1</span>)<span class="op">/</span><span class="dv">2</span>]  <span class="co"># find the middle number by adding 1 to length and div 2</span></span>
+<span id="cb4-7"><a href="#cb4-7"></a>    <span class="cf">else</span> {                <span class="co"># even numbers</span></span>
+<span id="cb4-8"><a href="#cb4-8"></a>      middletwo &lt;-<span class="st"> </span><span class="kw">sort</span>(x)[(n<span class="op">/</span><span class="dv">2</span>) <span class="op">+</span><span class="st"> </span><span class="dv">0</span><span class="op">:</span><span class="dv">1</span>]   <span class="co">#find the two middle numbers</span></span>
+<span id="cb4-9"><a href="#cb4-9"></a>      <span class="kw">mean</span>(middletwo)</span>
+<span id="cb4-10"><a href="#cb4-10"></a>      }</span>
+<span id="cb4-11"><a href="#cb4-11"></a>}</span>
+<span id="cb4-12"><a href="#cb4-12"></a></span>
+<span id="cb4-13"><a href="#cb4-13"></a><span class="co"># use the function</span></span>
+<span id="cb4-14"><a href="#cb4-14"></a>mydat &lt;-<span class="st"> </span><span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">50</span>, <span class="dt">size =</span> <span class="dv">10</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span> )</span>
+<span id="cb4-15"><a href="#cb4-15"></a></span>
+<span id="cb4-16"><a href="#cb4-16"></a><span class="co"># our function</span></span>
+<span id="cb4-17"><a href="#cb4-17"></a><span class="kw">ourmedian</span>(mydat)</span>
+<span id="cb4-18"><a href="#cb4-18"></a></span>
+<span id="cb4-19"><a href="#cb4-19"></a><span class="co"># R median function</span></span>
+<span id="cb4-20"><a href="#cb4-20"></a><span class="kw">median</span>(mydat)</span></code></pre></div>
 <p> </p>
 <p>5. You are a population ecologist for the day and wish to investigate the properties of the <a href="https://en.wikipedia.org/wiki/Ricker_model">Ricker model</a>. The Ricker model is defined as:</p>
 <p> </p>
 <p><span class="math display">\[ N_{t+1} = N_{t} exp\left[r\left(1- \frac{N_{t}}{K} \right) \right] \]</span></p>
 <p> </p>
 <p>5. (cont) Where <em>N<sub>t</sub></em> is the population size at time <em>t</em>, <em>r</em> is the population growth rate and <em>K</em> is the carrying capacity. Write a function to simulate this model so you can conveniently determine the effect of changing <em>r</em> and the initial population size N0. <em>K</em> is often set to 100 by default, but you want the option of being able to change this with your function. So, you will need a function with the following arguments; nzero which sets the initial population size, <em>r</em> which will determine the population growth rate, time which sets how long the simulation will run for and <em>K</em> which we will initially set to 100 by default.</p>
-<pre><code>```r
-# function to simulate Ricker model
-
-Ricker.model &lt;- function(nzero, r, time, K = 1) {
-    # sets initial parameters
-    N &lt;- numeric(time + 1)  # creates a real vector of length time+1 to store values of Nt+1
-    N[1] &lt;- nzero  # sets initial population size in first element of N
-    for (i in 1:time) {
-        # loops over time
-        N[i + 1] &lt;- N[i] * exp(r * (1 - N[i]/K))
-    }
-    Time &lt;- 0:time  # creates vector for x axis
-    plot(Time, N, type = &quot;o&quot;, xlim = c(0, time), xlab = &quot;Time&quot;, ylab = &quot;Population size (N)&quot;, main = paste(&quot;r =&quot;, r, sep = &quot; &quot;))  # plots     output
-}
-
-# To run play around with the different parameters, especially r
-Ricker.model(nzero = 0.1, r = 1, time = 100)
-```</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># function to simulate Ricker model</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a></span>
+<span id="cb5-3"><a href="#cb5-3"></a>Ricker.model &lt;-<span class="st"> </span><span class="cf">function</span>(nzero, r, time, <span class="dt">K =</span> <span class="dv">1</span>) {</span>
+<span id="cb5-4"><a href="#cb5-4"></a>    <span class="co"># sets initial parameters</span></span>
+<span id="cb5-5"><a href="#cb5-5"></a>    N &lt;-<span class="st"> </span><span class="kw">numeric</span>(time <span class="op">+</span><span class="st"> </span><span class="dv">1</span>)  <span class="co"># creates a real vector of length time+1 to store values of Nt+1</span></span>
+<span id="cb5-6"><a href="#cb5-6"></a>    N[<span class="dv">1</span>] &lt;-<span class="st"> </span>nzero  <span class="co"># sets initial population size in first element of N</span></span>
+<span id="cb5-7"><a href="#cb5-7"></a>    <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>time) {</span>
+<span id="cb5-8"><a href="#cb5-8"></a>        <span class="co"># loops over time</span></span>
+<span id="cb5-9"><a href="#cb5-9"></a>        N[i <span class="op">+</span><span class="st"> </span><span class="dv">1</span>] &lt;-<span class="st"> </span>N[i] <span class="op">*</span><span class="st"> </span><span class="kw">exp</span>(r <span class="op">*</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span>N[i]<span class="op">/</span>K))</span>
+<span id="cb5-10"><a href="#cb5-10"></a>    }</span>
+<span id="cb5-11"><a href="#cb5-11"></a>    Time &lt;-<span class="st"> </span><span class="dv">0</span><span class="op">:</span>time  <span class="co"># creates vector for x axis</span></span>
+<span id="cb5-12"><a href="#cb5-12"></a>    <span class="kw">plot</span>(Time, N, <span class="dt">type =</span> <span class="st">&quot;o&quot;</span>, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">0</span>, time), <span class="dt">xlab =</span> <span class="st">&quot;Time&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Population size (N)&quot;</span>, <span class="dt">main =</span> <span class="kw">paste</span>(<span class="st">&quot;r =&quot;</span>, r, <span class="dt">sep =</span> <span class="st">&quot; &quot;</span>))  <span class="co"># plots     output</span></span>
+<span id="cb5-13"><a href="#cb5-13"></a>}</span>
+<span id="cb5-14"><a href="#cb5-14"></a></span>
+<span id="cb5-15"><a href="#cb5-15"></a><span class="co"># To run play around with the different parameters, especially r</span></span>
+<span id="cb5-16"><a href="#cb5-16"></a><span class="kw">Ricker.model</span>(<span class="dt">nzero =</span> <span class="fl">0.1</span>, <span class="dt">r =</span> <span class="dv">1</span>, <span class="dt">time =</span> <span class="dv">100</span>)</span></code></pre></div>
 <p> </p>
 <p>End of Exercise 6</p>
 </div>

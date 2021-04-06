@@ -566,13 +566,13 @@ $(document).ready(function () {
 <p>Finally, extract all rows except the first 10 rows and all columns except the last column. Remember, for some of these questions you can specify the columns you want either by position or by name. Practice both ways. Do you have a preference? If so why?</p>
 <p> </p>
 <p>9. In addition to extracting rows and columns from your dataframe by position you can also use conditional statements to select particular rows based on some logical criteria. This is very useful but takes a bit of practice to get used to (see <a href="https://intro2r.com/wrangling-data-frames.html#logical-indexes">Section 3.4.2</a> for an introduction). Extract rows from your dataframe (all columns by default) based on the following criteria (note: you will need to assign the results of these statements to appropriately named variables, I’ll leave it up to you to use informative names!):</p>
-<pre><code>  + at depths greater than 1200 m
-  + gradient steeper than 200 degrees
-  + water noise level of ‘low’
-  + water.noise level of &#39;high&#39; in the month of &#39;May&#39;
-  + month of &#39;October&#39;, water noise level of ‘low’ and gradient greater than the median value of gradient (132)
-  + all observations from between latitudes 60.0 and 61.0 and longitudes -6.0 and -4.0
-  + all rows that do not have a water noise level of medium</code></pre>
+<pre><code>- at depths greater than 1200 m
+- gradient steeper than 200 degrees
+- water noise level of ‘low’
+- water.noise level of &#39;high&#39; in the month of &#39;May&#39;
+- month of &#39;October&#39;, water noise level of ‘low’ and gradient greater than the median value of gradient (132)
+- all observations from between latitudes 60.0 and 61.0 and longitudes -6.0 and -4.0
+- all rows that do not have a water noise level of medium</code></pre>
 <p> </p>
 <p>10. A really neat feature of extracting rows based on conditional statements is that you can include R functions within the statement itself. To practice this, modify your answer to the gradient question in Q9 to use the <code>median()</code> function rather than hard coding the value 132.</p>
 <p> </p>

@@ -40,7 +40,6 @@ far.cent2 <- function(a){
 }
 
 
-
 ## ----Q3---------------------------------------------------------------------------------------------------------------------------------
 
 # Create a vector of normally distributed data
@@ -106,5 +105,4 @@ Ricker.model <- function(nzero, r, time, K=1){     # sets initial parameters
 # To run
 # play around with the different parameters, especially r
 Ricker.model(nzero=0.1,r=1,time=100)
-
 

@@ -112,14 +112,11 @@ dotplot(as.matrix(squid[,c("DML", "weight", "nid.length", "ovary.weight")]),
 ## ----Q7---------------------------------------------------------------------------------------------------------------------------------
 which(squid$nid.length > 400)
 # [1] 11
-
 squid$nid.length[11]
 # [1] 430.2
-
 squid$nid.length[11] <- 43.2
 squid$nid.length[11]
 # [1] 43.2
-
 dotchart(squid$nid.length, main = "nid length")
 
 
@@ -218,7 +215,6 @@ with(squid, plot(DML, ovary.weight.sqrt, xlab = "DML (mm)", ylab = "square root 
 labs <- c("stage 1", "stage 2", "stage 3", "stage 4","stage 5")
 cols <- as.numeric(levels(squid$Fmaturity))
 legend("topleft", labs,col = cols, pch = 1)
-
 
 ## ----Q13b, tidy = TRUE------------------------------------------------------------------------------------------------------------------
 # longer but more control
