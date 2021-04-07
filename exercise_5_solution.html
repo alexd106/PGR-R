@@ -716,33 +716,35 @@ $(document).ready(function () {
 <span id="cb6-6"><a href="#cb6-6"></a><span class="kw">plot</span>(growth.lm)  </span></code></pre></div>
 <p> </p>
 <p>7. Download the datafile <em>‘Gigartina.CSV’</em> from the <strong><a href="data.html"><i class="fa fa-download"></i> Data</a></strong> link and save it to the <code>data</code> directory. Import the dataset into R and assign the dataframe an appropriate name. These data were collected from a study to examine the change in <code>diameter</code> of red algae <a href="https://en.wikipedia.org/wiki/Mastocarpus_stellatus"><em>Mastocarpus stellatus</em></a> spores grown in three different diatom cultures and a control group grown in artificial seawater (<code>diatom.treat</code> variable). Use the function <code>str()</code> to examine the dataframe. How many replicates are there per diatom treatment? Use an appropriate plot to examine whether there are any obvious differences in diameter between the treatments.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>gigartina &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="st">&quot;workshop/data/Gigartina.CSV&quot;</span>, <span class="dt">header =</span> <span class="ot">TRUE</span>, <span class="dt">sep =</span> <span class="st">&quot;,&quot;</span>, <span class="dt">stringsAsFactors =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb7-2"><a href="#cb7-2"></a></span>
-<span id="cb7-3"><a href="#cb7-3"></a><span class="co"># or</span></span>
-<span id="cb7-4"><a href="#cb7-4"></a></span>
-<span id="cb7-5"><a href="#cb7-5"></a>gigartina &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;workshop/data/Gigartina.CSV&quot;</span>, <span class="dt">stringsAsFactors =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb7-6"><a href="#cb7-6"></a></span>
-<span id="cb7-7"><a href="#cb7-7"></a><span class="kw">str</span>(gigartina)</span>
-<span id="cb7-8"><a href="#cb7-8"></a><span class="co"># &#39;data.frame&#39;: 40 obs. of 2 variables: $ diameter : int 110 115 110 108 109 101 101 98 120 ...  $ diatom.treat: Factor w/ 4 levels</span></span>
-<span id="cb7-9"><a href="#cb7-9"></a><span class="co"># &#39;ASGM&#39;,&#39;Sdecl&#39;,..: 1 1...</span></span>
-<span id="cb7-10"><a href="#cb7-10"></a></span>
-<span id="cb7-11"><a href="#cb7-11"></a><span class="kw">table</span>(gigartina<span class="op">$</span>diatom.treat)</span>
-<span id="cb7-12"><a href="#cb7-12"></a></span>
-<span id="cb7-13"><a href="#cb7-13"></a><span class="co"># ASGM Sdecl Sexpo Sstat 10 10 10 10</span></span>
-<span id="cb7-14"><a href="#cb7-14"></a></span>
-<span id="cb7-15"><a href="#cb7-15"></a><span class="co"># or use xtabs</span></span>
-<span id="cb7-16"><a href="#cb7-16"></a></span>
-<span id="cb7-17"><a href="#cb7-17"></a><span class="kw">xtabs</span>(<span class="op">~</span>diatom.treat, <span class="dt">data =</span> gigartina)</span>
-<span id="cb7-18"><a href="#cb7-18"></a></span>
-<span id="cb7-19"><a href="#cb7-19"></a><span class="co"># diatom.treat ASGM Sdecl Sexpo Sstat 10 10 10 10</span></span>
-<span id="cb7-20"><a href="#cb7-20"></a></span>
-<span id="cb7-21"><a href="#cb7-21"></a><span class="co"># plot these data</span></span>
-<span id="cb7-22"><a href="#cb7-22"></a></span>
-<span id="cb7-23"><a href="#cb7-23"></a><span class="kw">boxplot</span>(diameter <span class="op">~</span><span class="st"> </span>diatom.treat, <span class="dt">data =</span> gigartina, <span class="dt">xlab =</span> <span class="st">&quot;diatom treatment&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;diameter (um)&quot;</span>)</span>
-<span id="cb7-24"><a href="#cb7-24"></a></span>
-<span id="cb7-25"><a href="#cb7-25"></a><span class="co"># or if you want to do the fancy um symbol correctly</span></span>
-<span id="cb7-26"><a href="#cb7-26"></a></span>
-<span id="cb7-27"><a href="#cb7-27"></a><span class="kw">boxplot</span>(diameter <span class="op">~</span><span class="st"> </span>diatom.treat, <span class="dt">data =</span> gigartina, <span class="dt">xlab =</span> <span class="st">&quot;diatom treatment&quot;</span>, <span class="dt">ylab =</span> <span class="kw">expression</span>(<span class="kw">paste</span>(<span class="st">&quot;diameter&quot;</span>, <span class="st">&quot; (&quot;</span>, mu, <span class="st">&quot;m)&quot;</span>)))</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>gigartina &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="st">&quot;workshop/data/Gigartina.CSV&quot;</span>, <span class="dt">header =</span> <span class="ot">TRUE</span>, <span class="dt">sep =</span> <span class="st">&quot;,&quot;</span>, </span>
+<span id="cb7-2"><a href="#cb7-2"></a>    <span class="dt">stringsAsFactors =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb7-3"><a href="#cb7-3"></a></span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="co"># or</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a></span>
+<span id="cb7-6"><a href="#cb7-6"></a>gigartina &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;workshop/data/Gigartina.CSV&quot;</span>, <span class="dt">stringsAsFactors =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb7-7"><a href="#cb7-7"></a></span>
+<span id="cb7-8"><a href="#cb7-8"></a><span class="kw">str</span>(gigartina)</span>
+<span id="cb7-9"><a href="#cb7-9"></a><span class="co"># &#39;data.frame&#39;: 40 obs. of 2 variables: $ diameter : int 110 115 110 108 109 101</span></span>
+<span id="cb7-10"><a href="#cb7-10"></a><span class="co"># 101 98 120 ...  $ diatom.treat: Factor w/ 4 levels &#39;ASGM&#39;,&#39;Sdecl&#39;,..: 1 1...</span></span>
+<span id="cb7-11"><a href="#cb7-11"></a></span>
+<span id="cb7-12"><a href="#cb7-12"></a><span class="kw">table</span>(gigartina<span class="op">$</span>diatom.treat)</span>
+<span id="cb7-13"><a href="#cb7-13"></a></span>
+<span id="cb7-14"><a href="#cb7-14"></a><span class="co"># ASGM Sdecl Sexpo Sstat 10 10 10 10</span></span>
+<span id="cb7-15"><a href="#cb7-15"></a></span>
+<span id="cb7-16"><a href="#cb7-16"></a><span class="co"># or use xtabs</span></span>
+<span id="cb7-17"><a href="#cb7-17"></a></span>
+<span id="cb7-18"><a href="#cb7-18"></a><span class="kw">xtabs</span>(<span class="op">~</span>diatom.treat, <span class="dt">data =</span> gigartina)</span>
+<span id="cb7-19"><a href="#cb7-19"></a></span>
+<span id="cb7-20"><a href="#cb7-20"></a><span class="co"># diatom.treat ASGM Sdecl Sexpo Sstat 10 10 10 10</span></span>
+<span id="cb7-21"><a href="#cb7-21"></a></span>
+<span id="cb7-22"><a href="#cb7-22"></a><span class="co"># plot these data</span></span>
+<span id="cb7-23"><a href="#cb7-23"></a></span>
+<span id="cb7-24"><a href="#cb7-24"></a><span class="kw">boxplot</span>(diameter <span class="op">~</span><span class="st"> </span>diatom.treat, <span class="dt">data =</span> gigartina, <span class="dt">xlab =</span> <span class="st">&quot;diatom treatment&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;diameter (um)&quot;</span>)</span>
+<span id="cb7-25"><a href="#cb7-25"></a></span>
+<span id="cb7-26"><a href="#cb7-26"></a><span class="co"># or if you want to do the fancy um symbol correctly</span></span>
+<span id="cb7-27"><a href="#cb7-27"></a></span>
+<span id="cb7-28"><a href="#cb7-28"></a><span class="kw">boxplot</span>(diameter <span class="op">~</span><span class="st"> </span>diatom.treat, <span class="dt">data =</span> gigartina, <span class="dt">xlab =</span> <span class="st">&quot;diatom treatment&quot;</span>, <span class="dt">ylab =</span> <span class="kw">expression</span>(<span class="kw">paste</span>(<span class="st">&quot;diameter&quot;</span>, </span>
+<span id="cb7-29"><a href="#cb7-29"></a>    <span class="st">&quot; (&quot;</span>, mu, <span class="st">&quot;m)&quot;</span>)))</span></code></pre></div>
 <p> </p>
 <p>8. You wish to compare the mean diameter of <em>Metacarpus</em> grown in the four treatment groups (<code>ASGM</code>, <code>Sdecl</code>, <code>Sexpo</code>, <code>Sstat</code>) using a one-way analysis of variance (ANOVA). What is your null hypothesis?</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># The null hypothesis Ho: there is no difference in mean diameter </span></span>
@@ -818,38 +820,46 @@ $(document).ready(function () {
 <span id="cb14-6"><a href="#cb14-6"></a></span>
 <span id="cb14-7"><a href="#cb14-7"></a><span class="kw">str</span>(temora)</span>
 <span id="cb14-8"><a href="#cb14-8"></a></span>
-<span id="cb14-9"><a href="#cb14-9"></a><span class="co"># &#39;data.frame&#39;: 45 obs. of 3 variables: $ temp : num 5 6 7 10 11 12 13 15 16 17 ...  $ beat_rate : num 3.76 5.4 8 9.4 16.6 18.5 19...  $</span></span>
-<span id="cb14-10"><a href="#cb14-10"></a><span class="co"># acclimitisation_temp: int 5 5 5 5 5 5 5 5 5 5 ...</span></span></code></pre></div>
+<span id="cb14-9"><a href="#cb14-9"></a><span class="co"># &#39;data.frame&#39;: 45 obs. of 3 variables: $ temp : num 5 6 7 10 11 12 13 15 16 17</span></span>
+<span id="cb14-10"><a href="#cb14-10"></a><span class="co"># ...  $ beat_rate : num 3.76 5.4 8 9.4 16.6 18.5 19...  $ acclimitisation_temp:</span></span>
+<span id="cb14-11"><a href="#cb14-11"></a><span class="co"># int 5 5 5 5 5 5 5 5 5 5 ...</span></span></code></pre></div>
 <p> </p>
 <p>16. What type of variable is <code>acclimitisation_temp</code>? Is it a factor? Convert <code>acclimitisation_temp</code> to a factor and store the result in a new column in your dataframe called <code>Facclimitisation_temp</code>. Hint: use the function <code>factor()</code>. Use an appropriate plot to visualise these data (perhaps a coplot or similar?).</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>temora<span class="op">$</span>Facclimitisation_temp &lt;-<span class="st"> </span><span class="kw">factor</span>(temora<span class="op">$</span>acclimitisation_temp)</span>
 <span id="cb15-2"><a href="#cb15-2"></a></span>
 <span id="cb15-3"><a href="#cb15-3"></a><span class="co"># boxplot of beat rate and acclimitisation temp</span></span>
 <span id="cb15-4"><a href="#cb15-4"></a></span>
-<span id="cb15-5"><a href="#cb15-5"></a><span class="kw">boxplot</span>(beat_rate <span class="op">~</span><span class="st"> </span>Facclimitisation_temp, <span class="dt">data =</span> temora, <span class="dt">xlab =</span> <span class="st">&quot;acclimitisation temp&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;beat rate&quot;</span>)</span>
-<span id="cb15-6"><a href="#cb15-6"></a></span>
-<span id="cb15-7"><a href="#cb15-7"></a><span class="co"># scatter plot using the with function</span></span>
-<span id="cb15-8"><a href="#cb15-8"></a></span>
-<span id="cb15-9"><a href="#cb15-9"></a><span class="kw">with</span>(temora, <span class="kw">plot</span>(beat_rate <span class="op">~</span><span class="st"> </span>temp, <span class="dt">xlab =</span> <span class="st">&quot;temperature&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;beat rate&quot;</span>))</span>
-<span id="cb15-10"><a href="#cb15-10"></a></span>
-<span id="cb15-11"><a href="#cb15-11"></a><span class="co"># using a coplot</span></span>
-<span id="cb15-12"><a href="#cb15-12"></a></span>
-<span id="cb15-13"><a href="#cb15-13"></a><span class="kw">coplot</span>(beat_rate <span class="op">~</span><span class="st"> </span>temp <span class="op">|</span><span class="st"> </span>Facclimitisation_temp, <span class="dt">data =</span> temora)</span>
-<span id="cb15-14"><a href="#cb15-14"></a></span>
-<span id="cb15-15"><a href="#cb15-15"></a><span class="co"># scatter plot with different symbols and colours</span></span>
-<span id="cb15-16"><a href="#cb15-16"></a></span>
-<span id="cb15-17"><a href="#cb15-17"></a><span class="kw">with</span>(temora, <span class="kw">plot</span>(beat_rate <span class="op">~</span><span class="st"> </span>temp, <span class="dt">xlab =</span> <span class="st">&quot;temperature&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;beat rate&quot;</span>, <span class="dt">col =</span> <span class="kw">as.numeric</span>(Facclimitisation_temp), <span class="dt">pch =</span> <span class="kw">as.numeric</span>(Facclimitisation_temp)))</span>
-<span id="cb15-18"><a href="#cb15-18"></a></span>
-<span id="cb15-19"><a href="#cb15-19"></a><span class="kw">legend</span>(<span class="st">&quot;topleft&quot;</span>, <span class="dt">legend =</span> <span class="kw">c</span>(<span class="st">&quot;5&quot;</span>, <span class="st">&quot;10&quot;</span>, <span class="st">&quot;20&quot;</span>), <span class="dt">pch =</span> <span class="kw">unique</span>(<span class="kw">as.numeric</span>(temora<span class="op">$</span>Facclimitisation_temp)), <span class="dt">col =</span> <span class="kw">unique</span>(<span class="kw">as.numeric</span>(temora<span class="op">$</span>Facclimitisation_temp)))</span>
+<span id="cb15-5"><a href="#cb15-5"></a><span class="kw">boxplot</span>(beat_rate <span class="op">~</span><span class="st"> </span>Facclimitisation_temp, <span class="dt">data =</span> temora, <span class="dt">xlab =</span> <span class="st">&quot;acclimitisation temp&quot;</span>, </span>
+<span id="cb15-6"><a href="#cb15-6"></a>    <span class="dt">ylab =</span> <span class="st">&quot;beat rate&quot;</span>)</span>
+<span id="cb15-7"><a href="#cb15-7"></a></span>
+<span id="cb15-8"><a href="#cb15-8"></a><span class="co"># scatter plot using the with function</span></span>
+<span id="cb15-9"><a href="#cb15-9"></a></span>
+<span id="cb15-10"><a href="#cb15-10"></a><span class="kw">with</span>(temora, <span class="kw">plot</span>(beat_rate <span class="op">~</span><span class="st"> </span>temp, <span class="dt">xlab =</span> <span class="st">&quot;temperature&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;beat rate&quot;</span>))</span>
+<span id="cb15-11"><a href="#cb15-11"></a></span>
+<span id="cb15-12"><a href="#cb15-12"></a><span class="co"># using a coplot</span></span>
+<span id="cb15-13"><a href="#cb15-13"></a></span>
+<span id="cb15-14"><a href="#cb15-14"></a><span class="kw">coplot</span>(beat_rate <span class="op">~</span><span class="st"> </span>temp <span class="op">|</span><span class="st"> </span>Facclimitisation_temp, <span class="dt">data =</span> temora)</span>
+<span id="cb15-15"><a href="#cb15-15"></a></span>
+<span id="cb15-16"><a href="#cb15-16"></a><span class="co"># scatter plot with different symbols and colours</span></span>
+<span id="cb15-17"><a href="#cb15-17"></a></span>
+<span id="cb15-18"><a href="#cb15-18"></a><span class="kw">with</span>(temora, <span class="kw">plot</span>(beat_rate <span class="op">~</span><span class="st"> </span>temp, <span class="dt">xlab =</span> <span class="st">&quot;temperature&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;beat rate&quot;</span>, <span class="dt">col =</span> <span class="kw">as.numeric</span>(Facclimitisation_temp), </span>
+<span id="cb15-19"><a href="#cb15-19"></a>    <span class="dt">pch =</span> <span class="kw">as.numeric</span>(Facclimitisation_temp)))</span>
 <span id="cb15-20"><a href="#cb15-20"></a></span>
-<span id="cb15-21"><a href="#cb15-21"></a><span class="co"># or more flexibly</span></span>
-<span id="cb15-22"><a href="#cb15-22"></a></span>
-<span id="cb15-23"><a href="#cb15-23"></a><span class="kw">plot</span>(beat_rate <span class="op">~</span><span class="st"> </span>temp, <span class="dt">xlab =</span> <span class="st">&quot;temperature&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;beat rate&quot;</span>, <span class="dt">type =</span> <span class="st">&quot;n&quot;</span>, <span class="dt">data =</span> temora)</span>
-<span id="cb15-24"><a href="#cb15-24"></a><span class="kw">with</span>(temora, <span class="kw">points</span>(beat_rate[Facclimitisation_temp <span class="op">==</span><span class="st"> &quot;5&quot;</span>] <span class="op">~</span><span class="st"> </span>temp[Facclimitisation_temp <span class="op">==</span><span class="st"> &quot;5&quot;</span>], <span class="dt">pch =</span> <span class="dv">1</span>, <span class="dt">col =</span> <span class="st">&quot;black&quot;</span>))</span>
-<span id="cb15-25"><a href="#cb15-25"></a><span class="kw">with</span>(temora, <span class="kw">points</span>(beat_rate[Facclimitisation_temp <span class="op">==</span><span class="st"> &quot;10&quot;</span>] <span class="op">~</span><span class="st"> </span>temp[Facclimitisation_temp <span class="op">==</span><span class="st"> &quot;10&quot;</span>], <span class="dt">pch =</span> <span class="dv">2</span>, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>))</span>
-<span id="cb15-26"><a href="#cb15-26"></a><span class="kw">with</span>(temora, <span class="kw">points</span>(beat_rate[Facclimitisation_temp <span class="op">==</span><span class="st"> &quot;20&quot;</span>] <span class="op">~</span><span class="st"> </span>temp[Facclimitisation_temp <span class="op">==</span><span class="st"> &quot;20&quot;</span>], <span class="dt">pch =</span> <span class="dv">3</span>, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>))</span>
-<span id="cb15-27"><a href="#cb15-27"></a></span>
-<span id="cb15-28"><a href="#cb15-28"></a><span class="kw">legend</span>(<span class="st">&quot;topleft&quot;</span>, <span class="dt">legend =</span> <span class="kw">c</span>(<span class="st">&quot;5&quot;</span>, <span class="st">&quot;10&quot;</span>, <span class="st">&quot;20&quot;</span>), <span class="dt">col =</span> <span class="kw">c</span>(<span class="st">&quot;black&quot;</span>, <span class="st">&quot;red&quot;</span>, <span class="st">&quot;blue&quot;</span>), <span class="dt">pch =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>))</span></code></pre></div>
+<span id="cb15-21"><a href="#cb15-21"></a><span class="kw">legend</span>(<span class="st">&quot;topleft&quot;</span>, <span class="dt">legend =</span> <span class="kw">c</span>(<span class="st">&quot;5&quot;</span>, <span class="st">&quot;10&quot;</span>, <span class="st">&quot;20&quot;</span>), <span class="dt">pch =</span> <span class="kw">unique</span>(<span class="kw">as.numeric</span>(temora<span class="op">$</span>Facclimitisation_temp)), </span>
+<span id="cb15-22"><a href="#cb15-22"></a>    <span class="dt">col =</span> <span class="kw">unique</span>(<span class="kw">as.numeric</span>(temora<span class="op">$</span>Facclimitisation_temp)))</span>
+<span id="cb15-23"><a href="#cb15-23"></a></span>
+<span id="cb15-24"><a href="#cb15-24"></a><span class="co"># or more flexibly</span></span>
+<span id="cb15-25"><a href="#cb15-25"></a></span>
+<span id="cb15-26"><a href="#cb15-26"></a><span class="kw">plot</span>(beat_rate <span class="op">~</span><span class="st"> </span>temp, <span class="dt">xlab =</span> <span class="st">&quot;temperature&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;beat rate&quot;</span>, <span class="dt">type =</span> <span class="st">&quot;n&quot;</span>, <span class="dt">data =</span> temora)</span>
+<span id="cb15-27"><a href="#cb15-27"></a><span class="kw">with</span>(temora, <span class="kw">points</span>(beat_rate[Facclimitisation_temp <span class="op">==</span><span class="st"> &quot;5&quot;</span>] <span class="op">~</span><span class="st"> </span>temp[Facclimitisation_temp <span class="op">==</span><span class="st"> </span></span>
+<span id="cb15-28"><a href="#cb15-28"></a><span class="st">    &quot;5&quot;</span>], <span class="dt">pch =</span> <span class="dv">1</span>, <span class="dt">col =</span> <span class="st">&quot;black&quot;</span>))</span>
+<span id="cb15-29"><a href="#cb15-29"></a><span class="kw">with</span>(temora, <span class="kw">points</span>(beat_rate[Facclimitisation_temp <span class="op">==</span><span class="st"> &quot;10&quot;</span>] <span class="op">~</span><span class="st"> </span>temp[Facclimitisation_temp <span class="op">==</span><span class="st"> </span></span>
+<span id="cb15-30"><a href="#cb15-30"></a><span class="st">    &quot;10&quot;</span>], <span class="dt">pch =</span> <span class="dv">2</span>, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>))</span>
+<span id="cb15-31"><a href="#cb15-31"></a><span class="kw">with</span>(temora, <span class="kw">points</span>(beat_rate[Facclimitisation_temp <span class="op">==</span><span class="st"> &quot;20&quot;</span>] <span class="op">~</span><span class="st"> </span>temp[Facclimitisation_temp <span class="op">==</span><span class="st"> </span></span>
+<span id="cb15-32"><a href="#cb15-32"></a><span class="st">    &quot;20&quot;</span>], <span class="dt">pch =</span> <span class="dv">3</span>, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>))</span>
+<span id="cb15-33"><a href="#cb15-33"></a></span>
+<span id="cb15-34"><a href="#cb15-34"></a><span class="kw">legend</span>(<span class="st">&quot;topleft&quot;</span>, <span class="dt">legend =</span> <span class="kw">c</span>(<span class="st">&quot;5&quot;</span>, <span class="st">&quot;10&quot;</span>, <span class="st">&quot;20&quot;</span>), <span class="dt">col =</span> <span class="kw">c</span>(<span class="st">&quot;black&quot;</span>, <span class="st">&quot;red&quot;</span>, <span class="st">&quot;blue&quot;</span>), </span>
+<span id="cb15-35"><a href="#cb15-35"></a>    <span class="dt">pch =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>))</span></code></pre></div>
 <p> </p>
 <p>17. We will analyse these data using an Analysis of Covariance (ANCOVA) to compare the slopes and the intercepts of the relationship between <code>beat_rate</code> and <code>temp</code> for each level of <code>Facclimatisation_temp</code>. Take a look at the plot you produced in Q16, do you think the relationships are different?</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="co"># the slope of the relationship between beat rate and temp</span></span>
@@ -859,11 +869,12 @@ $(document).ready(function () {
 <pre><code>`temp + Facclimatisation_temp + temp:Facclimatisation_temp` or
 
 `temp * Facclimatisation_temp`</code></pre>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>temora.lm &lt;-<span class="st"> </span><span class="kw">lm</span>(beat_rate <span class="op">~</span><span class="st"> </span>temp <span class="op">+</span><span class="st"> </span>Facclimitisation_temp <span class="op">+</span><span class="st"> </span>temp<span class="op">:</span>Facclimitisation_temp, <span class="dt">data =</span> temora)</span>
-<span id="cb18-2"><a href="#cb18-2"></a></span>
-<span id="cb18-3"><a href="#cb18-3"></a><span class="co"># or equivalently</span></span>
-<span id="cb18-4"><a href="#cb18-4"></a></span>
-<span id="cb18-5"><a href="#cb18-5"></a>temora.lm &lt;-<span class="st"> </span><span class="kw">lm</span>(beat_rate <span class="op">~</span><span class="st"> </span>temp <span class="op">*</span><span class="st"> </span>Facclimitisation_temp, <span class="dt">data =</span> temora)</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>temora.lm &lt;-<span class="st"> </span><span class="kw">lm</span>(beat_rate <span class="op">~</span><span class="st"> </span>temp <span class="op">+</span><span class="st"> </span>Facclimitisation_temp <span class="op">+</span><span class="st"> </span>temp<span class="op">:</span>Facclimitisation_temp, </span>
+<span id="cb18-2"><a href="#cb18-2"></a>    <span class="dt">data =</span> temora)</span>
+<span id="cb18-3"><a href="#cb18-3"></a></span>
+<span id="cb18-4"><a href="#cb18-4"></a><span class="co"># or equivalently</span></span>
+<span id="cb18-5"><a href="#cb18-5"></a></span>
+<span id="cb18-6"><a href="#cb18-6"></a>temora.lm &lt;-<span class="st"> </span><span class="kw">lm</span>(beat_rate <span class="op">~</span><span class="st"> </span>temp <span class="op">*</span><span class="st"> </span>Facclimitisation_temp, <span class="dt">data =</span> temora)</span></code></pre></div>
 <p> </p>
 <p>19. Produce the summary ANOVA table as usual. Is the interaction between <code>temp</code> and <code>Facclimatisation_temp</code> significant? What is the interpretation of the interaction term? Should we interpret the main effects of <code>temp</code> and <code>Facclimatisation_temp</code> as well?</p>
 <div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="kw">anova</span>(temora.lm)</span>

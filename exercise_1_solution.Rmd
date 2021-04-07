@@ -74,7 +74,7 @@ ls()          # list all variables in the workspace
 
 \  
 
-8\. Let's see what happens if we assign another value to an existing variable. Assign the value `"my second character"` to the variable `first_char` you created in Q6. Notice the value has changed in the 'Environment'. To display the value of `first.char` enter the name of the variable in the console. Don't to forget to save your R script periodically! 
+8\. Let's see what happens if we assign another value to an existing variable. Assign the value `"my second character"` to the variable `first_char` you created in Q6. Notice the value has changed in the 'Environment'. To display the value of `first_char` enter the name of the variable in the console. Don't to forget to save your R script periodically! 
 
 ```{r Q8}
 first_char <- "my second variable"
