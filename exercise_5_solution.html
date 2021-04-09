@@ -857,75 +857,74 @@ $(document).ready(function () {
 <span id="cb16-2"><a href="#cb16-2"></a><span class="co"># look different for each acclimitisation temp</span></span></code></pre></div>
 <p> </p>
 <p>18. As usual we will fit the model using the <code>lm()</code> function. You will need to fit the main effects of <code>temp</code> and <code>Facclimatisation_temp</code> and the interaction between <code>temp</code> and <code>Facclimatisation_temp</code>. You can do this using either of the equivalent specifications:</p>
-<pre><code>`temp + Facclimatisation_temp + temp:Facclimatisation_temp` or
-
-`temp * Facclimatisation_temp`</code></pre>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>temora.lm &lt;-<span class="st"> </span><span class="kw">lm</span>(beat_rate <span class="op">~</span><span class="st"> </span>temp <span class="op">+</span><span class="st"> </span>Facclimitisation_temp <span class="op">+</span><span class="st"> </span>temp<span class="op">:</span>Facclimitisation_temp, <span class="dt">data =</span> temora)</span>
-<span id="cb18-2"><a href="#cb18-2"></a></span>
-<span id="cb18-3"><a href="#cb18-3"></a><span class="co"># or equivalently</span></span>
-<span id="cb18-4"><a href="#cb18-4"></a></span>
-<span id="cb18-5"><a href="#cb18-5"></a>temora.lm &lt;-<span class="st"> </span><span class="kw">lm</span>(beat_rate <span class="op">~</span><span class="st"> </span>temp <span class="op">*</span><span class="st"> </span>Facclimitisation_temp, <span class="dt">data =</span> temora)</span></code></pre></div>
+<p><code>temp + Facclimatisation_temp + temp:Facclimatisation_temp</code> or</p>
+<p><code>temp * Facclimatisation_temp</code></p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>temora.lm &lt;-<span class="st"> </span><span class="kw">lm</span>(beat_rate <span class="op">~</span><span class="st"> </span>temp <span class="op">+</span><span class="st"> </span>Facclimitisation_temp <span class="op">+</span><span class="st"> </span>temp<span class="op">:</span>Facclimitisation_temp, <span class="dt">data =</span> temora)</span>
+<span id="cb17-2"><a href="#cb17-2"></a></span>
+<span id="cb17-3"><a href="#cb17-3"></a><span class="co"># or equivalently</span></span>
+<span id="cb17-4"><a href="#cb17-4"></a></span>
+<span id="cb17-5"><a href="#cb17-5"></a>temora.lm &lt;-<span class="st"> </span><span class="kw">lm</span>(beat_rate <span class="op">~</span><span class="st"> </span>temp <span class="op">*</span><span class="st"> </span>Facclimitisation_temp, <span class="dt">data =</span> temora)</span></code></pre></div>
 <p> </p>
 <p>19. Produce the summary ANOVA table as usual. Is the interaction between <code>temp</code> and <code>Facclimatisation_temp</code> significant? What is the interpretation of the interaction term? Should we interpret the main effects of <code>temp</code> and <code>Facclimatisation_temp</code> as well?</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="kw">anova</span>(temora.lm)</span>
-<span id="cb19-2"><a href="#cb19-2"></a></span>
-<span id="cb19-3"><a href="#cb19-3"></a><span class="co"># Analysis of Variance Table</span></span>
-<span id="cb19-4"><a href="#cb19-4"></a></span>
-<span id="cb19-5"><a href="#cb19-5"></a><span class="co"># Response: beat_rate</span></span>
-<span id="cb19-6"><a href="#cb19-6"></a><span class="co">#                            Df Sum Sq Mean Sq F value    Pr(&gt;F)    </span></span>
-<span id="cb19-7"><a href="#cb19-7"></a><span class="co"># temp                        1 4293.7  4293.7 835.866 &lt; 2.2e-16 ***</span></span>
-<span id="cb19-8"><a href="#cb19-8"></a><span class="co"># Facclimitisation_temp       2 1197.7   598.8 116.576 &lt; 2.2e-16 ***</span></span>
-<span id="cb19-9"><a href="#cb19-9"></a><span class="co"># temp:Facclimitisation_temp  2  284.1   142.0  27.651 3.331e-08 ***</span></span>
-<span id="cb19-10"><a href="#cb19-10"></a><span class="co"># Residuals                  39  200.3     5.1   </span></span>
-<span id="cb19-11"><a href="#cb19-11"></a></span>
-<span id="cb19-12"><a href="#cb19-12"></a><span class="co"># there is a significant interaction between temp and </span></span>
-<span id="cb19-13"><a href="#cb19-13"></a><span class="co"># Facclimitisation_temp therefore there is a significant </span></span>
-<span id="cb19-14"><a href="#cb19-14"></a><span class="co"># relationship between beat_rate and temp, and this relationship </span></span>
-<span id="cb19-15"><a href="#cb19-15"></a><span class="co"># is different depending on the level of Facclimitisation_temp.</span></span>
-<span id="cb19-16"><a href="#cb19-16"></a><span class="co"># Therefore we should not interpret the main effect of temp</span></span>
-<span id="cb19-17"><a href="#cb19-17"></a><span class="co"># or Facclimitisation_temp</span></span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="kw">anova</span>(temora.lm)</span>
+<span id="cb18-2"><a href="#cb18-2"></a></span>
+<span id="cb18-3"><a href="#cb18-3"></a><span class="co"># Analysis of Variance Table</span></span>
+<span id="cb18-4"><a href="#cb18-4"></a></span>
+<span id="cb18-5"><a href="#cb18-5"></a><span class="co"># Response: beat_rate</span></span>
+<span id="cb18-6"><a href="#cb18-6"></a><span class="co">#                            Df Sum Sq Mean Sq F value    Pr(&gt;F)    </span></span>
+<span id="cb18-7"><a href="#cb18-7"></a><span class="co"># temp                        1 4293.7  4293.7 835.866 &lt; 2.2e-16 ***</span></span>
+<span id="cb18-8"><a href="#cb18-8"></a><span class="co"># Facclimitisation_temp       2 1197.7   598.8 116.576 &lt; 2.2e-16 ***</span></span>
+<span id="cb18-9"><a href="#cb18-9"></a><span class="co"># temp:Facclimitisation_temp  2  284.1   142.0  27.651 3.331e-08 ***</span></span>
+<span id="cb18-10"><a href="#cb18-10"></a><span class="co"># Residuals                  39  200.3     5.1   </span></span>
+<span id="cb18-11"><a href="#cb18-11"></a></span>
+<span id="cb18-12"><a href="#cb18-12"></a><span class="co"># there is a significant interaction between temp and </span></span>
+<span id="cb18-13"><a href="#cb18-13"></a><span class="co"># Facclimitisation_temp therefore there is a significant </span></span>
+<span id="cb18-14"><a href="#cb18-14"></a><span class="co"># relationship between beat_rate and temp, and this relationship </span></span>
+<span id="cb18-15"><a href="#cb18-15"></a><span class="co"># is different depending on the level of Facclimitisation_temp.</span></span>
+<span id="cb18-16"><a href="#cb18-16"></a><span class="co"># Therefore we should not interpret the main effect of temp</span></span>
+<span id="cb18-17"><a href="#cb18-17"></a><span class="co"># or Facclimitisation_temp</span></span></code></pre></div>
 <p> </p>
 <p>20. Assess the assumptions of normality and equal variance of the residuals in the usual way. Do the residuals meet these assumptions? Discuss with a instructor.</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</span>
-<span id="cb20-2"><a href="#cb20-2"></a><span class="kw">plot</span>(temora.lm)</span>
-<span id="cb20-3"><a href="#cb20-3"></a></span>
-<span id="cb20-4"><a href="#cb20-4"></a><span class="co"># there is a hint of heterogeneity of variance (non equal variance)</span></span>
-<span id="cb20-5"><a href="#cb20-5"></a><span class="co"># as the variance increases with the fitted values. This is typical </span></span>
-<span id="cb20-6"><a href="#cb20-6"></a><span class="co"># of count data.</span></span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</span>
+<span id="cb19-2"><a href="#cb19-2"></a><span class="kw">plot</span>(temora.lm)</span>
+<span id="cb19-3"><a href="#cb19-3"></a></span>
+<span id="cb19-4"><a href="#cb19-4"></a><span class="co"># there is a hint of heterogeneity of variance (non equal variance)</span></span>
+<span id="cb19-5"><a href="#cb19-5"></a><span class="co"># as the variance increases with the fitted values. This is typical </span></span>
+<span id="cb19-6"><a href="#cb19-6"></a><span class="co"># of count data.</span></span></code></pre></div>
 <p> </p>
 <p>21. Write a short summary in you R script (don’t forget to comment this out with <code>#</code>) describing the interpretation of this model. Report the appropriate summary statistics such as <em>F</em> values, degrees of freedom and p values.</p>
 <p> </p>
 <p>22. (Optional) refit the model using the square root transformed <code>beat_rate</code> as the response variable. Does the interpretation of the model change? Do the validation plots of the residuals look better?</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="co"># we could try square root transforming the variable </span></span>
-<span id="cb21-2"><a href="#cb21-2"></a><span class="co"># beat_rate to stabilise the variance</span></span>
-<span id="cb21-3"><a href="#cb21-3"></a></span>
-<span id="cb21-4"><a href="#cb21-4"></a><span class="co"># square root transform beat_rate and store in the dataframe</span></span>
-<span id="cb21-5"><a href="#cb21-5"></a></span>
-<span id="cb21-6"><a href="#cb21-6"></a>temora<span class="op">$</span>SQRT_beatrate &lt;-<span class="st"> </span><span class="kw">sqrt</span>(temora<span class="op">$</span>beat_rate)</span>
-<span id="cb21-7"><a href="#cb21-7"></a></span>
-<span id="cb21-8"><a href="#cb21-8"></a><span class="co"># refit the model using the square root transformed data</span></span>
-<span id="cb21-9"><a href="#cb21-9"></a></span>
-<span id="cb21-10"><a href="#cb21-10"></a>temora.lm2 &lt;-<span class="st"> </span><span class="kw">lm</span>(SQRT_beatrate <span class="op">~</span><span class="st"> </span>temp <span class="op">*</span><span class="st"> </span>Facclimitisation_temp, <span class="dt">data =</span> temora)</span>
-<span id="cb21-11"><a href="#cb21-11"></a></span>
-<span id="cb21-12"><a href="#cb21-12"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</span>
-<span id="cb21-13"><a href="#cb21-13"></a><span class="kw">plot</span>(temora.lm2)</span>
-<span id="cb21-14"><a href="#cb21-14"></a></span>
-<span id="cb21-15"><a href="#cb21-15"></a><span class="co"># Residuals look a bit better</span></span>
-<span id="cb21-16"><a href="#cb21-16"></a><span class="co"># now lets look at the ANOVA table for our new model</span></span>
-<span id="cb21-17"><a href="#cb21-17"></a></span>
-<span id="cb21-18"><a href="#cb21-18"></a><span class="kw">anova</span>(temora.lm2)</span>
-<span id="cb21-19"><a href="#cb21-19"></a></span>
-<span id="cb21-20"><a href="#cb21-20"></a><span class="co"># Analysis of Variance Table</span></span>
-<span id="cb21-21"><a href="#cb21-21"></a><span class="co"># </span></span>
-<span id="cb21-22"><a href="#cb21-22"></a><span class="co"># Response: SQRT_beatrate</span></span>
-<span id="cb21-23"><a href="#cb21-23"></a><span class="co">#                            Df Sum Sq Mean Sq  F value    Pr(&gt;F)    </span></span>
-<span id="cb21-24"><a href="#cb21-24"></a><span class="co"># temp                        1 67.916  67.916 712.1746 &lt; 2.2e-16 ***</span></span>
-<span id="cb21-25"><a href="#cb21-25"></a><span class="co"># Facclimitisation_temp       2 17.600   8.800  92.2782 1.632e-15 ***</span></span>
-<span id="cb21-26"><a href="#cb21-26"></a><span class="co"># temp:Facclimitisation_temp  2  1.151   0.576   6.0353  0.005205 ** </span></span>
-<span id="cb21-27"><a href="#cb21-27"></a><span class="co"># Residuals                  39  3.719   0.095                       </span></span>
-<span id="cb21-28"><a href="#cb21-28"></a></span>
-<span id="cb21-29"><a href="#cb21-29"></a><span class="co"># model has the same interpretation but the p value for the </span></span>
-<span id="cb21-30"><a href="#cb21-30"></a><span class="co"># interaction term is a bit larger.</span></span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="co"># we could try square root transforming the variable </span></span>
+<span id="cb20-2"><a href="#cb20-2"></a><span class="co"># beat_rate to stabilise the variance</span></span>
+<span id="cb20-3"><a href="#cb20-3"></a></span>
+<span id="cb20-4"><a href="#cb20-4"></a><span class="co"># square root transform beat_rate and store in the dataframe</span></span>
+<span id="cb20-5"><a href="#cb20-5"></a></span>
+<span id="cb20-6"><a href="#cb20-6"></a>temora<span class="op">$</span>SQRT_beatrate &lt;-<span class="st"> </span><span class="kw">sqrt</span>(temora<span class="op">$</span>beat_rate)</span>
+<span id="cb20-7"><a href="#cb20-7"></a></span>
+<span id="cb20-8"><a href="#cb20-8"></a><span class="co"># refit the model using the square root transformed data</span></span>
+<span id="cb20-9"><a href="#cb20-9"></a></span>
+<span id="cb20-10"><a href="#cb20-10"></a>temora.lm2 &lt;-<span class="st"> </span><span class="kw">lm</span>(SQRT_beatrate <span class="op">~</span><span class="st"> </span>temp <span class="op">*</span><span class="st"> </span>Facclimitisation_temp, <span class="dt">data =</span> temora)</span>
+<span id="cb20-11"><a href="#cb20-11"></a></span>
+<span id="cb20-12"><a href="#cb20-12"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</span>
+<span id="cb20-13"><a href="#cb20-13"></a><span class="kw">plot</span>(temora.lm2)</span>
+<span id="cb20-14"><a href="#cb20-14"></a></span>
+<span id="cb20-15"><a href="#cb20-15"></a><span class="co"># Residuals look a bit better</span></span>
+<span id="cb20-16"><a href="#cb20-16"></a><span class="co"># now lets look at the ANOVA table for our new model</span></span>
+<span id="cb20-17"><a href="#cb20-17"></a></span>
+<span id="cb20-18"><a href="#cb20-18"></a><span class="kw">anova</span>(temora.lm2)</span>
+<span id="cb20-19"><a href="#cb20-19"></a></span>
+<span id="cb20-20"><a href="#cb20-20"></a><span class="co"># Analysis of Variance Table</span></span>
+<span id="cb20-21"><a href="#cb20-21"></a><span class="co"># </span></span>
+<span id="cb20-22"><a href="#cb20-22"></a><span class="co"># Response: SQRT_beatrate</span></span>
+<span id="cb20-23"><a href="#cb20-23"></a><span class="co">#                            Df Sum Sq Mean Sq  F value    Pr(&gt;F)    </span></span>
+<span id="cb20-24"><a href="#cb20-24"></a><span class="co"># temp                        1 67.916  67.916 712.1746 &lt; 2.2e-16 ***</span></span>
+<span id="cb20-25"><a href="#cb20-25"></a><span class="co"># Facclimitisation_temp       2 17.600   8.800  92.2782 1.632e-15 ***</span></span>
+<span id="cb20-26"><a href="#cb20-26"></a><span class="co"># temp:Facclimitisation_temp  2  1.151   0.576   6.0353  0.005205 ** </span></span>
+<span id="cb20-27"><a href="#cb20-27"></a><span class="co"># Residuals                  39  3.719   0.095                       </span></span>
+<span id="cb20-28"><a href="#cb20-28"></a></span>
+<span id="cb20-29"><a href="#cb20-29"></a><span class="co"># model has the same interpretation but the p value for the </span></span>
+<span id="cb20-30"><a href="#cb20-30"></a><span class="co"># interaction term is a bit larger.</span></span></code></pre></div>
 <p> </p>
 <p>End of Exercise 5</p>
 </div>

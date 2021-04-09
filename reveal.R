@@ -8,3 +8,4 @@ show_lecture <- TRUE
 
 # Change to TRUE to show exercises
 show_exercise <- TRUE
+
