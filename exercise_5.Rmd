@@ -71,11 +71,11 @@ Although this short course is primarily focussed on introducing you to R, it wou
 
 \  
 
-13\. We will use the function `TukeyHSD.lm()` from the `mosaic` package to perform these comparisons (you will need to install this package first and then use `library(mosaic)` to make the function available). Which groups are different from each other if we use the p-value cutoff (alpha) of p < 0.05?
+13\. We will use the function `TukeyHSD()` from the `mosaic` package to perform these comparisons (you will need to install this package first and then use `library(mosaic)` to make the function available). Which groups are different from each other if we use the p-value cutoff (alpha) of p < 0.05?
 
 \  
 
-14\. We can also produce a plot of the comparisons to help us interpret the table of comparisons. Use the `plot()` function with the `TukeyHSD.lm(gigartina.lm)`. Ask if you get stuck (or Google it!).
+14\. We can also produce a plot of the comparisons to help us interpret the table of comparisons. Use the `plot()` function with the `TukeyHSD(gigartina.lm)`. Ask if you get stuck (or Google it!).
 
 \  
 
