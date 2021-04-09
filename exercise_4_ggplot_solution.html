@@ -788,8 +788,7 @@ ggsave(&#39;output/gg_xy_weight.png&#39;, device = &#39;png&#39;)
 <p>10. When visualising differences in a continuous variable between levels of a factor (categorical variable) then a boxplot is your friend (avoid using bar plots - Google ‘bar plots are evil’ for more info). Create a boxplot to visualise the differences in DML at each maturity stage (don’t forget to use the recoded version of this variable you created in Q4) . Include x and y axes labels in your plot. Make sure you understand the anatomy of a boxplot before moving on - please ask if you’re not sure. An alternative to the boxplot is the violin plot. A violin plot is a combination of a boxplot and a <a href="https://www.statmethods.net/graphs/density.html">kernel density plot</a> and is great at visualising the distribution of a variable.</p>
 <pre><code>```r
 # note: Fmaturity is the recoded maturity.stage variable cerated in Q4
-ggplot(data = squid) + geom_boxplot(aes(x = Fmaturity, y = DML)) + theme_classic() + xlab(&quot;Maturity stage&quot;) + 
-    ylab(&quot;Dorsal mantel length&quot;)
+ggplot(data = squid) + geom_boxplot(aes(x = Fmaturity, y = DML)) + theme_classic() + xlab(&quot;Maturity stage&quot;) + ylab(&quot;Dorsal mantel length&quot;)
 
 # violin plot
 ggplot(data = squid) + geom_violin(aes(x = Fmaturity, y = DML))
@@ -815,14 +814,13 @@ ggpairs(squid[, c(5, 8, 9, 11, 12, 13)])
 <pre><code>```r
 # square root transform ovary weight
 squid$ovary.weight.sqrt &lt;- sqrt(squid$ovary.weight)
-ggplot(data = squid) + geom_point(aes(x = DML, y = ovary.weight.sqrt, colour = Fmaturity), alpha = 0.8, 
-    size = 2) + scale_colour_manual(values = c(&quot;deepskyblue3&quot;, &quot;darkolivegreen3&quot;, &quot;coral3&quot;, &quot;lemonchiffon3&quot;, 
-    &quot;darkorchid3&quot;), labels = c(&quot;stage 1&quot;, &quot;stage 2&quot;, &quot;stage 3&quot;, &quot;stage 4&quot;, &quot;stage 5&quot;)) + theme_classic(base_size = 12) + 
-    labs(colour = &quot;&quot;, x = &quot;DML (mm)&quot;, y = &quot;square root ovary weight (g)&quot;)
+ggplot(data = squid) + geom_point(aes(x = DML, y = ovary.weight.sqrt, colour = Fmaturity), alpha = 0.8, size = 2) + scale_colour_manual(values = c(&quot;deepskyblue3&quot;, 
+    &quot;darkolivegreen3&quot;, &quot;coral3&quot;, &quot;lemonchiffon3&quot;, &quot;darkorchid3&quot;), labels = c(&quot;stage 1&quot;, &quot;stage 2&quot;, &quot;stage 3&quot;, &quot;stage 4&quot;, &quot;stage 5&quot;)) + 
+    theme_classic(base_size = 12) + labs(colour = &quot;&quot;, x = &quot;DML (mm)&quot;, y = &quot;square root ovary weight (g)&quot;)
 
 # OR
-ggplot(data = squid) + geom_point(aes(x = DML, y = ovary.weight.sqrt, colour = Fmaturity), alpha = 0.8, 
-    size = 2) + theme_classic() + labs(colour = &quot;&quot;, x = &quot;DML (mm)&quot;, y = &quot;square root ovary weight (g)&quot;)
+ggplot(data = squid) + geom_point(aes(x = DML, y = ovary.weight.sqrt, colour = Fmaturity), alpha = 0.8, size = 2) + theme_classic() + 
+    labs(colour = &quot;&quot;, x = &quot;DML (mm)&quot;, y = &quot;square root ovary weight (g)&quot;)
 
 
 browseURL(&quot;https://giphy.com/gifs/RyXVu4ZW454IM/fullscreen&quot;, browser = getOption(&quot;browser&quot;), encodeIfNeeded = FALSE)
