@@ -11,7 +11,7 @@ output:
 
 During the course we will be using both R and RStudio. To get your computer ready for this course please follow the instructions under **_Core Software_** and **_Get the Data_** headings.
 
-If you are having trouble installing R or Rstudio or downloading the data files we will run a drop in session on blackboard collaborate on Tuesday 6^th^ April at 14:00 - 15:30. 
+If you are having trouble installing R or Rstudio or downloading the data files we will run a drop in session on blackboard collaborate on Tuesday 5^th^ April at 14:00 - 15:30. 
 
 \  
 

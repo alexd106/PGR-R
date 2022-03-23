@@ -13,17 +13,23 @@
 
 <title>Exercises</title>
 
-<script src="site_libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
@@ -39,32 +45,7 @@
 
 
 
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
+
 
 
 
@@ -74,10 +55,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -94,40 +71,13 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+pre code {
+  padding: 0;
+}
 </style>
 
 
 <style type="text/css">
-/* padding for bootstrap navbar */
-body {
-  padding-top: 60px;
-  padding-bottom: 40px;
-}
-/* offset scroll position for anchor links (for fixed navbar)  */
-.section h1 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h2 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h3 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h4 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h5 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h6 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
 .dropdown-submenu {
   position: relative;
 }
@@ -155,7 +105,7 @@ body {
   margin-right: -10px;
 }
 .dropdown-submenu:hover>a:after {
-  border-left-color: #ffffff;
+  border-left-color: #adb5bd;
 }
 .dropdown-submenu.pull-left {
   float: none;
@@ -167,7 +117,7 @@ body {
 }
 </style>
 
-<script>
+<script type="text/javascript">
 // manage active state of menu based on current page
 $(document).ready(function () {
   // active menu anchor
@@ -178,10 +128,23 @@ $(document).ready(function () {
   var menuAnchor = $('a[href="' + href + '"]');
 
   // mark it active
-  menuAnchor.parent().addClass('active');
+  menuAnchor.tab('show');
 
   // if it's got a parent navbar menu mark it active as well
   menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
 });
 </script>
 
@@ -193,7 +156,6 @@ $(document).ready(function () {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -439,7 +401,7 @@ $(document).ready(function () {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
@@ -456,7 +418,7 @@ $(document).ready(function () {
 <p> </p>
 <p>1. As in previous exercises, either create a new R script or continue with your previous R script in your RStudio Project. Again, make sure you include any metadata you feel is appropriate (title, description of task, date of creation etc) and don’t forget to comment out your metadata with a <code>#</code> at the beginning of the line.</p>
 <p> </p>
-<p>2. Download the data file <em>‘squid1.xlsx’</em> from the <strong><a href="data.html"><i class="fa fa-download"></i> Data</a></strong> link and save it to the <code>data</code> directory you created during exercise 1. Open this file in Microsoft Excel (or even better use an open source equivalent - <a href="https://www.libreoffice.org/download/download/">LibreOffice</a> is a good free alternative) and save it as a tab delimited file type. Name the file <em>‘squid1.txt’</em> and save it to the <code>data</code> directory.</p>
+<p>2. If you haven’t already download the data file <em>‘squid1.xlsx’</em> from the <strong><a href="data.html"><i class="fa fa-download"></i> Data</a></strong> link and save it to the <code>data</code> directory you created during exercise 1. Open this file in Microsoft Excel (or even better use an open source equivalent - <a href="https://www.libreoffice.org/download/download/">LibreOffice</a> is a good free alternative) and save it as a tab delimited file type. Name the file <em>‘squid1.txt’</em> and save it to the <code>data</code> directory.</p>
 <p> </p>
 <p>3. These data were originally collected as part of a study published in Aquatic Living Resources<sup>1</sup> in 2005. The aim of the study was to investigate the seasonal patterns of investment in somatic and reproductive tissues in the long finned squid <em>Loligo forbesi</em> caught in Scottish waters. Squid were caught monthly from December 1989 - July 1991 (<code>month</code> and <code>year</code> variables). After capture, each squid was given a unique <code>specimen</code> code, weighed (<code>weight</code>) and the sex determined (<code>sex</code> - only female squid are included here). The size of individuals was also measured as the dorsal mantle length (<code>DML</code>) and the mantle weight measured without internal organs (<code>eviscerate.weight</code>). The gonads were weighed (<code>ovary.weight</code>) along with the accessory reproductive organ (the nidamental gland, <code>nid.weight</code>, <code>nid.length</code>). Each individual was also assigned a categorical measure of maturity (<code>maturity.stage</code>, ranging from 1 to 5 with 1 = immature, 5 = mature). The digestive gland weight (<code>dig.weight</code>) was also recorded to assess nutritional status of the individual. If you’re not familiar with squid morphology and are interested in finding out more see <a href="https://en.wikipedia.org/wiki/Cephalopod_size">here</a>.</p>
 <p> </p>
@@ -468,7 +430,7 @@ $(document).ready(function () {
 <p> </p>
 <p>7. It looks like the variable <code>nid.length</code> contains an unusually large value. Actually, this value is biologically implausible and clearly an error. The researchers were asked to go back and check their field notebooks and sure enough they discover a typo. It looks like a tired researcher accidentally inserted a zero by mistake when transcribing these data (mistakes in data are very common and why we <strong>always</strong> explore, check and validate any data we are working on). We can clearly see this value is over 400 so we can use the <code>which()</code> function to identify which observation this is <code>which(squid$nid.length &gt; 400)</code>. It looks like this is the 11<sup>th</sup> observation of the <code>squid$nid.length</code> variable. Use your skill with the square brackets <code>[ ]</code> to first confirm the this is the correct value (you should get 430.2) and then change this value to 43.2. Now redo the dotchart to visualise your correction. Caution: You can only do this because you have confirmed that this is an transcribing error. You should <strong>not</strong> remove or change values in your data just because you feel like it or they look ‘unusual’. This is scientific fraud! Also, the advantage of making this change in your R script rather than in Excel is that you now have a permanent record of the change you made and can state a clear reason for the change.</p>
 <p> </p>
-<p>8. When exploring your data it is often useful to visualise the distribution of continuous variables. Create histograms for the variables; <code>DML</code>, <code>weight</code>, <code>eviscerate.weight</code> and <code>ovary.weight</code>. Again, its up to you if you want to plot all 4 plots separately or in the same figure. Export your plot(s) as pdf file(s) to the <code>output</code> directory. One potential problem with histograms is that the distribution of data can look quite different depending on the number of ‘breaks’ used. The <code>hist()</code> function does it’s best to create appropriate ‘breaks’ for your plots (it uses the <a href="https://en.wikipedia.org/wiki/Histogram">Sturges algorithm</a> for those that want to know) but experiment with changing the number of breaks for the <code>DML</code> variable to see how the shape of the distribution changes (see <a href="https://intro2r.com/simple-base-r-plots.html#histograms">Section 4.2.2</a> of the book for further details of how to change the breaks).</p>
+<p>8. When exploring your data it is often useful to visualise the distribution of continuous variables. Take a look at <a href="https://intro2r.com/simple-base-r-plots.html#histograms">Section 4.2.2</a> and then create histograms for the variables; <code>DML</code>, <code>weight</code>, <code>eviscerate.weight</code> and <code>ovary.weight</code>. Again, its up to you if you want to plot all 4 plots separately or in the same figure. Export your plot(s) as pdf file(s) to the <code>output</code> directory. One potential problem with histograms is that the distribution of data can look quite different depending on the number of ‘breaks’ used. The <code>hist()</code> function does it’s best to create appropriate ‘breaks’ for your plots (it uses the <a href="https://en.wikipedia.org/wiki/Histogram">Sturges algorithm</a> for those that want to know) but experiment with changing the number of breaks for the <code>DML</code> variable to see how the shape of the distribution changes (see <a href="https://intro2r.com/simple-base-r-plots.html#histograms">Section 4.2.2</a> of the book for further details of how to change the breaks).</p>
 <p> </p>
 <p>9. Scatterplots are great for visualising relationships between two continuous variables (<a href="https://intro2r.com/simple-base-r-plots.html#scatterplot">Section 4.2.1</a>). Plot the relationship between <code>DML</code> on the x axis and <code>weight</code> on the y axis. How would you describe this relationship? Is it linear? One approach to linearising relationships is to apply a transformation on one or both variables. Try transforming the <code>weight</code> variable with either a natural log (<code>log()</code>) or square root (<code>sqrt()</code>) transformation. I suggest you create new variables in the <code>squid</code> dataframe for your transformed variables and use these variables when creating your new plots (ask if you’re not sure how to do this). Which transformation best linearises this relationship? Again, save your plots as a pdf file (or try saving in your <code>output</code> directory as jpeg or png format using the <code>jpeg()</code> or <code>png()</code> functions (<a href="https://intro2r.com/export-plots.html#export_plots">Section 4.5</a>) if you feel the need for a change!).</p>
 <p> </p>
@@ -512,7 +474,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>

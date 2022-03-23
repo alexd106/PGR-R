@@ -14,13 +14,13 @@ The course will start at 09:30 each morning and finish at 17:00. We will break f
 
 \  
 
-#### Tuesday 6^th^ April 2021
+#### Tuesday 5^th^ April 2022
 
   - 14:00 - 15:30: Drop-in session for software installation issues (MS Teams)
 
 \  
 
-#### Wednesday 7^th^ April 2021 
+#### Wednesday 6^th^ April 2022
 
   - Morning: Introduction to the course, getting to know R and RStudio
 
@@ -28,7 +28,7 @@ The course will start at 09:30 each morning and finish at 17:00. We will break f
 
 \  
 
-#### Thursday 8^th^ April 2021
+#### Thursday 7^th^ April 2022
 
   - Morning: Importing and manipulating dataframes
 
@@ -36,7 +36,7 @@ The course will start at 09:30 each morning and finish at 17:00. We will break f
 
 \  
 
-#### Friday 9^th^ April 2021
+#### Friday 8^th^ April 2022
 
   - Morning: Simple statistics in R
 

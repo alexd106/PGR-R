@@ -27,7 +27,7 @@ Read [Chapter 2](https://intro2r.com/basics-r.html) to help you complete the que
 
 \  
 
-3\. Next, use R to determine the area of a circle with a diameter of 20 cm and assign the result to an object called `area_circle`. If you can't remember how to create and assign objects see [Section 2.2](https://intro2r.com/objects-in-r.html#objects-in-r) or watch this [video](https://alexd106.github.io/PGR-R/howto.html#objs-vid). Google is your friend if you can't remember the formula to calculate the area of a circle! Also, remember that R already knows about `pi`.
+3\. Next, use R to determine the area of a circle with a diameter of 20 cm and assign the result to an object called `area_circle`. If you can't remember how to create and assign objects see [Section 2.2](https://intro2r.com/objects-in-r.html#objects-in-r) or watch this [video](https://alexd106.github.io/PGR-R/howto.html#objs-vid). Google is your friend if you can't remember the formula to calculate the area of a circle! Also, remember that R already knows about `pi`. Don’t worry if you’re stumped and feel free to ask one of the instructors for guidance.
 
 \  
 
@@ -39,11 +39,11 @@ Read [Chapter 2](https://intro2r.com/basics-r.html) to help you complete the que
 
 \  
 
-6\. You can now do stuff to your `weight` vector. Get R to calculate the mean, variance, standard deviation, range of weights and the number of children of your `weights` vector ([Section 2.3](https://intro2r.com/using-functions-in-r.html#using-functions-in-r)). Next, extract the weights for the first five children and store these weights in a new variable called `first_five`. Remember, you will need to use the square brackets `[ ]` to extract (aka indexing, subsetting) elements from a variable. [Section 2.4.1](https://intro2r.com/vectors.html#extracting-elements) introduces using the `[]` notation.
+6\. Now you can do some useful stuff to your `weight` vector. Get R to calculate the mean, variance, standard deviation, range of weights and the number of children of your `weight` vector (see [Section 2.3](https://intro2r.com/using-functions-in-r.html) for more details). Now read [Section 2.4](https://intro2r.com/vectors.html) of the R book to learn how to work with vectors. After reading this section you should be able to extract the weights for the first five children using [Positional indexes](https://intro2r.com/vectors.html#positional-index) and store these weights in a new variable called `first_five`. Remember, you will need to use the square brackets `[ ]` to extract (aka index, subset) elements from a variable.
 
 \  
 
-7\. We're now going to use the the `c()` function again to create a vector called `height` containing the height (in cm) of the same 10 children: `112, 102, 83, 84, 99, 90, 77, 112, 133, 112`. Use the `summary()` function to summarise these data. Extract the height of the 2nd, 3rd, 9th and 10th child and assign these heights to a variable called `some_child`. Also extract all the heights of children less than or equal to 99 cm and assign to a variable called `shorter_child`.
+7\. We're now going to use the the `c()` function again to create another vector called `height` containing the height (in cm) of the same 10 children: `112, 102, 83, 84, 99, 90, 77, 112, 133, 112`. Use the `summary()` function to summarise these data in the `height` object. Extract the height of the 2nd, 3rd, 9th and 10th child and assign these heights to a variable called `some_child` (take a look at the section [Positional indexes](https://intro2r.com/vectors.html#positional-index) in the R book if you're stuck). We can also extract elements using [Logical indexes](https://intro2r.com/vectors.html#logical-index). Let's extract all the heights of children less than or equal to 99 cm and assign to a variable called `shorter_child`.
 
 \  
 
@@ -51,15 +51,15 @@ Read [Chapter 2](https://intro2r.com/basics-r.html) to help you complete the que
 
 \  
 
-9\. Now let's practice a very useful skill - creating sequences (honestly it is...). First use the `seq()` function to create a sequence of numbers ranging from 0 to 1 in steps of 0.1 (this is also a vector by the way) and assign this sequence to a variable called `seq1`. If you're unsure how to do this then see [Section 2.3](https://intro2r.com/using-functions-in-r.html#using-functions-in-r) of the book for more information.
+9\. Now let's practice a very useful skill - creating sequences (honestly it is...). Take a look at [Section 2.3](https://intro2r.com/using-functions-in-r.html#using-functions-in-r) in the R book (the bit on creating sequences) to see the myriad ways you can create sequences in R. Let's use the `seq()` function to create a sequence of numbers ranging from 0 to 1 in steps of 0.1 (this is also a vector by the way) and assign this sequence to a variable called `seq1`.
 
 \  
 
-10\.	Next, create a sequence from 10 to 1 in steps of 0.5 and assign to a variable called `seq2` (Hint: you may find it easier to include the `rev()` function in your code).
+10\.	Next, see if you can figure out how to create a sequence from 10 to 1 in steps of 0.5. Assign this sequence to a variable called `seq2` (Hint: you may find it useful to include the `rev()` function in your code).
 
 \  
 
-11\.	Let's go seqeunce crazy! Generate the following sequences. You will need to experiment with the arguments to the `rep()` function to generate these sequences (see [Section 2.3](https://intro2r.com/using-functions-in-r.html#using-functions-in-r) for some clues):
+11\.	Let's go sequence crazy! Generate the following sequences. You will need to experiment with the arguments to the `rep()` function to generate these sequences (see [Section 2.3](https://intro2r.com/using-functions-in-r.html#using-functions-in-r) for some clues):
 
 - 1 2 3 1 2 3 1 2 3
 - "a" "a" "a" "c" "c" "c" "e" "e" "e" "g" "g" "g"
@@ -78,11 +78,11 @@ Read [Chapter 2](https://intro2r.com/basics-r.html) to help you complete the que
 
 \  
 
-14\. A really useful (and common) task is to sort the values of one variable by the order of another variable. To do this you will need to use the `order()` function in combination with the square bracket notation `[ ]` (see [Section 2.4.3](https://intro2r.com/vectors.html#vec_ord) of the book for more details).  Create a new variable called `names_sort` to store the names of the children sorted by child height (from shortest to tallest). Who is the shortest? who is the tallest child? If you're not sure how to do this, please ask one of the instructors.
+14\. A really useful (and common) task is to order the values of one variable by the order of another variable. To do this you will need to use the `order()` function in combination with the square bracket notation `[ ]`. Have a peep at [Section 2.4.3](https://intro2r.com/vectors.html#vec_ord) for some details. Create a new variable called `names_sort` to store the names of the children ordered by child height (from shortest to tallest). Who is the shortest? who is the tallest child? If you're not sure how to do this, please ask one of the instructors.
 
 \  
 
-15\. Now order the names of the children by descending values of weight and assign the result to a variable called `weight_rev`. Who is the heaviest? Who is the lightest?
+15\. Now order the names of the children by **descending** values of weight and assign the result to a variable called `weight_rev` (Hint: perhaps include the `rev()` function?). Who is the heaviest? Who is the lightest?
 
 \  
 

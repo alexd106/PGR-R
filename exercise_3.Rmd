@@ -49,13 +49,13 @@ Read [Chapter 3](https://intro2r.com/data-r.html) to help you complete the quest
 
 8\. Summarising and manipulating dataframes is a key skill to acquire when learning R. Although there are many ways to do this, we will concentrate on using the square bracket `[ ]` notation which you used previously with vectors. The key thing to remember when using `[ ]` with dataframes is that dataframes have two dimensions (think rows and columns) so you always need to specify which rows and which columns you want inside the `[ ]` (see [Section 3.4.1](https://intro2r.com/wrangling-data-frames.html#positional-indexes) and this [video](https://alexd106.github.io/PGR-R/howto.html#dataw-vid) for some additional background information and a few examples). Let's practice. 
 
-Extract all the elements of the first 10 rows and the first 4 columns of the `whale` dataframe and assign to a new variable called `whale.sub`. 
+a) Extract all the elements of the first 10 rows and the first 4 columns of the `whale` dataframe and assign to a new variable called `whale.sub`. 
 
-Next, extract all observations (remember - rows) from the `whale` dataframe and the columns `month`, `water.noise` and `number.whales` and assign to a variable called `whale.num`. 
+b) Next, extract all observations (remember - rows) from the `whale` dataframe and the columns `month`, `water.noise` and `number.whales` and assign to a variable called `whale.num`. 
 
-Now, extract the first 50 rows and all columns form the original dataframe and assign to a variable `whale.may` (there's a better way to do this with conditional statements - see below). 
+c) Now, extract the first 50 rows and all columns form the original dataframe and assign to a variable `whale.may` (there's a better way to do this with conditional statements - see below). 
 
-Finally, extract all rows except the first 10 rows and all columns except the last column. Remember, for some of these questions you can specify the columns you want either by position or by name. Practice both ways. Do you have a preference? If so why?      
+d) Finally, extract all rows except the first 10 rows and all columns except the last column. Remember, for some of these questions you can specify the columns you want either by position or by name. Practice both ways. Do you have a preference? If so why?  
 
 \  
 
