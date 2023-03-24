@@ -13,7 +13,7 @@ output:
 
 Welcome to our *Introduction to R* training course. During this course we hope to introduce you to using R, an interactive environment for statistical computing. R in itself is not difficult to learn, but just like any new language the initial learning curve can be a little steep and you will need to use it frequently otherwise it’s easy to forget. 
 
-A few notes about this course. We have tried to simplify the content of this course as much as possible and have based it on 15 years experience teaching (and learning!) R. It is not intended as an introductory statistics course, although we will be using some basic statistics to highlight some of R’s capabilities. Our aim is to help you climb the initial learning curve and provide you with the basic skills to enable you to further your experience in using R. We have included a number of practical [exercises](exercises.html) for you to work through during the course and encourage you complete these in your own time - you certainly won’t learn how to use R by watching other people do it! 
+A few notes about this course. We have tried to simplify the content of this course as much as possible and have based it on 19 years experience teaching (and learning!) R. It is not intended as an introductory statistics course, although we will be using some basic statistics to highlight some of R’s capabilities. Our aim is to help you climb the initial learning curve and provide you with the basic skills to enable you to further your experience in using R. We have included a number of practical [exercises](exercises.html) for you to work through during the course and encourage you complete these in your own time - you certainly won’t learn how to use R by watching other people do it! 
 
 \  
 
@@ -39,7 +39,7 @@ See the course [syllabus](syllabus.html) for a general outline of the course con
 \  
 
 #### Where is the course held?
-This course will be run entirely online this year due to National Government Covid-19 restrictions. All interactive live sessions will be run using Blackboard Collaborate via [MyAberdeen](https://abdn.blackboard.com/). During these live sessions you will all be working in the main meeting room as you work through the associated course exercises. If you have a question, or get stuck you'll be able to get 1:1 support from one of the course instructors in a smaller breakout group. More information about this setup will be provided during the first session on Wednesday 6^th^ April 2022.   
+This course will be run entirely online this year. All interactive live sessions will be run using Blackboard Collaborate via [MyAberdeen](https://abdn.blackboard.com/). During these live sessions you will all be working in the main meeting room as you work through the associated course exercises. If you have a question, or get stuck you'll be able to get 1:1 support from one of the course instructors in a smaller breakout group. More information about this setup will be provided during the first session on Monday 10^th^ April 2023.   
 
 \  
 

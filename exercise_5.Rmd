@@ -15,7 +15,7 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, eval = FALS
 
 \  
 
-Read [Chapter 6](https://intro2r.com/stats-r.html) to help you complete the questions in this exercise.
+Read [Chapter 6](https://intro2r.com/stats_r.html) to help you complete the questions in this exercise.
 
 \  
 

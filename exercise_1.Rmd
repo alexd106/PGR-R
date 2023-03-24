@@ -64,7 +64,7 @@ Read [Chapter 1](https://intro2r.com/chap1.html) to help you complete the questi
 
 \  
 
-12\. Another strategy would be to use the `help.search()` function to search through R's help files. Search the R help system for instances of the character string ‘plot’. Take a look at [Section 2.5.1](https://intro2r.com/help.html#r-help) for more information. Also, see if you can figure out how to narrow your search by only searching for ‘plot’ in the `nlme` package (hint: see the help page for `help.search()`.
+12\. Another strategy would be to use the `help.search()` function to search through R's help files. Search the R help system for instances of the character string ‘plot’. Take a look at [Section 2.5.1](https://intro2r.com/help.html#r-help) for more information. Also, see if you can figure out how to narrow your search by only searching for ‘plot’ in the `nlme` package (hint: see the help page for `help.search()`).
 
 \  
 

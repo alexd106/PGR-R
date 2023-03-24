@@ -12,15 +12,7 @@ The course will start at 09:30 each morning and finish at 17:00. We will break f
 <!--All teaching will be held in room FN113 in the Fraser Noble building (building No. 7 on [this map](images/uoa_map.png){target="_blank"} on the old Aberdeen campus).
 -->
 
-\  
-
-#### Tuesday 5^th^ April 2022
-
-  - 14:00 - 15:30: Drop-in session for software installation issues (MS Teams)
-
-\  
-
-#### Wednesday 6^th^ April 2022
+#### Monday 10^th^ April 2023
 
   - Morning: Introduction to the course, getting to know R and RStudio
 
@@ -28,7 +20,7 @@ The course will start at 09:30 each morning and finish at 17:00. We will break f
 
 \  
 
-#### Thursday 7^th^ April 2022
+#### Tuesday 11^th^ April 2023
 
   - Morning: Importing and manipulating dataframes
 
@@ -36,7 +28,7 @@ The course will start at 09:30 each morning and finish at 17:00. We will break f
 
 \  
 
-#### Friday 8^th^ April 2022
+#### Wednesday 12^th^ April 2023
 
   - Morning: Simple statistics in R
 
