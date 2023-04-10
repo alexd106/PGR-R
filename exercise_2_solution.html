@@ -621,8 +621,8 @@ variable.</p>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(weight)                               <span class="co"># range of weight values</span></span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(weight)                              <span class="co"># number of observations</span></span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>first_five <span class="ot">&lt;-</span> weights[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]                  <span class="co"># extract first 5 weight values</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>first_five <span class="ot">&lt;-</span> weights[<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)]     <span class="co"># alternative method</span></span></code></pre></div>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>first_five <span class="ot">&lt;-</span> weight[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]                  <span class="co"># extract first 5 weight values</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>first_five <span class="ot">&lt;-</span> weight[<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)]     <span class="co"># alternative method</span></span></code></pre></div>
 <p> </p>
 <p>7. We’re now going to use the the <code>c()</code> function again to
 create another vector called <code>height</code> containing the height
@@ -719,7 +719,7 @@ store the names of the children ordered by child height (from shortest
 to tallest). Who is the shortest? who is the tallest child? If you’re
 not sure how to do this, please ask one of the instructors.</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>height_ord <span class="ot">&lt;-</span> <span class="fu">order</span>(height)   <span class="co"># get the indexes of the heights, smallest to tallest</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>names_sort <span class="ot">&lt;-</span> child.names[height_ord]     <span class="co"># Louise is shortest, Ronald is tallest</span></span></code></pre></div>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>names_sort <span class="ot">&lt;-</span> child_names[height_ord]     <span class="co"># Louise is shortest, Ronald is tallest</span></span></code></pre></div>
 <p> </p>
 <p>15. Now order the names of the children by
 <strong>descending</strong> values of weight and assign the result to a
