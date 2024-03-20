@@ -12,6 +12,8 @@ The course will start at 09:30 each morning and finish at 17:00. We will break f
 <!--All teaching will be held in room FN113 in the Fraser Noble building (building No. 7 on [this map](images/uoa_map.png){target="_blank"} on the old Aberdeen campus).
 -->
 
+\  
+
 #### Monday 8^th^ April 2024
 
   - Morning: [Introduction to the course, getting to know R and RStudio](https://alexd106.github.io/PGR-R/exercise_1.html)
