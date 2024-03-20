@@ -30,6 +30,6 @@ The course will start at 09:30 each morning and finish at 17:00. We will break f
 
 #### Wednesday 10^th^ April 2024
 
-  - Morning: [Simple statistics in R](https://alexd106.github.io/PGR-R/exercise_5.html)
+  - Morning: [Simple statistics in R](https://alexd106.github.io/PGR-R/exercise_5.html) (optional)
 
-  - Afternoon: [Basic programming in R](https://alexd106.github.io/PGR-R/exercise_6.html) (optional) or catchup
+  - Afternoon: [Basic programming in R](https://alexd106.github.io/PGR-R/exercise_6.html) (optional)

@@ -21,7 +21,7 @@ utils::zip(zipfile = 'data/all_data', files = paste0('data/', flist), extras = c
 
 
 \  
-<!---
+<!--
 **Option 1: Download all the data at once.** 
 
 - Create a new RStudio project for this course (call it intro2r if your imagination fails you!). If you're not sure how to create a new Project then see [Section 1.6](https://intro2r.com/rsprojs.html) of our Introduction to R book or watch [this short video](https://alexd106.github.io/PGR-R/howto.html#rstudio_proj-vid).
