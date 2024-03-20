@@ -12,24 +12,24 @@ The course will start at 09:30 each morning and finish at 17:00. We will break f
 <!--All teaching will be held in room FN113 in the Fraser Noble building (building No. 7 on [this map](images/uoa_map.png){target="_blank"} on the old Aberdeen campus).
 -->
 
-#### Monday 10^th^ April 2023
+#### Monday 8^th^ April 2024
 
-  - Morning: Introduction to the course, getting to know R and RStudio
+  - Morning: [Introduction to the course, getting to know R and RStudio](https://alexd106.github.io/PGR-R/exercise_1.html)
 
-  - Afternoon: Basic R operations
-
-\  
-
-#### Tuesday 11^th^ April 2023
-
-  - Morning: Importing and manipulating dataframes
-
-  - Afternoon: Plotting data in R using base and lattice graphics
+  - Afternoon: [Basic R operations](https://alexd106.github.io/PGR-R/exercise_2.html)
 
 \  
 
-#### Wednesday 12^th^ April 2023
+#### Tuesday 9^th^ April 2024
 
-  - Morning: Simple statistics in R
+  - Morning: [Importing and manipulating dataframes](https://alexd106.github.io/PGR-R/exercise_3.html)
 
-  - Afternoon: Basic programming in R (optional) or catchup
+  - Afternoon: [Plotting data in R using base and lattice graphics](https://alexd106.github.io/PGR-R/exercise_4.html)
+
+\  
+
+#### Wednesday 10^th^ April 2024
+
+  - Morning: [Simple statistics in R](https://alexd106.github.io/PGR-R/exercise_5.html)
+
+  - Afternoon: [Basic programming in R](https://alexd106.github.io/PGR-R/exercise_6.html) (optional) or catchup

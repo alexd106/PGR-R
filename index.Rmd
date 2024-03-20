@@ -39,7 +39,7 @@ See the course [syllabus](syllabus.html) for a general outline of the course con
 \  
 
 #### Where is the course held?
-This course will be run entirely online this year. All interactive live sessions will be run using Blackboard Collaborate via [MyAberdeen](https://abdn.blackboard.com/). During these live sessions you will all be working in the main meeting room as you work through the associated course exercises. If you have a question, or get stuck you'll be able to get 1:1 support from one of the course instructors in a smaller breakout group. More information about this setup will be provided during the first session on Monday 10^th^ April 2023.   
+This course will be run entirely online this year. All interactive live sessions will be run using Blackboard Collaborate via [MyAberdeen](https://abdn.blackboard.com/). During these live sessions you will all be working in the main meeting room as you work through the associated course exercises. If you have a question, or get stuck you'll be able to get 1:1 support from one of the course instructors in a smaller breakout group. More information about this setup will be provided during the first session of the course. 
 
 \  
 
@@ -49,7 +49,7 @@ This course will be run entirely online this year. All interactive live sessions
 No. We will provide desktop computers for those who do not wish to bring their own laptops to the course. All of the desktops will have both R and RStudio already installed but please bring along a USB flash drive to save your work. If you require a desktop computer then please make sure you have registered for a UoA visitor computing account prior to the start of the course (contact [Izzie Buchanan](People.html) for further details). Having said that, if you have a laptop (Mac or Windows) we encourage you to bring it to the course. Please take a look at the **[Setup<i class="fa fa-cog" aria-hidden="true"></i>](setup.html)** link on the navbar at the top for further instructions on how to set up your laptop prior to the course starting.
 -->
 
-Yes. As we'll be running the course online this year you'll need your own computer with internet access. Please take a look at the **[<i class="fa fa-cog" aria-hidden="true"></i>Setup](setup.html)** link on the navbar at the top for further instructions on how to set up your computer prior to the course starting. Don't worry, you don't need a particularly powerful computer to install R and RStudio so anything from the last 5 years or so should be fine. What you will need is a reasonably stable internet connection to participate in the live Blackboard Collaborate sessions. If you think that your internet connection may not be up to it then please contact [Alex](People.html) to discuss alternatives.
+Yes. As we'll be running the course online you'll need your own computer with internet access. Please take a look at the **[<i class="fa fa-cog" aria-hidden="true"></i>Setup](setup.html)** link on the navbar at the top for further instructions on how to set up your computer prior to the course starting. Don't worry, you don't need a particularly powerful computer to install R and RStudio so anything from the last 5 years or so should be fine. What you will need is a reasonably stable internet connection to participate in the live Blackboard Collaborate sessions. If you think that your internet connection may not be up to it then please contact [Alex](People.html) to discuss alternatives.
 
 \  
 
