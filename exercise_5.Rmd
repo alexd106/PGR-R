@@ -205,7 +205,7 @@ plot(growth.lm)
 
 7\. Download the datafile *'Gigartina.CSV'* from the **[<i class="fa fa-download"></i> Data](data.html)** link and save it to the `data` directory. Import the dataset into R and assign the dataframe an appropriate name. These data were collected from a study to examine the change in `diameter` of red algae [*Mastocarpus stellatus*](https://en.wikipedia.org/wiki/Mastocarpus_stellatus) spores grown in three different diatom cultures and a control group grown in artificial seawater (`diatom.treat` variable). Use the function `str()` to examine the dataframe. How many replicates are there per diatom treatment? Use an appropriate plot to examine whether there are any obvious differences in diameter between the treatments.
 
-```{r Q7, echo=SOLUTIONS, tidy = TRUE}
+```{r Q7, echo=SOLUTIONS}
 gigartina <- read.table('data/Gigartina.CSV', header = TRUE, sep = ",",
                         stringsAsFactors = TRUE)
 
