@@ -35,7 +35,7 @@ Read [Chapter 1](https://intro2r.com/chap1.html) to help you complete the questi
 
 \  
 
-3\. Explore RStudio making sure you understand the functionality of each of the four windows (see [Section 1.3](https://intro2r.com/rstudio-orient.html#rstudio_orient) of the Introduction to R book for a summary and/or watch this [video](https://alexd106.github.io/intro2R/howto.html#rstudio-vid)). Take your time and check out each of the tabs in the windows. The function of some of these tabs will be obvious whereas others won't be useful right now. In general, you will write your R code in the script editor window (usually top left window) and then source your code into the R console (usually bottom left) by clicking anywhere in the relevant line of code with your mouse and then clicking on the 'Run' button at the top of the script editor window. If you don't like clicking buttons (I don't!) then you can use the keyboard shortcut 'ctrl + enter' (on Windows) or 'command + enter' (on Mac OSX).
+3\. Explore RStudio making sure you understand the functionality of each of the four windows (see [Section 1.3](https://intro2r.com/rstudio-orient.html#rstudio_orient) of the Introduction to R book for a summary and/or watch this [video](https://alexd106.github.io/PGR-R/howto.html#rstudio-vid)). Take your time and check out each of the tabs in the windows. The function of some of these tabs will be obvious whereas others won't be useful right now. In general, you will write your R code in the script editor window (usually top left window) and then source your code into the R console (usually bottom left) by clicking anywhere in the relevant line of code with your mouse and then clicking on the 'Run' button at the top of the script editor window. If you don't like clicking buttons (I don't!) then you can use the keyboard shortcut 'ctrl + enter' (on Windows) or 'command + enter' (on Mac OSX).
 
 \  
 
@@ -66,7 +66,7 @@ first_char <- "my first character"
 
 \  
 
-7\. Remove the variable `first_num` from your environment using the `rm()` function. Check out the 'Environment' tab to ensure the variable has been removed. Alternatively, use the `ls()` function to list all objects in your environment. 
+7\. Remove the variable `first_num` from your environment using the `rm()` function. Use the code `rm(first_num)` to do this. Check out the 'Environment' tab to ensure the variable has been removed. Alternatively, use the `ls()` function to list all objects in your environment. 
 
 ```{r Q7, echo=SOLUTIONS}
 rm(first_num)
@@ -101,7 +101,7 @@ help('plot.design')
 
 \  
 
-12\. Another strategy would be to use the `help.search()` function to search through R's help files. Search the R help system for instances of the character string ‘plot’. Take a look at [Section 2.5.1](https://intro2r.com/help.html#r-help) for more information. Also, see if you can figure out how to narrow your search by only searching for ‘plot’ in the `nlme` package (hint: see the help page for `help.search()`.
+12\. Another strategy would be to use the `help.search()` function to search through R's help files. Search the R help system for instances of the character string ‘plot’. Take a look at [Section 2.5.1](https://intro2r.com/help.html#r-help) for more information. Also, see if you can figure out how to narrow your search by only searching for ‘plot’ in the `nlme` package (hint: see the help page for `help.search()`).
 
 ```{r Q12, echo=SOLUTIONS}
 help.search("plot")

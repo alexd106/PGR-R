@@ -755,8 +755,9 @@ instructor and explore possible solutions.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="co"># results in a dataframe filled with NAs.</span></span>
 <span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>whale.new <span class="ot">&lt;-</span> whale[whale<span class="sc">$</span>depth <span class="sc">&gt;</span> <span class="dv">1500</span> <span class="sc">&amp;</span> whale<span class="sc">$</span>number.whales <span class="sc">&gt;</span> <span class="fu">mean</span>(whale<span class="sc">$</span>number.whales), ]</span>
 <span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a><span class="co"># the variable number.whales contains 1 NA value. By default the mean function will return an NA.  use the na.rm argument to ignore NAs</span></span>
-<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a>whale.new <span class="ot">&lt;-</span> whale[whale<span class="sc">$</span>depth <span class="sc">&gt;</span> <span class="dv">1500</span> <span class="sc">&amp;</span> whale<span class="sc">$</span>number.whales <span class="sc">&gt;</span> <span class="fu">mean</span>(whale<span class="sc">$</span>number.whales, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), ]</span></code></pre></div>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a><span class="co"># the variable number.whales contains 1 NA value. By default the mean function will return an NA.  use the na.rm argument to</span></span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a><span class="co"># ignore NAs</span></span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a>whale.new <span class="ot">&lt;-</span> whale[whale<span class="sc">$</span>depth <span class="sc">&gt;</span> <span class="dv">1500</span> <span class="sc">&amp;</span> whale<span class="sc">$</span>number.whales <span class="sc">&gt;</span> <span class="fu">mean</span>(whale<span class="sc">$</span>number.whales, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), ]</span></code></pre></div>
 <p> </p>
 <p>12. Although you have concentrated on using the square bracket
 <code>[ ]</code> notation to extract rows and columns from your
@@ -831,8 +832,8 @@ sighted at each level of water noise and for each month.</p>
 <span id="cb12-10"><a href="#cb12-10" tabindex="-1"></a><span class="fu">tapply</span>(whale<span class="sc">$</span>number.whales, <span class="fu">list</span>(whale<span class="sc">$</span>water.noise, whale<span class="sc">$</span>month), median, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)    </span></code></pre></div>
 <p> </p>
 <p>16. Another useful function for summarising dataframes is
-<code>aggregate()</code>. Refer back to the book (search for
-<code>aggregate</code>) to look up how to use this function (or see
+<code>aggregate()</code>. Search in the R book for the function
+aggregate to see how to use this function (or see
 <code>?aggregate</code>). Use the <code>aggregate()</code> function to
 calculate the mean of time at station, number of whales, depth and
 gradient for each level of water noise (don’t forget about that sneaky

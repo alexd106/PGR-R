@@ -591,11 +591,11 @@ components) that are all of the same data type (see <a
 href="https://intro2r.com/data-structures.html#scal_vecs">Section
 3.2.1</a> for an introduction to vectors). Although technically not
 correct it might be useful to think of a vector as something like a
-single column in a spreadsheet. There are a multitude of ways to create
-vectors in R but you will use the concatenate function <code>c()</code>
-to create a vector called <code>weight</code> containing the weight (in
-kg) of 10 children: <code>69, 62, 57, 59, 59, 64, 56, 66, 67, 66</code>
-(<a
+single column of data in a spreadsheet. There are a multitude of ways to
+create vectors in R but you will use the concatenate function
+<code>c()</code> to create a vector called <code>weight</code>
+containing the weight (in kg) of 10 children:
+<code>69, 62, 57, 59, 59, 64, 56, 66, 67, 66</code> (<a
 href="https://intro2r.com/using-functions-in-r.html#using-functions-in-r">Section
 2.3</a> or watch this <a
 href="https://alexd106.github.io/PGR-R/howto.html#vec-vid">video</a> for
@@ -669,8 +669,9 @@ variable called <code>seq1</code>.</p>
 <p> </p>
 <p>10. Next, see if you can figure out how to create a sequence from 10
 to 1 in steps of 0.5. Assign this sequence to a variable called
-<code>seq2</code> (Hint: you may find it useful to include the
-<code>rev()</code> function in your code).</p>
+<code>seq2</code>. Hint: you may find it useful to include the
+<code>rev()</code> function in your code (use the search facility in the
+Introduction to R book to search for <code>"rev"</code>).</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>seq2 <span class="ot">&lt;-</span> <span class="fu">rev</span>(<span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">1</span>, <span class="at">to =</span> <span class="dv">10</span>, <span class="at">by =</span> <span class="fl">0.5</span>))</span></code></pre></div>
 <p> </p>
 <p>11. Let’s go sequence crazy! Generate the following sequences. You
@@ -696,10 +697,10 @@ href="https://intro2r.com/using-functions-in-r.html#using-functions-in-r">Sectio
 <p>12. Ok, back to the variable <code>height</code> you created in Q7.
 Sort the values of <code>height</code> into ascending order (shortest to
 tallest) and assign the sorted vector to a new variable called
-<code>height_sorted</code>. See <a
-href="https://intro2r.com/vectors.html#vec_ord">Section 2.4.3</a> for an
-introduction to sorting and ordering vectors. Now sort all heights into
-descending order and assign the new vector a name of your choice.</p>
+<code>height_sorted</code>. Take a look at <a
+href="https://intro2r.com/vectors.html#vec_ord">Section 2.4.3</a> in the
+R book to see how to do this. Now sort all heights into descending order
+and assign the new vector a name of your choice.</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>height_sorted <span class="ot">&lt;-</span> <span class="fu">sort</span>(height)</span>
 <span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a>height_rev <span class="ot">&lt;-</span> <span class="fu">rev</span>(<span class="fu">sort</span>(height))</span></code></pre></div>
@@ -732,18 +733,18 @@ lightest?</p>
 <p>16. Almost there! In R, missing values are usually represented with
 an <code>NA</code>. Missing data can be tricky to deal with in R (and in
 statistics more generally) and cause some surprising behaviour when
-using some functions (see <a
+using some functions. Take a look at <a
 href="https://intro2r.com/vectors.html#na_vals">Section 2.4.5</a> of the
-Introduction to R book). To explore this a little further let’s create a
-vector called <code>mydata</code> with the values
-<code>2, 4, 1, 6, 8, 5, NA, 4, 7</code>. Notice the value of the
+R book for more information about missing values. To explore this a
+little further let’s create a vector called <code>mydata</code> with the
+values <code>2, 4, 1, 6, 8, 5, NA, 4, 7</code>. Notice the value of the
 7<sup>th</sup> element of <code>mydata</code> is missing and represented
 with an <code>NA</code>. Now use the <code>mean()</code> function to
 calculate the mean of the values in <code>mydata</code>. What does R
-return? Confused? Next, take a look at the help page for the function
-<code>mean()</code>. Can you figure out how to alter your use of the
-<code>mean()</code> function to calculate the mean without this missing
-value?</p>
+return? If you’re confused by this output take a look at the help page
+for the function <code>mean()</code>. Can you figure out how to alter
+your use of the <code>mean()</code> function to calculate the mean
+ignoring this missing value?</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a>mydata <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">5</span>, <span class="cn">NA</span>, <span class="dv">4</span>, <span class="dv">7</span>)</span>
 <span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a><span class="fu">mean</span>(mydata)    <span class="co"># returns NA!</span></span>
 <span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a></span>

@@ -22,7 +22,7 @@ Read [Chapter 2](https://intro2r.com/basics-r.html) to help you complete the que
 
 \  
 
-1\. Open up your RStudio Project from Exercise 1 and either create a new R script or continue with your previous R script. Remember to save your R script with a suitable name (exercise_2?). Make sure you include any metadata you feel is appropriate (title, description of task, date of script creation etc). Don't forget to comment out your metadata with a `#` at the beginning of the line.  
+1\. Open up your RStudio Project from Exercise 1 and either create a new R script or continue with your previous R script. Remember to save your R script with a suitable name (exercise_2?). Make sure you include any metadata you feel is appropriate (title, description of task, date of script creation etc). Don't forget to comment out your metadata with a `#` at the beginning of the line.
 
 \  
 
@@ -55,7 +55,7 @@ area_circle <- pi * (20/2)^2
 
 \  
 
-5\. Ok, you're now ready to explore one of R's basic (but very useful) data structures - vectors. A vector is a sequence of elements (or components) that are all of the same data type (see [Section 3.2.1](https://intro2r.com/data-structures.html#scal_vecs) for an introduction to vectors). Although technically not correct it might be useful to think of a vector as something like a single column in a spreadsheet. There are a multitude of ways to create vectors in R but you will use the concatenate function `c()` to create a vector called `weight` containing the weight (in kg) of 10 children: `69, 62, 57, 59, 59, 64, 56, 66, 67, 66` ([Section 2.3](https://intro2r.com/using-functions-in-r.html#using-functions-in-r) or watch this [video](https://alexd106.github.io/PGR-R/howto.html#vec-vid) for more information). 
+5\. Ok, you're now ready to explore one of R's basic (but very useful) data structures - vectors. A vector is a sequence of elements (or components) that are all of the same data type (see [Section 3.2.1](https://intro2r.com/data-structures.html#scal_vecs) for an introduction to vectors). Although technically not correct it might be useful to think of a vector as something like a single column of data in a spreadsheet. There are a multitude of ways to create vectors in R but you will use the concatenate function `c()` to create a vector called `weight` containing the weight (in kg) of 10 children: `69, 62, 57, 59, 59, 64, 56, 66, 67, 66` ([Section 2.3](https://intro2r.com/using-functions-in-r.html#using-functions-in-r) or watch this [video](https://alexd106.github.io/PGR-R/howto.html#vec-vid) for more information). 
 
 ```{r Q5, echo=SOLUTIONS}
 weight <- c(69, 62, 57, 59, 59, 64, 56, 66, 67, 66)
@@ -108,7 +108,7 @@ seq1 <- seq(from = 0, to = 1, by = 0.1)
 
 \  
 
-10\.	Next, see if you can figure out how to create a sequence from 10 to 1 in steps of 0.5. Assign this sequence to a variable called `seq2` (Hint: you may find it useful to include the `rev()` function in your code).
+10\.	Next, see if you can figure out how to create a sequence from 10 to 1 in steps of 0.5. Assign this sequence to a variable called `seq2`. Hint: you may find it useful to include the `rev()` function in your code (use the search facility in the Introduction to R book to search for `"rev"`).
 
 ```{r Q10, echo=SOLUTIONS}
 seq2 <- rev(seq(from = 1, to = 10, by = 0.5))
@@ -136,7 +136,7 @@ rep(c(7, 2, 8, 1), times = c(4, 3, 1, 5))
 
 \  
 
-12\.	Ok, back to the variable `height` you created in Q7. Sort the values of `height` into ascending order (shortest to tallest) and assign the sorted vector to a new variable called `height_sorted`. See [Section 2.4.3](https://intro2r.com/vectors.html#vec_ord) for an introduction to sorting and ordering vectors. Now sort all heights into descending order and assign the new vector a name of your choice.
+12\.	Ok, back to the variable `height` you created in Q7. Sort the values of `height` into ascending order (shortest to tallest) and assign the sorted vector to a new variable called `height_sorted`. Take a look at [Section 2.4.3](https://intro2r.com/vectors.html#vec_ord) in the R book to see how to do this. Now sort all heights into descending order and assign the new vector a name of your choice.
 
 ```{r Q12,echo=SOLUTIONS}
 height_sorted <- sort(height)
@@ -173,7 +173,7 @@ weight_rev <- child_names[weight_ord]     # Alfred is heaviest, Louise is lighte
 
 \  
 
-16\. Almost there! In R, missing values are usually represented with an `NA`. Missing data can be tricky to deal with in R (and in statistics more generally) and cause some surprising behaviour when using some functions (see [Section 2.4.5](https://intro2r.com/vectors.html#na_vals) of the Introduction to R book). To explore this a little further let's create a vector called `mydata` with the values `2, 4, 1, 6, 8, 5, NA, 4, 7`. Notice the value of the 7^th^ element of `mydata` is missing and represented with an `NA`. Now use the `mean()` function to calculate the mean of the values in `mydata`. What does R return? Confused? Next, take a look at the help page for the function `mean()`. Can you figure out how to alter your use of the `mean()` function to calculate the mean without this missing value?  
+16\. Almost there! In R, missing values are usually represented with an `NA`. Missing data can be tricky to deal with in R (and in statistics more generally) and cause some surprising behaviour when using some functions. Take a look at [Section 2.4.5](https://intro2r.com/vectors.html#na_vals) of the R book for more information about missing values. To explore this a little further let's create a vector called `mydata` with the values `2, 4, 1, 6, 8, 5, NA, 4, 7`. Notice the value of the 7^th^ element of `mydata` is missing and represented with an `NA`. Now use the `mean()` function to calculate the mean of the values in `mydata`. What does R return? If you're confused by this output take a look at the help page for the function `mean()`. Can you figure out how to alter your use of the `mean()` function to calculate the mean ignoring this missing value?  
 
 ```{r Q16,echo=SOLUTIONS}
 mydata <- c(2, 4, 1, 6, 8, 5, NA, 4, 7)
