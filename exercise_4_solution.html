@@ -11,7 +11,7 @@
 
 
 
-<title>Exercise Solutions</title>
+<title>Exercises</title>
 
 <script src="site_libs/header-attrs-2.26/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -528,7 +528,7 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Exercise Solutions</h1>
+<h1 class="title toc-ignore">Exercises</h1>
 
 </div>
 
@@ -699,7 +699,7 @@ have also included some alternative code in the <a
 href="exercise_4_solution.html">solutions for this exercise</a> using
 the <code>dotplot()</code> function from the <code>lattice</code>
 package.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">pdf</span>(<span class="st">&#39;figures/ex4_dotplots.pdf&#39;</span>)</span>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">pdf</span>(<span class="st">&#39;output/ex4_dotplots.pdf&#39;</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
 <span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="fu">dotchart</span>(squid<span class="sc">$</span>DML, <span class="at">main =</span> <span class="st">&quot;DML&quot;</span>)</span>
 <span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="fu">dotchart</span>(squid<span class="sc">$</span>weight, <span class="at">main =</span> <span class="st">&quot;weight&quot;</span>)</span>
@@ -768,7 +768,7 @@ shape of the distribution changes (see <a
 href="https://intro2r.com/simple-base-r-plots.html#histograms">Section
 4.2.2</a> of the book for further details of how to change the
 breaks).</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">pdf</span>(<span class="st">&#39;workshop/figures/ex4_hist.pdf&#39;</span>)</span>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">pdf</span>(<span class="st">&#39;output/ex4_hist.pdf&#39;</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</span>
 <span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="fu">hist</span>(squid<span class="sc">$</span>DML, <span class="at">main=</span><span class="st">&quot;&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;DML&quot;</span>)</span>
 <span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="fu">hist</span>(squid<span class="sc">$</span>weight, <span class="at">main=</span><span class="st">&quot;&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;weight&quot;</span>)</span>

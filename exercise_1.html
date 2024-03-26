@@ -30,6 +30,7 @@
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
 <link href="site_libs/font-awesome-6.4.2/css/all.min.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet" />
 
@@ -206,6 +207,9 @@ $(document).ready(function () {
 </style>
 
 <!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
 
 
 
@@ -404,6 +408,14 @@ $(document).ready(function () {
 
 <div id="header">
 
+<div class="btn-group pull-right float-right">
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
+
 
 
 <h1 class="title toc-ignore">Exercises</h1>
@@ -414,7 +426,7 @@ $(document).ready(function () {
 <p> </p>
 <div id="exercise-1-getting-to-know-r-and-rstudio"
 class="section level2">
-<h2>Exercise 1 : Getting to know R and RStudio</h2>
+<h2>Exercise 1: Getting to know R and RStudio</h2>
 <p> </p>
 <p>Read <a href="https://intro2r.com/chap1.html">Chapter 1</a> to help
 you complete the questions in this exercise. We’ll also bounce
@@ -436,7 +448,7 @@ throughout this course. If you’re confused see <a
 href="https://intro2r.com/rsprojs.html">Section 1.6</a> of the
 introduction to R Book which covers RStudio Projects or watch the
 ‘RStudio Projects’ video <a
-href="https://alexd106.github.io/PGR-R/howto.html">here</a>.</p>
+href="https://alexd106.github.io/BI5009/howto.html">here</a>.</p>
 <p> </p>
 <p>2. Now create a new R script inside this Project by selecting File
 –&gt; New File –&gt; R Script from the main menu (or use the shortcut
@@ -459,7 +471,7 @@ more detail.</p>
 each of the four windows (see <a
 href="https://intro2r.com/rstudio-orient.html#rstudio_orient">Section
 1.3</a> of the Introduction to R book for a summary and/or watch this <a
-href="https://alexd106.github.io/PGR-R/howto.html#rstudio-vid">video</a>).
+href="https://alexd106.github.io/intro2R/howto.html#rstudio-vid">video</a>).
 Take your time and check out each of the tabs in the windows. The
 function of some of these tabs will be obvious whereas others won’t be
 useful right now. In general, you will write your R code in the script
@@ -548,7 +560,7 @@ instances of the character string ‘plot’. Take a look at <a
 href="https://intro2r.com/help.html#r-help">Section 2.5.1</a> for more
 information. Also, see if you can figure out how to narrow your search
 by only searching for ‘plot’ in the <code>nlme</code> package (hint: see
-the help page for <code>help.search()</code>).</p>
+the help page for <code>help.search()</code>.</p>
 <p> </p>
 <p>13. R’s working directory is the default location of any files you
 read into R, or export from R. Although you won’t be importing or
@@ -623,6 +635,11 @@ $(document).ready(function () {
 </script>
 
 <!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("hide" === "show");
+});
+</script>
 
 
 <!-- dynamically load mathjax for compatibility with self-contained -->

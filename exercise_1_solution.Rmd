@@ -1,5 +1,5 @@
 ---
-title: 'Exercise Solutions'
+title: 'Exercises'
 output: 
   html_document:
     toc: false
@@ -8,6 +8,7 @@ output:
 
 ```{r setup, echo=FALSE, purl = FALSE}
 knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, eval = FALSE, cache = FALSE)
+SOLUTIONS <- TRUE
 ```
 
 \  
@@ -26,7 +27,7 @@ Read [Chapter 1](https://intro2r.com/chap1.html) to help you complete the questi
 
 2\. Now create a new R script inside this Project by selecting File --> New File --> R Script from the main menu (or use the shortcut button). Before you start writing any code save this script by selecting File --> Save from the main menu. Call this script 'exercise_1' or something similar (remember, files names should not [contain spaces!](https://intro2r.com/file_names.html)). Click on the 'Files' tab in the bottom right RStudio pane to see whether your file has been saved in the correct location. Ok, at the top of almost every R script (there are very few exceptions to this!) you should include some metadata to help your collaborators (and the future you) know who wrote the script, when it was written and what the script does (amongst other things). Include this information at the top of your R script making sure that you place a `#` at the beginning of every line to let R know this is a comment. See [Section 1.10](https://intro2r.com/proj-doc.html) for a little more detail.  
 
-```{r Q2}
+```{r Q2, echo=SOLUTIONS}
 # An Introduction to R course Exercise 1
 # Date: 27/01/21
 # Created by: Professor Plum
@@ -40,7 +41,7 @@ Read [Chapter 1](https://intro2r.com/chap1.html) to help you complete the questi
 
 4\. Now to practice writing code in the script editor and sourcing this code into the R console. Let's display the help file for the function `mean`. In your script type `help('mean')` and source this code into the console. Notice that the help file is displayed in the bottom right window (if not then click on the 'Help' tab). Examine the different components of the help file (especially the examples section at the end of the help file). See [Section 2.5.1](https://intro2r.com/help.html#r-help) of the Introduction to R book for more information about help files.
 
-```{r Q4}
+```{r Q4, echo=SOLUTIONS}
 help(mean)          # different methods of using help
 ?mean
 help("mean")
@@ -50,7 +51,7 @@ help("mean")
 
 5\. The content displayed in the bottom right window is context dependent. For example if we write the code `plot(1:10)` and source it into the R console the bottom right window will display this plot (don't worry about understanding the R code right now, hopefully this will become clear later on in the course!). 
 
-```{r Q5}
+```{r Q5, echo=SOLUTIONS}
 plot(1:10)    #dont worry about what 1:10 does just yet
 ```
 
@@ -58,7 +59,7 @@ plot(1:10)    #dont worry about what 1:10 does just yet
 
 6\. Next, let's practice creating a variable and assigning a value to this variable. Take a look at [Section 2.2](https://intro2r.com/objects-in-r.html) of the Introduction to R book for further information on how to do this or if you prefer watch the [Objects in R video](https://alexd106.github.io/PGR-R/howto.html#objs-vid). Create a variable called `first_num` and assign it the value `42`. Click on the 'Environment' tab in the top right window to display the variable and value. Now create another variable called `first_char` and assign it a value `"my first character"`. Notice this variable is now also displayed in the 'Environment' along with it's value and class (`chr` - short for character class).
 
-```{r Q6}
+```{r Q6, echo=SOLUTIONS}
 first_num <- 42    # create variable first_num and assign the value 42
 first_char <- "my first character"
 ```
@@ -67,7 +68,7 @@ first_char <- "my first character"
 
 7\. Remove the variable `first_num` from your environment using the `rm()` function. Check out the 'Environment' tab to ensure the variable has been removed. Alternatively, use the `ls()` function to list all objects in your environment. 
 
-```{r Q7}
+```{r Q7, echo=SOLUTIONS}
 rm(first_num)
 ls()          # list all variables in the workspace 
 ```
@@ -76,7 +77,7 @@ ls()          # list all variables in the workspace
 
 8\. Let's see what happens if we assign another value to an existing variable. Assign the value `"my second character"` to the variable `first_char` you created in Q6. Notice the value has changed in the 'Environment'. To display the value of `first_char` enter the name of the variable in the console. Don't to forget to save your R script periodically! 
 
-```{r Q8}
+```{r Q8, echo=SOLUTIONS}
 first_char <- "my second variable"
 first_char    # display the value 
 ```
@@ -93,7 +94,7 @@ first_char    # display the value
 
 11\.	OK, back to RStudio. Sometimes you may forget the exact name of a function you want to use so it would be useful to be able to search through all the function names. For example, you want to create a design plot but can only remember that the name of the function has the word 'plot' in it. Use the `apropos()` function to list all the functions with the word plot in their name (see [Section 2.5.1](https://intro2r.com/help.html#help) of the Introduction to R book). Look through the list and once you have figured what the correct function is then bring up the help file for this function (Hint: the function name probably has the words 'plot' and 'design' in it!). 
 
-```{r Q11}
+```{r Q11, echo=SOLUTIONS}
 apropos("plot")
 help('plot.design')
 ```
@@ -102,7 +103,7 @@ help('plot.design')
 
 12\. Another strategy would be to use the `help.search()` function to search through R's help files. Search the R help system for instances of the character string ‘plot’. Take a look at [Section 2.5.1](https://intro2r.com/help.html#r-help) for more information. Also, see if you can figure out how to narrow your search by only searching for ‘plot’ in the `nlme` package (hint: see the help page for `help.search()`.
 
-```{r Q12}
+```{r Q12, echo=SOLUTIONS}
 help.search("plot")
 ??plot     # shortcut for help.search function
 
@@ -113,7 +114,7 @@ help.search("plot", package = "nlme")
 
 13\.	R's working directory is the default location of any files you read into R, or export from R. Although you won't be importing or exporting files just yet (that's tomorrows job) it's useful to be able to determine what your current working directory is. So, read [Section 1.7](https://intro2r.com/work-d.html) of the Introduction to R book to introduce yourself to working directories and figure out how to display your current working directory.
 
-```{r Q13}
+```{r Q13, echo=SOLUTIONS}
 getwd()    # displays the current working directory 
 ```
 
@@ -121,7 +122,7 @@ getwd()    # displays the current working directory
 
 14\.	Let's finish up by creating some additional useful directories in your Project directory. If you've followed the **Data <i class="fa fa-download" aria-hidden="true"></i>** instructions when downloading datasets for this course you will already have a directory called `data` in your Project (if you didn't then take a look at the instructions under **Data <i class="fa fa-download" aria-hidden="true"></i>** [here](https://alexd106.github.io/PGR-R/data.html) to create this directory). Now let's create another directory called `output` where you'll save data files and plots you generate later on during this course. This time, instead of clicking on the 'New Folder' icon in RStudio we'll create a new directory using R code directly in the R console (you can also interact with your computer's operating system in all sorts of useful ways). To do this use the `dir.create()` function to create a directory called `output` (See [Section 1.8](https://intro2r.com/dir-struct.html) of the Introduction to R book for more details). If you fancy it, you can also create a subdirectory in your `output` directory called `figures` to store all your fancy R plots for your thesis. You can list all the files in your directories using the `list.files()` function. Can you figure out how to list the directories as well? (hint: see `?list.files` or [Section 1.8](https://intro2r.com/dir-struct.html) of the course book).
 
-```{r Q14}
+```{r Q14, echo=SOLUTIONS}
 dir.create(path = 'output')
 dir.create(path = 'output/figures')
 list.files(include.dirs = TRUE)
