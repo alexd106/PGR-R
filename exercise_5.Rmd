@@ -158,7 +158,7 @@ t.test(GRate ~ diet, var.equal = TRUE, data = prawn)
 
 \  
 
-4\. An alternative (but equivalent) way to compare the mean growth rate between diets is to use a linear model. Use the `lm()` function to fit a linear model with `GRate` as the response variable and `diet` as an explanatory variable (see [Section 6.3](https://intro2r.com/simple-lm.html#simple_lm) for a very brief introduction to linear modelling). Assign (`<-`) the results of the linear model to a variable with an appropriate name (i.e. `growth.lm`).
+4\. An alternative (but equivalent) way to compare the mean growth rate between diets is to use a linear model. Use the `lm()` function to fit a linear model with `GRate` as the response variable and `diet` as an explanatory variable (see [Section 6.3](https://intro2r.com/simple_lm.html#simple_lm) for a very brief introduction to linear modelling). Assign (`<-`) the results of the linear model to a variable with an appropriate name (i.e. `growth.lm`).
 
 ```{r Q4, echo=SOLUTIONS}
 # fit the model
@@ -190,7 +190,7 @@ anova(growth.lm)
 
 \  
 
-6\. Assess the normality and equal variance assumptions by plotting the residuals of the fitted model (see [Section 6.3](https://intro2r.com/simple-lm.html#simple_lm) for more details). Split the plotting device into 2 rows and 2 columns using `par(mfrow=c(2,2))` so you can fit four plots on a single device. Use the `plot()` function on your fitted model (`plot(growth.lm)`) to plot the graphs. Discuss with an instructor how to interpret these plots. What are your conclusions?
+6\. Assess the normality and equal variance assumptions by plotting the residuals of the fitted model (see [Section 6.3](https://intro2r.com/simple_lm.html#simple_lm) for more details). Split the plotting device into 2 rows and 2 columns using `par(mfrow=c(2,2))` so you can fit four plots on a single device. Use the `plot()` function on your fitted model (`plot(growth.lm)`) to plot the graphs. Discuss with an instructor how to interpret these plots. What are your conclusions?
 
 ```{r Q6, echo=SOLUTIONS}
 # plot the residuals to assess normality and equal variance

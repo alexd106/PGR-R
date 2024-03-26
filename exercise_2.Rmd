@@ -18,7 +18,7 @@ SOLUTIONS <- FALSE
 
 \  
 
-Read [Chapter 2](https://intro2r.com/basics-r.html) to help you complete the questions in this exercise.
+Read [Chapter 2](https://intro2r.com/basics_r.html) to help you complete the questions in this exercise.
 
 \  
 

@@ -17,7 +17,7 @@ SOLUTIONS <- TRUE
 
 \  
 
-Read [Chapter 7](https://intro2r.com/prog-r.html) to help you complete the questions in this exercise.
+Read [Chapter 7](https://intro2r.com/prog_r.html) to help you complete the questions in this exercise.
 
 \  
 

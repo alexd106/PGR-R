@@ -18,7 +18,7 @@ SOLUTIONS <- FALSE
 
 \  
 
-Read [Chapter 4](https://intro2r.com/graphics-base-r.html) to help you complete the questions in this exercise.
+Read [Chapter 4](https://intro2r.com/graphics_base_r.html) to help you complete the questions in this exercise.
 
 \  
 
@@ -130,7 +130,7 @@ ftable(xtabs(~ Fyear + Fmaturity + Fmonth, data = squid))
 
 \  
 
-6\. The humble cleveland dotplot is a great way of identifying if you have potential outliers in continuous variables (See [Section 4.2.4](https://intro2r.com/simple-base-r-plots.html#dotcharts). Create dotplots (using the `dotchart()` function) for the following variables; `DML`, `weight`, `nid.length` and `ovary.weight`. Do these variables contain any unusually large or small observations? Don't forget, if you prefer to create a single figure with all 4 plots you can always split your plotting device into 2 rows and 2 columns (see [Section 4.4](https://intro2r.com/mult-graphs.html#mult_graphs) of the book). Use the `pdf()` function to save a pdf version of your plot(s) in your `output` directory you created in Exercise 1 (see [Section 4.5](https://intro2r.com/export-plots.html#export_plots) of the book to see how the `pdf()` function works). I have also included some alternative code in the [solutions for this exercise](exercise_4_solution.html) using the `dotplot()` function from the `lattice` package.
+6\. The humble cleveland dotplot is a great way of identifying if you have potential outliers in continuous variables (See [Section 4.2.4](https://intro2r.com/simple-base-r-plots.html#dotcharts). Create dotplots (using the `dotchart()` function) for the following variables; `DML`, `weight`, `nid.length` and `ovary.weight`. Do these variables contain any unusually large or small observations? Don't forget, if you prefer to create a single figure with all 4 plots you can always split your plotting device into 2 rows and 2 columns (see [Section 4.4](https://intro2r.com/mult_graphs.html#mult_graphs) of the book). Use the `pdf()` function to save a pdf version of your plot(s) in your `output` directory you created in Exercise 1 (see [Section 4.5](https://intro2r.com/export_plots.html#export_plots) of the book to see how the `pdf()` function works). I have also included some alternative code in the [solutions for this exercise](exercise_4_solution.html) using the `dotplot()` function from the `lattice` package.
 
 ```{r Q6, echo=SOLUTIONS}
 pdf('output/ex4_dotplots.pdf')
@@ -275,7 +275,7 @@ pairs(squid[,c(5, 8, 9, 11, 12, 13)], diag.panel = panel.hist, upper.panel = pan
 
 \  
 
-13\. Almost every aspect of the figures you create in R is customisable. Learning how to get your plot looking just right is not only rewarding but also means that you will never have to include a plot in your paper/thesis that you're not completely happy with. When you start learning how to use R it can sometimes seem to take a lot of work to customise your plots. Don't worry, it gets easier with experience (most of the time anyway) and you will always have your code if you want to create a similar plot in the future. Use the `plot()` function to produce a scatterplot of DML on the x axis and ovary weight on the y axis (you might need to apply a transformation on the variable `ovary.weight`). Use a different colour to highlight points for each level of maturity stage. Produce a legend explaining the different colours and place it in a suitable position on the plot. Format the graph further to make it suitable for inclusion into your paper/thesis (i.e. add axes labels, change the axes scales etc). See [Section 4.3](https://intro2r.com/custom-plot.html#custom_plot) for more details about customising plots. I have given you a few different solutions in the code below. give them a go!
+13\. Almost every aspect of the figures you create in R is customisable. Learning how to get your plot looking just right is not only rewarding but also means that you will never have to include a plot in your paper/thesis that you're not completely happy with. When you start learning how to use R it can sometimes seem to take a lot of work to customise your plots. Don't worry, it gets easier with experience (most of the time anyway) and you will always have your code if you want to create a similar plot in the future. Use the `plot()` function to produce a scatterplot of DML on the x axis and ovary weight on the y axis (you might need to apply a transformation on the variable `ovary.weight`). Use a different colour to highlight points for each level of maturity stage. Produce a legend explaining the different colours and place it in a suitable position on the plot. Format the graph further to make it suitable for inclusion into your paper/thesis (i.e. add axes labels, change the axes scales etc). See [Section 4.3](https://intro2r.com/custom_plot.html#custom_plot) for more details about customising plots. I have given you a few different solutions in the code below. give them a go!
 
 ```{r Q13a, echo=SOLUTIONS, tidy = TRUE}
 # quick and dirty way

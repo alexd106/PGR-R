@@ -18,7 +18,7 @@ SOLUTIONS <- TRUE
 
 \  
 
-Read [Chapter 3](https://intro2r.com/data-r.html) to help you complete the questions in this exercise.
+Read [Chapter 3](https://intro2r.com/data_r.html) to help you complete the questions in this exercise.
 
 \  
 
