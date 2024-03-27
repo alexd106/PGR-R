@@ -515,10 +515,13 @@ equal to 99 cm and assign to a variable called
 <p>8. Now you can use the information in your <code>weight</code> and
 <code>height</code> variables to calculate the body mass index (BMI) for
 each child. The BMI is calculated as weight (in kg) divided by the
-square of the height (in meters). Store the results of this calculation
-in a variable called <code>bmi</code>. Note: you don’t need to do this
-calculation for each child individually, you can use both vectors in the
-BMI equation – this is called vectorisation (see <a
+square of the height (<strong>in meters</strong>).</p>
+<p><span class="math display">\[bmi_i = \frac{weight_i}
+{height_i^2}\]</span></p>
+<p>Store the results of this calculation in a variable called
+<code>bmi</code>. Note: you don’t need to do this calculation for each
+child individually, you can use both vectors in the BMI equation – this
+is called vectorisation (see <a
 href="https://intro2r.com/vectors.html#vectorisation">Section 2.4.4</a>
 of the Introduction to R book).</p>
 <p> </p>
@@ -535,10 +538,10 @@ variable called <code>seq1</code>.</p>
 to 1 in steps of 0.5. Assign this sequence to a variable called
 <code>seq2</code>. Hint: you may find it useful to include the
 <code>rev()</code> function in your code (use the search facility in the
-Introduction to R book to search for <code>"rev"</code>).</p>
+Introduction to R book to search for <code>'rev'</code>).</p>
 <p> </p>
 <p>11. Let’s go sequence crazy! Generate the following sequences. You
-will need to experiment with the arguments to the <code>rep()</code>
+will need to experiment with the arguments of the <code>rep()</code>
 function to generate these sequences (see <a
 href="https://intro2r.com/using-functions-in-r.html#using-functions-in-r">Section
 2.3</a> for some clues):</p>
@@ -551,7 +554,7 @@ href="https://intro2r.com/using-functions-in-r.html#using-functions-in-r">Sectio
 <li>7 7 7 7 2 2 2 8 1 1 1 1 1</li>
 </ul>
 <p> </p>
-<p>12. Ok, back to the variable <code>height</code> you created in Q7.
+<p>12. OK, back to the variable <code>height</code> you created in Q7.
 Sort the values of <code>height</code> into ascending order (shortest to
 tallest) and assign the sorted vector to a new variable called
 <code>height_sorted</code>. Take a look at <a

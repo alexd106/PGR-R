@@ -1,4 +1,4 @@
-## ----Q1, echo=SOLUTIONS-------------------------------------------------------------------------------------------------------
+## ----Q1, echo=SOLUTIONS------------------------------------------------------------------------------------------------------
 prawns <- read.table('data/prawnGR.CSV', sep = ",", header = TRUE,
                      stringsAsFactors = TRUE)
 
@@ -39,7 +39,7 @@ xtabs(~ diet, data = prawns)
 boxplot(GRate ~ diet, data = prawns, xlab = "Diet", ylab = "Growth Rate")
 
 
-## ----Q2, echo=SOLUTIONS-------------------------------------------------------------------------------------------------------
+## ----Q2, echo=SOLUTIONS------------------------------------------------------------------------------------------------------
 # test normality assumption
 
 # Do not perform test on all data together, i.e.
@@ -94,7 +94,7 @@ var.test(prawns$GRate ~ prawns$diet)
 # difference in variance
 
 
-## ----Q3, echo=SOLUTIONS-------------------------------------------------------------------------------------------------------
+## ----Q3, echo=SOLUTIONS------------------------------------------------------------------------------------------------------
 # conduct t-test assuming equal variances
 # Null hypothesis Ho: no difference in growth rate 
 # between prawns fed on artificial diet or Natural diet
@@ -118,13 +118,13 @@ t.test(GRate ~ diet, var.equal = TRUE, data = prawn)
 # or natural diet (t = -1.33, df = 58, p = 0.19).
 
 
-## ----Q4, echo=SOLUTIONS-------------------------------------------------------------------------------------------------------
+## ----Q4, echo=SOLUTIONS------------------------------------------------------------------------------------------------------
 # fit the model
 
 growth.lm <- lm(GRate ~ diet, data = prawns)
 
 
-## ----Q5, echo=SOLUTIONS-------------------------------------------------------------------------------------------------------
+## ----Q5, echo=SOLUTIONS------------------------------------------------------------------------------------------------------
 # produce the ANOVA table
 
 anova(growth.lm)
@@ -142,7 +142,7 @@ anova(growth.lm)
 # They're the same test
 
 
-## ----Q6, echo=SOLUTIONS-------------------------------------------------------------------------------------------------------
+## ----Q6, echo=SOLUTIONS------------------------------------------------------------------------------------------------------
 # plot the residuals to assess normality and equal variance
 # divide the plotting device into 2 rows and 2 columns to get all
 # the graphs on one device
@@ -151,7 +151,7 @@ par(mfrow = c(2,2))
 plot(growth.lm)  
 
 
-## ----Q7, echo=SOLUTIONS-------------------------------------------------------------------------------------------------------
+## ----Q7, echo=SOLUTIONS------------------------------------------------------------------------------------------------------
 gigartina <- read.table('data/Gigartina.CSV', header = TRUE, sep = ",",
                         stringsAsFactors = TRUE)
 
@@ -187,17 +187,17 @@ boxplot(diameter ~ diatom.treat, data = gigartina, xlab = "diatom treatment", yl
 boxplot(diameter ~ diatom.treat, data = gigartina, xlab = "diatom treatment", ylab = expression(paste("diameter", " (",mu,"m)")))
 
 
-## ----Q8, echo=SOLUTIONS-------------------------------------------------------------------------------------------------------
+## ----Q8, echo=SOLUTIONS------------------------------------------------------------------------------------------------------
 # The null hypothesis Ho: there is no difference in mean diameter 
 # of the spores between the different treatment groups
 
 
-## ----Q9, echo=SOLUTIONS-------------------------------------------------------------------------------------------------------
+## ----Q9, echo=SOLUTIONS------------------------------------------------------------------------------------------------------
 
 gigartina.lm <- lm(diameter ~ diatom.treat, data = gigartina)
 
 
-## ----Q10, echo=SOLUTIONS------------------------------------------------------------------------------------------------------
+## ----Q10, echo=SOLUTIONS-----------------------------------------------------------------------------------------------------
 anova(gigartina.lm)
 
 # Analysis of Variance Table
@@ -213,14 +213,14 @@ anova(gigartina.lm)
 # (F_3,36 = 22.78, p < 0.001)
 
 
-## ----Q11, echo=SOLUTIONS------------------------------------------------------------------------------------------------------
+## ----Q11, echo=SOLUTIONS-----------------------------------------------------------------------------------------------------
 par(mfrow = c(2,2))
 plot(gigartina.lm)
 
 # residual plots look ok to me!
 
 
-## ----Q13, echo=SOLUTIONS------------------------------------------------------------------------------------------------------
+## ----Q13, echo=SOLUTIONS-----------------------------------------------------------------------------------------------------
 # what group mean is different from what? Post-hoc comparisons.
 # we will use Tukey's Honest significant difference method 
 # to compare group means.
@@ -253,11 +253,11 @@ TukeyHSD(gigartina.lm)
 # are significantly different
 
 
-## ----Q14, echo=SOLUTIONS------------------------------------------------------------------------------------------------------
+## ----Q14, echo=SOLUTIONS-----------------------------------------------------------------------------------------------------
 plot(TukeyHSD(gigartina.lm), cex.axis = 0.5, las = 2)
 
 
-## ----Q15, echo=SOLUTIONS, tidy = TRUE-----------------------------------------------------------------------------------------
+## ----Q15, echo=SOLUTIONS, tidy = TRUE----------------------------------------------------------------------------------------
 temora <- read.table('data/TemoraBR.CSV', header = TRUE, sep = ",",
                         stringsAsFactors = TRUE)
 
@@ -274,7 +274,7 @@ str(temora)
 #  $ acclimitisation_temp: int  5 5 5 5 5 5 5 5 5 5 ...
 
 
-## ----Q16, echo=SOLUTIONS, tidy = TRUE-----------------------------------------------------------------------------------------
+## ----Q16, echo=SOLUTIONS, tidy = TRUE----------------------------------------------------------------------------------------
 temora$Facclimitisation_temp <- factor(temora$acclimitisation_temp)
 
 # boxplot of beat rate and acclimitisation temp
@@ -305,12 +305,12 @@ with(temora, points(beat_rate[Facclimitisation_temp == "20"] ~ temp[Facclimitisa
 legend("topleft", legend = c("5", "10", "20"), col = c("black", "red","blue"), pch = c(1,2,3))
 
 
-## ----Q17, echo=SOLUTIONS------------------------------------------------------------------------------------------------------
+## ----Q17, echo=SOLUTIONS-----------------------------------------------------------------------------------------------------
 # the slope of the relationship between beat rate and temp
 # look different for each acclimitisation temp
 
 
-## ----Q18, echo=SOLUTIONS, tidy = TRUE-----------------------------------------------------------------------------------------
+## ----Q18, echo=SOLUTIONS, tidy = TRUE----------------------------------------------------------------------------------------
 temora.lm <- lm(beat_rate ~ temp + Facclimitisation_temp + temp:Facclimitisation_temp, data = temora)
 
 # or equivalently
@@ -318,7 +318,7 @@ temora.lm <- lm(beat_rate ~ temp + Facclimitisation_temp + temp:Facclimitisation
 temora.lm <- lm(beat_rate ~ temp * Facclimitisation_temp, data = temora)
 
 
-## ----Q19, echo=SOLUTIONS------------------------------------------------------------------------------------------------------
+## ----Q19, echo=SOLUTIONS-----------------------------------------------------------------------------------------------------
 anova(temora.lm)
 
 # Analysis of Variance Table
@@ -338,7 +338,7 @@ anova(temora.lm)
 # or Facclimitisation_temp
 
 
-## ----Q20, echo=SOLUTIONS------------------------------------------------------------------------------------------------------
+## ----Q20, echo=SOLUTIONS-----------------------------------------------------------------------------------------------------
 
 par(mfrow = c(2,2))
 plot(temora.lm)
@@ -348,7 +348,7 @@ plot(temora.lm)
 # of count data.
 
 
-## ----Q22, echo=SOLUTIONS------------------------------------------------------------------------------------------------------
+## ----Q22, echo=SOLUTIONS-----------------------------------------------------------------------------------------------------
 # we could try square root transforming the variable 
 # beat_rate to stabilise the variance
 

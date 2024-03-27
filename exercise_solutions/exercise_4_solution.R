@@ -1,4 +1,4 @@
-## ----Q4, echo=SOLUTIONS-------------------------------------------------------------------------------------------------------
+## ----Q4, echo=SOLUTIONS------------------------------------------------------------------------------------------------------
 squid <- read.table('workshop/data/squid1.txt', header =TRUE, 
                      stringsAsFactors = TRUE)
 
@@ -46,7 +46,7 @@ str(squid)
  
 
 
-## ----Q5, echo=SOLUTIONS-------------------------------------------------------------------------------------------------------
+## ----Q5, echo=SOLUTIONS------------------------------------------------------------------------------------------------------
 table(squid$Fmonth, squid$Fyear)
 
   #   1989 1990 1991
@@ -86,7 +86,7 @@ ftable(xtabs(~ Fyear + Fmaturity + Fmonth, data = squid))
 
 
 
-## ----Q6, echo=SOLUTIONS-------------------------------------------------------------------------------------------------------
+## ----Q6, echo=SOLUTIONS------------------------------------------------------------------------------------------------------
 pdf('output/ex4_dotplots.pdf')
 par(mfrow = c(2, 2))
 dotchart(squid$DML, main = "DML")
@@ -109,7 +109,7 @@ dotplot(as.matrix(squid[,c("DML", "weight", "nid.length", "ovary.weight")]),
         ylab = "Order of the data from text file")
 
 
-## ----Q7, echo=SOLUTIONS-------------------------------------------------------------------------------------------------------
+## ----Q7, echo=SOLUTIONS------------------------------------------------------------------------------------------------------
 which(squid$nid.length > 400)
 # [1] 11
 squid$nid.length[11]
@@ -120,7 +120,7 @@ squid$nid.length[11]
 dotchart(squid$nid.length, main = "nid length")
 
 
-## ----Q8, echo=SOLUTIONS-------------------------------------------------------------------------------------------------------
+## ----Q8, echo=SOLUTIONS------------------------------------------------------------------------------------------------------
 pdf('output/ex4_hist.pdf')
 par(mfrow = c(2,2))
 hist(squid$DML, main="", xlab = "DML")
@@ -151,7 +151,7 @@ brk4 <- seq(from = 80, to = 340, by = 2)
 hist(squid$DML, xlab = "DML", breaks = brk4, main = "brk: 2")
 
 
-## ----Q9, echo=SOLUTIONS-------------------------------------------------------------------------------------------------------
+## ----Q9, echo=SOLUTIONS------------------------------------------------------------------------------------------------------
 # clearly not linear
 plot(squid$DML, squid$weight)
 
@@ -174,7 +174,7 @@ plot(squid$DML, squid$weight.sqrt)
 dev.off()
 
 
-## ----Q10, echo=SOLUTIONS, tidy = TRUE-----------------------------------------------------------------------------------------
+## ----Q10, echo=SOLUTIONS, tidy = TRUE----------------------------------------------------------------------------------------
 # note: Fmaturity is the recoded maturity.stage variable cerated in Q4
 boxplot(DML ~ Fmaturity, data = squid, xlab = "maturity stage", ylab = "DML")
 
@@ -183,7 +183,7 @@ library(vioplot)
 vioplot(DML ~ Fmaturity, data = squid, xlab = "maturity stage", ylab = "DML" , col = "lightblue")
 
 
-## ----Q11, echo=SOLUTIONS------------------------------------------------------------------------------------------------------
+## ----Q11, echo=SOLUTIONS-----------------------------------------------------------------------------------------------------
 coplot(weight.sqrt ~ DML | Fmaturity, data = squid)
 
 # using xyplot from the lattice package
@@ -191,7 +191,7 @@ xyplot(weight.sqrt ~ DML | Fmaturity, data = squid)
 
 
 
-## ----Q12, echo=SOLUTIONS, tidy = TRUE-----------------------------------------------------------------------------------------
+## ----Q12, echo=SOLUTIONS, tidy = TRUE----------------------------------------------------------------------------------------
 # vanilla pairs plot
 pairs(squid[,c(5, 8, 9, 11, 12, 13)])
 
@@ -203,7 +203,7 @@ pairs(squid[,c(5, 8, 9, 11, 12, 13)], diag.panel = panel.hist, upper.panel = pan
 			lower.panel = panel.smooth)
 
 
-## ----Q13a, echo=SOLUTIONS, tidy = TRUE----------------------------------------------------------------------------------------
+## ----Q13a, echo=SOLUTIONS, tidy = TRUE---------------------------------------------------------------------------------------
 # quick and dirty way
 # need to transform ovary.weight first
 squid$ovary.weight.sqrt <- sqrt(squid$ovary.weight)
@@ -217,7 +217,7 @@ cols <- as.numeric(levels(squid$Fmaturity))
 legend("topleft", labs,col = cols, pch = 1)
 
 
-## ----Q13b, echo=SOLUTIONS, tidy = TRUE----------------------------------------------------------------------------------------
+## ----Q13b, echo=SOLUTIONS, tidy = TRUE---------------------------------------------------------------------------------------
 # longer but more control
 
 # need to scales package to set transparency of points

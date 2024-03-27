@@ -92,7 +92,11 @@ shorter_child <- height[height <= 99]     # extract all heights less than or equ
 
 \  
 
-8\. Now you can use the information in your `weight` and `height` variables to calculate the body mass index (BMI) for each child. The BMI is calculated as weight (in kg) divided by the square of the height (in meters). Store the results of this calculation in a variable called `bmi`. Note: you don’t need to do this calculation for each child individually, you can use both vectors in the BMI equation  – this is called vectorisation (see [Section 2.4.4](https://intro2r.com/vectors.html#vectorisation) of the Introduction to R book).
+8\. Now you can use the information in your `weight` and `height` variables to calculate the body mass index (BMI) for each child. The BMI is calculated as weight (in kg) divided by the square of the height (**in meters**). 
+
+$$bmi_i = \frac{weight_i} {height_i^2}$$
+
+Store the results of this calculation in a variable called `bmi`. Note: you don’t need to do this calculation for each child individually, you can use both vectors in the BMI equation  – this is called vectorisation (see [Section 2.4.4](https://intro2r.com/vectors.html#vectorisation) of the Introduction to R book).
 
 ```{r Q8,echo=SOLUTIONS}
 bmi <- weight/(height/100)^2    # don't forget to convert height to meters
@@ -108,7 +112,7 @@ seq1 <- seq(from = 0, to = 1, by = 0.1)
 
 \  
 
-10\.	Next, see if you can figure out how to create a sequence from 10 to 1 in steps of 0.5. Assign this sequence to a variable called `seq2`. Hint: you may find it useful to include the `rev()` function in your code (use the search facility in the Introduction to R book to search for `"rev"`).
+10\.	Next, see if you can figure out how to create a sequence from 10 to 1 in steps of 0.5. Assign this sequence to a variable called `seq2`. Hint: you may find it useful to include the `rev()` function in your code (use the search facility in the Introduction to R book to search for `'rev'`).
 
 ```{r Q10, echo=SOLUTIONS}
 seq2 <- rev(seq(from = 1, to = 10, by = 0.5))
@@ -116,7 +120,7 @@ seq2 <- rev(seq(from = 1, to = 10, by = 0.5))
 
 \  
 
-11\.	Let's go sequence crazy! Generate the following sequences. You will need to experiment with the arguments to the `rep()` function to generate these sequences (see [Section 2.3](https://intro2r.com/using-functions-in-r.html#using-functions-in-r) for some clues):
+11\.	Let's go sequence crazy! Generate the following sequences. You will need to experiment with the arguments of the `rep()` function to generate these sequences (see [Section 2.3](https://intro2r.com/using-functions-in-r.html#using-functions-in-r) for some clues):
 
 - 1 2 3 1 2 3 1 2 3
 - "a" "a" "a" "c" "c" "c" "e" "e" "e" "g" "g" "g"
@@ -136,7 +140,7 @@ rep(c(7, 2, 8, 1), times = c(4, 3, 1, 5))
 
 \  
 
-12\.	Ok, back to the variable `height` you created in Q7. Sort the values of `height` into ascending order (shortest to tallest) and assign the sorted vector to a new variable called `height_sorted`. Take a look at [Section 2.4.3](https://intro2r.com/vectors.html#vec_ord) in the R book to see how to do this. Now sort all heights into descending order and assign the new vector a name of your choice.
+12\.	OK, back to the variable `height` you created in Q7. Sort the values of `height` into ascending order (shortest to tallest) and assign the sorted vector to a new variable called `height_sorted`. Take a look at [Section 2.4.3](https://intro2r.com/vectors.html#vec_ord) in the R book to see how to do this. Now sort all heights into descending order and assign the new vector a name of your choice.
 
 ```{r Q12,echo=SOLUTIONS}
 height_sorted <- sort(height)
