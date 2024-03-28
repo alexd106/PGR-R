@@ -123,8 +123,8 @@ seq2 <- rev(seq(from = 1, to = 10, by = 0.5))
 11\.	Let's go sequence crazy! Generate the following sequences. You will need to experiment with the arguments of the `rep()` function to generate these sequences (see [Section 2.3](https://intro2r.com/using-functions-in-r.html#using-functions-in-r) for some clues):
 
 - 1 2 3 1 2 3 1 2 3
-- "a" "a" "a" "c" "c" "c" "e" "e" "e" "g" "g" "g"
-- "a" "c" "e" "g" "a" "c" "e" "g" "a" "c" "e" "g"
+- a a a c c c e e e g g g
+- a c e g a c e g a c e g
 - 1 1 1 2 2 2 3 3 3 1 1 1 2 2 2 3 3 3
 - 1 1 1 1 1 2 2 2 2 3 3 3 4 4 5
 - 7 7 7 7 2 2 2 8 1 1 1 1 1

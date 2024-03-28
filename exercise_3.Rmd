@@ -26,11 +26,11 @@ Read [Chapter 3](https://intro2r.com/data_r.html) to help you complete the quest
 
 \  
 
-2\. If you haven't already, download the data file *‘whaledata.xlsx’* from the **[<i class="fa fa-download"></i> Data](data.html)** link and save it to the `data` directory you created in Exercise 1.  
+2\. If you haven't already, download the data file *‘whaledata.xlsx’* from the **[<i class="fa fa-download"></i> Data](data.html)** link and save it to the `data` directory you created in Exercise 1 in your RStudio project.  
 
 \  
 
-3\. Open this file in Microsoft Excel (or even better use an open source equivalent - [LibreOffice](https://www.libreoffice.org/download/download/) is a good free alternative) and save it as a tab delimited file type (see [Section 3.3.1](https://intro2r.com/importing-data.html#saving-files-to-import) of the Introduction to R book or watch this [video](https://alexd106.github.io/PGR-R/howto.html#import-vid) if you're not sure how to do this). Name the file *‘whaledata.txt'* and save it to the `data` directory. If you're a Windows user be careful with file extensions (things like *.txt*). By default, Windows doesn't show you the file extension (maybe the boffins at Microsoft don't think you need to know complicated things like this?) so if you enter *'whaledata.txt'* as a filename you might end up with a filename *'whaledata.txt.txt*'! 
+3\. Open the *‘whaledata.xlsx’* file in Microsoft Excel (or even better use an open source equivalent - [LibreOffice](https://www.libreoffice.org/download/download/) is a good free alternative) and save it as a tab delimited file type (see [Section 3.3.1](https://intro2r.com/importing-data.html#saving-files-to-import) of the Introduction to R book or watch this [video](https://alexd106.github.io/PGR-R/howto.html#import-vid) if you're not sure how to do this). Name the file *‘whaledata.txt'* and save it to the `data` directory. If you're a Windows user be careful with file extensions (things like *.txt*). By default, Windows doesn't show you the file extension (maybe the boffins at Microsoft don't think you need to know complicated things like this?) so if you enter *'whaledata.txt'* as a filename you might end up with a filename *'whaledata.txt.txt*'! 
 
 \  
 
