@@ -734,16 +734,18 @@ than the median value of gradient (132)</li>
 <span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a></span>
 <span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a>whale.subset <span class="ot">&lt;-</span> whale[whale<span class="sc">$</span>month <span class="sc">==</span> <span class="st">&quot;October&quot;</span> <span class="sc">&amp;</span> whale<span class="sc">$</span>water.noise <span class="sc">==</span> <span class="st">&quot;low&quot;</span> <span class="sc">&amp;</span> whale<span class="sc">$</span>gradient <span class="sc">&gt;</span> <span class="dv">132</span>, ]</span>
 <span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a></span>
-<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a>whale.lat.long <span class="ot">&lt;-</span> whale[whale<span class="sc">$</span>latitude <span class="sc">&gt;</span> <span class="dv">60</span> <span class="sc">&amp;</span> whale<span class="sc">$</span>latitude <span class="sc">&lt;</span> <span class="dv">61</span> <span class="sc">&amp;</span> whale<span class="sc">$</span>longitude <span class="sc">&gt;</span> <span class="sc">-</span><span class="dv">6</span> <span class="sc">&amp;</span> whale<span class="sc">$</span>longitude <span class="sc">&lt;</span> <span class="sc">-</span><span class="dv">4</span>, ]</span>
-<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a></span>
-<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a>whale.nomed <span class="ot">&lt;-</span> whale[whale<span class="sc">$</span>water.noise <span class="sc">!=</span> <span class="st">&quot;medium&quot;</span>, ]</span></code></pre></div>
+<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a>whale.lat.long <span class="ot">&lt;-</span> whale[whale<span class="sc">$</span>latitude <span class="sc">&gt;</span> <span class="dv">60</span> <span class="sc">&amp;</span> whale<span class="sc">$</span>latitude <span class="sc">&lt;</span> <span class="dv">61</span> <span class="sc">&amp;</span> whale<span class="sc">$</span>longitude <span class="sc">&gt;</span> <span class="sc">-</span><span class="dv">6</span> <span class="sc">&amp;</span> whale<span class="sc">$</span>longitude <span class="sc">&lt;</span></span>
+<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a>    <span class="sc">-</span><span class="dv">4</span>, ]</span>
+<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a></span>
+<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a>whale.nomed <span class="ot">&lt;-</span> whale[whale<span class="sc">$</span>water.noise <span class="sc">!=</span> <span class="st">&quot;medium&quot;</span>, ]</span></code></pre></div>
 <p> </p>
 <p>10. A really neat feature of extracting rows based on conditional
 statements is that you can include R functions within the statement
 itself. To practice this, modify your answer to the gradient question in
 Q9 to use the <code>median()</code> function rather than hard coding the
 value 132.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>whale.subset <span class="ot">&lt;-</span> whale[whale<span class="sc">$</span>month <span class="sc">==</span> <span class="st">&quot;October&quot;</span> <span class="sc">&amp;</span> whale<span class="sc">$</span>water.noise <span class="sc">==</span> <span class="st">&quot;low&quot;</span> <span class="sc">&amp;</span> whale<span class="sc">$</span>gradient <span class="sc">&gt;</span> <span class="fu">median</span>(whale<span class="sc">$</span>gradient), ]</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>whale.subset <span class="ot">&lt;-</span> whale[whale<span class="sc">$</span>month <span class="sc">==</span> <span class="st">&quot;October&quot;</span> <span class="sc">&amp;</span> whale<span class="sc">$</span>water.noise <span class="sc">==</span> <span class="st">&quot;low&quot;</span> <span class="sc">&amp;</span> whale<span class="sc">$</span>gradient <span class="sc">&gt;</span> <span class="fu">median</span>(whale<span class="sc">$</span>gradient),</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>    ]</span></code></pre></div>
 <p> </p>
 <p>11. However, when using functions in conditional statements you need
 to be careful. For example, write some code to extract all rows from the
@@ -755,9 +757,10 @@ instructor and explore possible solutions.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="co"># results in a dataframe filled with NAs.</span></span>
 <span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>whale.new <span class="ot">&lt;-</span> whale[whale<span class="sc">$</span>depth <span class="sc">&gt;</span> <span class="dv">1500</span> <span class="sc">&amp;</span> whale<span class="sc">$</span>number.whales <span class="sc">&gt;</span> <span class="fu">mean</span>(whale<span class="sc">$</span>number.whales), ]</span>
 <span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a><span class="co"># the variable number.whales contains 1 NA value. By default the mean function will return an NA.  use the na.rm argument to</span></span>
-<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a><span class="co"># ignore NAs</span></span>
-<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a>whale.new <span class="ot">&lt;-</span> whale[whale<span class="sc">$</span>depth <span class="sc">&gt;</span> <span class="dv">1500</span> <span class="sc">&amp;</span> whale<span class="sc">$</span>number.whales <span class="sc">&gt;</span> <span class="fu">mean</span>(whale<span class="sc">$</span>number.whales, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), ]</span></code></pre></div>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a><span class="co"># the variable number.whales contains 1 NA value. By default the mean function will return an NA.</span></span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a><span class="co"># use the na.rm argument to ignore NAs</span></span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a>whale.new <span class="ot">&lt;-</span> whale[whale<span class="sc">$</span>depth <span class="sc">&gt;</span> <span class="dv">1500</span> <span class="sc">&amp;</span> whale<span class="sc">$</span>number.whales <span class="sc">&gt;</span> <span class="fu">mean</span>(whale<span class="sc">$</span>number.whales, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a>    ]</span></code></pre></div>
 <p> </p>
 <p>12. Although you have concentrated on using the square bracket
 <code>[ ]</code> notation to extract rows and columns from your
@@ -844,12 +847,13 @@ modify your previous code to display the mean values to 2 decimal places
 rather than the default of 3 decimal places.</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="fu">aggregate</span>(whale[, <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">8</span>)], <span class="at">by =</span> <span class="fu">list</span>(<span class="at">water.noise =</span> whale<span class="sc">$</span>water.noise), mean, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a></span>
-<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a><span class="fu">aggregate</span>(whale[, <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">8</span>)], <span class="at">by =</span> <span class="fu">list</span>(<span class="at">water.noise =</span> whale<span class="sc">$</span>water.noise, <span class="at">month =</span> whale<span class="sc">$</span>month), mean, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a></span>
-<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a><span class="co"># optional question. Need to specify a function &#39;on the fly&#39; using function(x){}</span></span>
-<span id="cb13-6"><a href="#cb13-6" tabindex="-1"></a><span class="fu">aggregate</span>(whale[, <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">8</span>)], <span class="at">by =</span> <span class="fu">list</span>(<span class="at">water.noise =</span> whale<span class="sc">$</span>water.noise, <span class="at">month =</span> whale<span class="sc">$</span>month), <span class="cf">function</span>(x) {</span>
-<span id="cb13-7"><a href="#cb13-7" tabindex="-1"></a>    <span class="fu">round</span>(<span class="fu">mean</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="at">digits =</span> <span class="dv">2</span>)</span>
-<span id="cb13-8"><a href="#cb13-8" tabindex="-1"></a>})</span></code></pre></div>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a><span class="fu">aggregate</span>(whale[, <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">8</span>)], <span class="at">by =</span> <span class="fu">list</span>(<span class="at">water.noise =</span> whale<span class="sc">$</span>water.noise, <span class="at">month =</span> whale<span class="sc">$</span>month), mean,</span>
+<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a>    <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" tabindex="-1"></a><span class="co"># optional question. Need to specify a function &#39;on the fly&#39; using function(x){}</span></span>
+<span id="cb13-7"><a href="#cb13-7" tabindex="-1"></a><span class="fu">aggregate</span>(whale[, <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">8</span>)], <span class="at">by =</span> <span class="fu">list</span>(<span class="at">water.noise =</span> whale<span class="sc">$</span>water.noise, <span class="at">month =</span> whale<span class="sc">$</span>month), <span class="cf">function</span>(x) {</span>
+<span id="cb13-8"><a href="#cb13-8" tabindex="-1"></a>    <span class="fu">round</span>(<span class="fu">mean</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="at">digits =</span> <span class="dv">2</span>)</span>
+<span id="cb13-9"><a href="#cb13-9" tabindex="-1"></a>})</span></code></pre></div>
 <p> </p>
 <p>17. Knowing how many observations are present for each factor level
 (or combinations of factor levels) is useful to determine whether you

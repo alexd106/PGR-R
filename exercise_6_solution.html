@@ -665,11 +665,12 @@ for and <em>K</em> which we will initially set to 100 by default.</p>
 <span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a>        N[i <span class="sc">+</span> <span class="dv">1</span>] <span class="ot">&lt;-</span> N[i] <span class="sc">*</span> <span class="fu">exp</span>(r <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> N[i]<span class="sc">/</span>K))</span>
 <span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a>    }</span>
 <span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a>    Time <span class="ot">&lt;-</span> <span class="dv">0</span><span class="sc">:</span>time  <span class="co"># creates vector for x axis</span></span>
-<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a>    <span class="fu">plot</span>(Time, N, <span class="at">type =</span> <span class="st">&quot;o&quot;</span>, <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, time), <span class="at">xlab =</span> <span class="st">&quot;Time&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Population size (N)&quot;</span>, <span class="at">main =</span> <span class="fu">paste</span>(<span class="st">&quot;r =&quot;</span>, r, <span class="at">sep =</span> <span class="st">&quot; &quot;</span>))  <span class="co"># plots     output</span></span>
-<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a>}</span>
-<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a></span>
-<span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a><span class="co"># To run play around with the different parameters, especially r</span></span>
-<span id="cb5-16"><a href="#cb5-16" tabindex="-1"></a><span class="fu">Ricker.model</span>(<span class="at">nzero =</span> <span class="fl">0.1</span>, <span class="at">r =</span> <span class="dv">1</span>, <span class="at">time =</span> <span class="dv">100</span>)</span></code></pre></div>
+<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a>    <span class="fu">plot</span>(Time, N, <span class="at">type =</span> <span class="st">&quot;o&quot;</span>, <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, time), <span class="at">xlab =</span> <span class="st">&quot;Time&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Population size (N)&quot;</span>, <span class="at">main =</span> <span class="fu">paste</span>(<span class="st">&quot;r =&quot;</span>,</span>
+<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a>        r, <span class="at">sep =</span> <span class="st">&quot; &quot;</span>))  <span class="co"># plots     output</span></span>
+<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a>}</span>
+<span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a></span>
+<span id="cb5-16"><a href="#cb5-16" tabindex="-1"></a><span class="co"># To run play around with the different parameters, especially r</span></span>
+<span id="cb5-17"><a href="#cb5-17" tabindex="-1"></a><span class="fu">Ricker.model</span>(<span class="at">nzero =</span> <span class="fl">0.1</span>, <span class="at">r =</span> <span class="dv">1</span>, <span class="at">time =</span> <span class="dv">100</span>)</span></code></pre></div>
 <p> </p>
 <p>End of Exercise 6</p>
 </div>
