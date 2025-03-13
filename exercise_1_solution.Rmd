@@ -21,7 +21,7 @@ Read [Chapter 1](https://intro2r.com/chap1.html) to help you complete the questi
 
 \  
 
-1\. Start RStudio on your computer. If you haven't already done so, create a new RStudio Project (select File --> New Project on the main menu). Create the Project in a new directory by selecting 'New Directory' and then select 'New Project'. Give the Project a suitable name (intro2r maybe - see [Section 1.9](https://intro2r.com/file_names.html) of the Introduction to R book for a discussion on naming files and directories) in the 'Directory name:' box and choose where you would like to create this Project directory by clicking on the 'Browse' button. Finally create the project by clicking on the 'Create Project' button. This will be your main RStudio Project file and directory which you will use throughout this course. If you're confused see [Section 1.6](https://intro2r.com/rsprojs.html) of the introduction to R Book which covers RStudio Projects or watch the 'RStudio Projects' video [here](https://alexd106.github.io/BI5009/howto.html).
+1\. Start RStudio on your computer. If you haven't already done so, create a new RStudio Project (select File --> New Project on the main menu). Create the Project in a new directory by selecting 'New Directory' and then select 'New Project'. Give the Project a suitable name (intro2r maybe - see [Section 1.9](https://intro2r.com/file_names.html) of the Introduction to R book for a discussion on naming files and directories) in the 'Directory name:' box and choose where you would like to create this Project directory by clicking on the 'Browse' button. Finally create the project by clicking on the 'Create Project' button. This will be your main RStudio Project file and directory which you will use throughout this course. If you're confused see [Section 1.6](https://intro2r.com/rsprojs.html) of the introduction to R Book which covers RStudio Projects or watch the 'RStudio Projects' video [here](https://alexd106.github.io/PGR-R/howto.html).
 
 \  
 
@@ -52,7 +52,7 @@ help("mean")
 5\. The content displayed in the bottom right window is context dependent. For example if we write the code `plot(1:10)` and source it into the R console the bottom right window will display this plot (don't worry about understanding the R code right now, hopefully this will become clear later on in the course!). 
 
 ```{r Q5, echo=SOLUTIONS}
-plot(1:10)    #dont worry about what 1:10 does just yet
+plot(1:10)    # dont worry about what 1:10 does just yet
 ```
 
 \  
