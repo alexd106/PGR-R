@@ -13,7 +13,7 @@
 
 <title>Exercises</title>
 
-<script src="site_libs/header-attrs-2.26/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
@@ -55,7 +55,7 @@
 </style>
 <style type="text/css" data-origin="pandoc">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -66,7 +66,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -478,7 +478,7 @@ $(document).ready(function () {
       </a>
     </li>
     <li>
-      <a href="https://forms.gle/2yBDzGs29oBMfM9w7">
+      <a href="https://forms.gle/AvCiephVcG98EtyP7">
         <span class="fa fa-commenting"></span>
          
         Feedback
@@ -493,7 +493,7 @@ $(document).ready(function () {
       </a>
     </li>
     <li>
-      <a href="https://github.com/alexd106/intro2R">
+      <a href="https://github.com/alexd106/PGR-R">
         <span class="fa fa-github fa-lg"></span>
          
         Source code
@@ -901,8 +901,8 @@ at the Introduction to R book to see how to do all this (or
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="co"># vanilla pairs plot</span></span>
 <span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="fu">pairs</span>(squid[, <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">12</span>, <span class="dv">13</span>)])</span>
 <span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a></span>
-<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a><span class="co"># customise the plot. You will need to define the panel.hist and panel.cor functions first. see the</span></span>
-<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a><span class="co"># course manual or ?pairs help file</span></span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a><span class="co"># customise the plot. You will need to define the panel.hist and panel.cor functions first. see the course manual or ?pairs</span></span>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a><span class="co"># help file</span></span>
 <span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a></span>
 <span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a><span class="fu">pairs</span>(squid[, <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">12</span>, <span class="dv">13</span>)], <span class="at">diag.panel =</span> panel.hist, <span class="at">upper.panel =</span> panel.cor, <span class="at">lower.panel =</span> panel.smooth)</span></code></pre></div>
 <p> </p>
@@ -941,25 +941,20 @@ different solutions in the code below. give them a go!</p>
 <span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a><span class="fu">library</span>(scales)</span>
 <span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a></span>
 <span id="cb11-6"><a href="#cb11-6" tabindex="-1"></a><span class="co"># setup the axes but dont plot the points</span></span>
-<span id="cb11-7"><a href="#cb11-7" tabindex="-1"></a><span class="fu">with</span>(squid, <span class="fu">plot</span>(DML, ovary.weight.sqrt, <span class="at">xlab =</span> <span class="st">&quot;DML (mm)&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;square root ovary weight (g)&quot;</span>, <span class="at">type =</span> <span class="st">&quot;n&quot;</span>,</span>
-<span id="cb11-8"><a href="#cb11-8" tabindex="-1"></a>    <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">60</span>, <span class="dv">350</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">8.5</span>)))</span>
+<span id="cb11-7"><a href="#cb11-7" tabindex="-1"></a><span class="fu">with</span>(squid, <span class="fu">plot</span>(DML, ovary.weight.sqrt, <span class="at">xlab =</span> <span class="st">&quot;DML (mm)&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;square root ovary weight (g)&quot;</span>, <span class="at">type =</span> <span class="st">&quot;n&quot;</span>, <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">60</span>, <span class="dv">350</span>),</span>
+<span id="cb11-8"><a href="#cb11-8" tabindex="-1"></a>    <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">8.5</span>)))</span>
 <span id="cb11-9"><a href="#cb11-9" tabindex="-1"></a></span>
 <span id="cb11-10"><a href="#cb11-10" tabindex="-1"></a><span class="co"># plot the points with custom colours</span></span>
-<span id="cb11-11"><a href="#cb11-11" tabindex="-1"></a><span class="fu">with</span>(squid, <span class="fu">points</span>(DML[Fmaturity <span class="sc">==</span> <span class="st">&quot;1&quot;</span>], ovary.weight.sqrt[Fmaturity <span class="sc">==</span> <span class="st">&quot;1&quot;</span>], <span class="at">col =</span> <span class="fu">alpha</span>(<span class="st">&quot;deepskyblue3&quot;</span>,</span>
-<span id="cb11-12"><a href="#cb11-12" tabindex="-1"></a>    <span class="fl">0.7</span>), <span class="at">pch =</span> <span class="dv">16</span>))</span>
-<span id="cb11-13"><a href="#cb11-13" tabindex="-1"></a><span class="fu">with</span>(squid, <span class="fu">points</span>(DML[Fmaturity <span class="sc">==</span> <span class="st">&quot;2&quot;</span>], ovary.weight.sqrt[Fmaturity <span class="sc">==</span> <span class="st">&quot;2&quot;</span>], <span class="at">col =</span> <span class="fu">alpha</span>(<span class="st">&quot;darkolivegreen3&quot;</span>,</span>
-<span id="cb11-14"><a href="#cb11-14" tabindex="-1"></a>    <span class="fl">0.7</span>), <span class="at">pch =</span> <span class="dv">16</span>))</span>
-<span id="cb11-15"><a href="#cb11-15" tabindex="-1"></a><span class="fu">with</span>(squid, <span class="fu">points</span>(DML[Fmaturity <span class="sc">==</span> <span class="st">&quot;3&quot;</span>], ovary.weight.sqrt[Fmaturity <span class="sc">==</span> <span class="st">&quot;3&quot;</span>], <span class="at">col =</span> <span class="fu">alpha</span>(<span class="st">&quot;coral3&quot;</span>, <span class="fl">0.7</span>),</span>
-<span id="cb11-16"><a href="#cb11-16" tabindex="-1"></a>    <span class="at">pch =</span> <span class="dv">16</span>))</span>
-<span id="cb11-17"><a href="#cb11-17" tabindex="-1"></a><span class="fu">with</span>(squid, <span class="fu">points</span>(DML[Fmaturity <span class="sc">==</span> <span class="st">&quot;4&quot;</span>], ovary.weight.sqrt[Fmaturity <span class="sc">==</span> <span class="st">&quot;4&quot;</span>], <span class="at">col =</span> <span class="fu">alpha</span>(<span class="st">&quot;lemonchiffon3&quot;</span>,</span>
-<span id="cb11-18"><a href="#cb11-18" tabindex="-1"></a>    <span class="fl">0.7</span>), <span class="at">pch =</span> <span class="dv">16</span>))</span>
-<span id="cb11-19"><a href="#cb11-19" tabindex="-1"></a><span class="fu">with</span>(squid, <span class="fu">points</span>(DML[Fmaturity <span class="sc">==</span> <span class="st">&quot;5&quot;</span>], ovary.weight.sqrt[Fmaturity <span class="sc">==</span> <span class="st">&quot;5&quot;</span>], <span class="at">col =</span> <span class="fu">alpha</span>(<span class="st">&quot;darkorchid3&quot;</span>,</span>
-<span id="cb11-20"><a href="#cb11-20" tabindex="-1"></a>    <span class="fl">0.7</span>), <span class="at">pch =</span> <span class="dv">16</span>))</span>
-<span id="cb11-21"><a href="#cb11-21" tabindex="-1"></a></span>
-<span id="cb11-22"><a href="#cb11-22" tabindex="-1"></a><span class="co"># include the legend</span></span>
-<span id="cb11-23"><a href="#cb11-23" tabindex="-1"></a>labs <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;stage 1&quot;</span>, <span class="st">&quot;stage 2&quot;</span>, <span class="st">&quot;stage 3&quot;</span>, <span class="st">&quot;stage 4&quot;</span>, <span class="st">&quot;stage 5&quot;</span>)</span>
-<span id="cb11-24"><a href="#cb11-24" tabindex="-1"></a>cols <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;deepskyblue3&quot;</span>, <span class="st">&quot;darkolivegreen3&quot;</span>, <span class="st">&quot;coral3&quot;</span>, <span class="st">&quot;lemonchiffon3&quot;</span>, <span class="st">&quot;darkorchid3&quot;</span>)</span>
-<span id="cb11-25"><a href="#cb11-25" tabindex="-1"></a><span class="fu">legend</span>(<span class="dv">55</span>, <span class="fl">8.2</span>, labs, <span class="at">col =</span> <span class="fu">alpha</span>(cols, <span class="fl">0.7</span>), <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">bty =</span> <span class="st">&quot;n&quot;</span>)</span></code></pre></div>
+<span id="cb11-11"><a href="#cb11-11" tabindex="-1"></a><span class="fu">with</span>(squid, <span class="fu">points</span>(DML[Fmaturity <span class="sc">==</span> <span class="st">&quot;1&quot;</span>], ovary.weight.sqrt[Fmaturity <span class="sc">==</span> <span class="st">&quot;1&quot;</span>], <span class="at">col =</span> <span class="fu">alpha</span>(<span class="st">&quot;deepskyblue3&quot;</span>, <span class="fl">0.7</span>), <span class="at">pch =</span> <span class="dv">16</span>))</span>
+<span id="cb11-12"><a href="#cb11-12" tabindex="-1"></a><span class="fu">with</span>(squid, <span class="fu">points</span>(DML[Fmaturity <span class="sc">==</span> <span class="st">&quot;2&quot;</span>], ovary.weight.sqrt[Fmaturity <span class="sc">==</span> <span class="st">&quot;2&quot;</span>], <span class="at">col =</span> <span class="fu">alpha</span>(<span class="st">&quot;darkolivegreen3&quot;</span>, <span class="fl">0.7</span>), <span class="at">pch =</span> <span class="dv">16</span>))</span>
+<span id="cb11-13"><a href="#cb11-13" tabindex="-1"></a><span class="fu">with</span>(squid, <span class="fu">points</span>(DML[Fmaturity <span class="sc">==</span> <span class="st">&quot;3&quot;</span>], ovary.weight.sqrt[Fmaturity <span class="sc">==</span> <span class="st">&quot;3&quot;</span>], <span class="at">col =</span> <span class="fu">alpha</span>(<span class="st">&quot;coral3&quot;</span>, <span class="fl">0.7</span>), <span class="at">pch =</span> <span class="dv">16</span>))</span>
+<span id="cb11-14"><a href="#cb11-14" tabindex="-1"></a><span class="fu">with</span>(squid, <span class="fu">points</span>(DML[Fmaturity <span class="sc">==</span> <span class="st">&quot;4&quot;</span>], ovary.weight.sqrt[Fmaturity <span class="sc">==</span> <span class="st">&quot;4&quot;</span>], <span class="at">col =</span> <span class="fu">alpha</span>(<span class="st">&quot;lemonchiffon3&quot;</span>, <span class="fl">0.7</span>), <span class="at">pch =</span> <span class="dv">16</span>))</span>
+<span id="cb11-15"><a href="#cb11-15" tabindex="-1"></a><span class="fu">with</span>(squid, <span class="fu">points</span>(DML[Fmaturity <span class="sc">==</span> <span class="st">&quot;5&quot;</span>], ovary.weight.sqrt[Fmaturity <span class="sc">==</span> <span class="st">&quot;5&quot;</span>], <span class="at">col =</span> <span class="fu">alpha</span>(<span class="st">&quot;darkorchid3&quot;</span>, <span class="fl">0.7</span>), <span class="at">pch =</span> <span class="dv">16</span>))</span>
+<span id="cb11-16"><a href="#cb11-16" tabindex="-1"></a></span>
+<span id="cb11-17"><a href="#cb11-17" tabindex="-1"></a><span class="co"># include the legend</span></span>
+<span id="cb11-18"><a href="#cb11-18" tabindex="-1"></a>labs <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;stage 1&quot;</span>, <span class="st">&quot;stage 2&quot;</span>, <span class="st">&quot;stage 3&quot;</span>, <span class="st">&quot;stage 4&quot;</span>, <span class="st">&quot;stage 5&quot;</span>)</span>
+<span id="cb11-19"><a href="#cb11-19" tabindex="-1"></a>cols <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;deepskyblue3&quot;</span>, <span class="st">&quot;darkolivegreen3&quot;</span>, <span class="st">&quot;coral3&quot;</span>, <span class="st">&quot;lemonchiffon3&quot;</span>, <span class="st">&quot;darkorchid3&quot;</span>)</span>
+<span id="cb11-20"><a href="#cb11-20" tabindex="-1"></a><span class="fu">legend</span>(<span class="dv">55</span>, <span class="fl">8.2</span>, labs, <span class="at">col =</span> <span class="fu">alpha</span>(cols, <span class="fl">0.7</span>), <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">bty =</span> <span class="st">&quot;n&quot;</span>)</span></code></pre></div>
 <p> </p>
 <p><sup>1</sup> Smith JM et al (2005) Seasonal patterns of investment in
 reproductive and somatic tissues in the squid <em>Loligo forbesi</em>,

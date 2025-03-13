@@ -13,7 +13,7 @@
 
 <title>Formatting text in R markdown</title>
 
-<script src="site_libs/header-attrs-2.26/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
@@ -55,7 +55,7 @@
 </style>
 <style type="text/css" data-origin="pandoc">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -66,7 +66,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -479,7 +479,7 @@ $(document).ready(function () {
       </a>
     </li>
     <li>
-      <a href="https://forms.gle/2yBDzGs29oBMfM9w7">
+      <a href="https://forms.gle/AvCiephVcG98EtyP7">
         <span class="fa fa-commenting"></span>
          
         Feedback
@@ -494,7 +494,7 @@ $(document).ready(function () {
       </a>
     </li>
     <li>
-      <a href="https://github.com/alexd106/intro2R">
+      <a href="https://github.com/alexd106/PGR-R">
         <span class="fa fa-github fa-lg"></span>
          
         Source code
@@ -632,6 +632,23 @@ all your formatting. You could also try knitting to a pdf document.</p>
 <p>You can find the solution below (click on the ‘code’ button on the
 right)</p>
 <p> </p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode r fold.hide"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="do">## Sampling and data description</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>These data were originally collected as part of a study published <span class="cf">in</span> Aquatic Living <span class="fu">Resources</span> (Smith <span class="sc">*</span>et al<span class="sc">*</span>., <span class="dv">2005</span>). The aim of the study was to investigate the seasonal patterns of investment <span class="cf">in</span> somatic and reproductive tissues <span class="cf">in</span> the long finned squid <span class="sc">*</span>Loligo forbesi<span class="sc">*</span> caught <span class="cf">in</span> Scottish waters. Squid were caught monthly from December <span class="dv">1989</span> <span class="sc">-</span> July <span class="dv">1991</span> (<span class="sc">**</span>month<span class="sc">**</span> and <span class="sc">**</span>year variables<span class="sc">**</span>). After capture, each squid was given a unique specimen <span class="fu">code</span> (<span class="sc">**</span>specimen variable<span class="sc">**</span>) and the following variables measured<span class="sc">:</span> </span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="sc">-</span> <span class="er">**</span>weight variable<span class="sc">**</span> <span class="sc">-</span> body <span class="fu">weight</span> (g)</span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="sc">-</span> <span class="er">**</span>sex variable<span class="sc">**</span> <span class="sc">-</span> <span class="fu">sex</span> (only female squid are included here)</span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="sc">-</span> <span class="er">**</span>DML variable<span class="sc">**</span> <span class="sc">-</span> individual dorsal mantle <span class="fu">length</span> (mm)</span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="sc">-</span> <span class="er">**</span>eviscerate.weight variable<span class="sc">**</span> <span class="sc">-</span> mantle weight measured without internal <span class="fu">organs</span> (g)</span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="sc">-</span> <span class="er">**</span>ovary.weight variable<span class="sc">**</span> <span class="sc">-</span> gonad <span class="fu">weight</span> (g) </span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a><span class="sc">-</span> <span class="er">**</span>nid.weight variable<span class="sc">**</span> <span class="sc">-</span> nidamental gland <span class="fu">weight</span> (g)</span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a><span class="sc">-</span> <span class="er">**</span>nid.length variable<span class="sc">**</span> <span class="sc">-</span> nidamental gland <span class="fu">length</span> (g)  </span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a><span class="sc">-</span> <span class="er">**</span>dig.weight variable<span class="sc">**</span> <span class="sc">-</span>  digestive gland <span class="fu">weight</span> (g)</span>
+<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a>Each individual was also assigned a categorical measure of <span class="fu">maturity</span> (<span class="sc">**</span>maturity.stage variable<span class="sc">**</span>) ranging from <span class="dv">1</span> to <span class="dv">5</span> with <span class="dv">1</span> <span class="ot">=</span> immature, <span class="dv">5</span> <span class="ot">=</span> mature.  </span>
+<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a>Some interesting background information on squid morphology can be found [here](https<span class="sc">:</span><span class="er">//</span>en.wikipedia.org<span class="sc">/</span>wiki<span class="sc">/</span>Loligo_forbesii) and the following image provides a useful summary of squid anatomy.  </span>
+<span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a><span class="sc">!</span>[squid anatomy](images<span class="sc">/</span>squid_anatomy.jpg) </span></code></pre></div>
 
 
 
