@@ -23,7 +23,6 @@ Alex is a Professor of Biostatistics at the University of Aberdeen and has been 
 
 - Email: a(dot)douglas(at)abdn(dot)ac(dot)uk
 - Web: https://www.abdn.ac.uk/people/a.douglas/
-- X: https://twitter.com/Scedacity
 - GitHub: https://github.com/alexd106
 
 \  
@@ -39,11 +38,10 @@ knitr::include_graphics("images/deon.png")
 
 \ 
 
-Deon is a Lecturer in Applied Statistics at the University of Aberdeen and has been using and teaching R for the last 10 years. 
+Deon is a Lecturer in Applied Statistics at the University of Aberdeen and has been using and teaching R for the last 11 years. 
 
 - Email: deon(dot)roos4(at)abdn(dot)ac(dot)uk
 - Web: https://www.abdn.ac.uk/people/deon.roos4
-- X: https://twitter.com/DeonRoos88
 - GitHub: https://github.com/DeonRoos
 \  
 

@@ -14,7 +14,7 @@ The course will start at 09:30 each morning and finish at 17:00. We will break f
 
 \  
 
-#### Monday 24^th^ March 2025
+#### Monday 23^rd^ March 2026
 
   - Morning: [Introduction to the course, getting to know R and RStudio](https://alexd106.github.io/PGR-R/exercise_1.html)
 
@@ -22,7 +22,7 @@ The course will start at 09:30 each morning and finish at 17:00. We will break f
 
 \  
 
-#### Tuesday 25^th^ March 2025
+#### Tuesday 24^th^ March 2026
 
   - Morning: [Importing and manipulating dataframes](https://alexd106.github.io/PGR-R/exercise_3.html)
 
@@ -30,7 +30,7 @@ The course will start at 09:30 each morning and finish at 17:00. We will break f
 
 \  
 
-#### Wednesday 26^th^ March 2025
+#### Wednesday 25^th^ March 2026
 
   - Morning: [Simple statistics in R](https://alexd106.github.io/PGR-R/exercise_5.html) (optional)
 

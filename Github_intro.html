@@ -13,7 +13,7 @@
 
 <title>Version control with Git and GitHub</title>
 
-<script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.30/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
@@ -33,8 +33,8 @@
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/font-awesome-6.4.2/css/all.min.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.5.2/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet" />
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -446,13 +446,7 @@ div.tocify {
         Resources
       </a>
     </li>
-    <li>
-      <a href="https://forms.gle/AvCiephVcG98EtyP7">
-        <span class="fa fa-commenting"></span>
-         
-        Feedback
-      </a>
-    </li>
+    <li class="dropdown-header">Feedback</li>
     <li class="divider"></li>
     <li>
       <a href="People.html">
@@ -466,13 +460,6 @@ div.tocify {
         <span class="fa fa-github fa-lg"></span>
          
         Source code
-      </a>
-    </li>
-    <li>
-      <a href="https://twitter.com/Scedacity">
-        <span class="fa fa-twitter fa-lg"></span>
-         
-        Twitter
       </a>
     </li>
   </ul>
@@ -571,7 +558,7 @@ You need version control
 <p> </p>
 <p>usually arising from this (familiar?) scenario</p>
 <p> </p>
-<p><img src="images/final_doc.gif" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="images/final_doc.gif" alt="" width="60%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <p>Version control automatically takes care of keeping a record of all
 the versions of a particular file and allows you to revert back to
@@ -616,7 +603,7 @@ collaborators. If other people are working on the same project
 computer, you can <strong>pull</strong> any changes back to your local
 repository so everything is synchronised.</p>
 <p> </p>
-<p><img src="images/Github_cartoon2.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="images/Github_cartoon2.png" alt="" width="60%" style="display: block; margin: auto;" /></p>
 <p> </p>
 </div>
 <div id="setup_git" class="section level2">
@@ -640,7 +627,7 @@ your computer) then you already have Git installed (happy days). If you
 get an error (something like <code>git: command not found</code>) this
 means you don’t have Git installed (yet!).</p>
 <p> </p>
-<p><img src="images/git_version.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="images/git_version.png" alt="" width="60%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <p>You can also do this check outside RStudio by opening up a separate
 Terminal if you want. On Windows go to the ‘Start menu’ and in the
@@ -722,7 +709,7 @@ path is correct for your installation. If it’s not correct hit the
 and click on the executable file. You will need to restart RStudio after
 doing this.</p>
 <p> </p>
-<p><img src="images/git_path.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="images/git_path.png" alt="" width="60%" style="display: block; margin: auto;" /></p>
 <p> </p>
 </div>
 <div id="register-a-github-account" class="section level3">
@@ -785,14 +772,14 @@ href="https://github.com/">GitHub page</a> and sign in if necessary.
 Click on the ‘Repositories’ tab at the top and then on the green ‘New’
 button on the right</p>
 <p> </p>
-<p><img src="images/new_repo.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="images/new_repo.png" alt="" width="60%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <p>Give your new repo a name (let’s call it <code>first_repo</code> for
 this tutorial), select ‘Public’, tick on the ‘Initialize this repository
 with a README’ (this is important) and then click on ‘Create repository’
 (ignore the other options for now).</p>
 <p> </p>
-<p><img src="images/new_repo_opt.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="images/new_repo_opt.png" alt="" width="60%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <p>Your new GitHub repository will now be created. Notice the README has
 been rendered in GitHub and is in markdown (.md) format (see the other
@@ -802,13 +789,13 @@ Download’ button and copy the <code>https//...</code> URL that pops up
 for later (either highlight it all and copy or click on the copy to
 clipboard icon to the right).</p>
 <p> </p>
-<p><img src="images/new_repo_clone.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="images/new_repo_clone.png" alt="" width="60%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <p>Ok, we now switch our attention to RStudio. In RStudio click on the
 <code>File</code> -&gt; <code>New Project</code> menu. In the pop up
 window select <code>Version Control</code>.</p>
 <p> </p>
-<p><img src="images/proj_setup1.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="images/proj_setup1.png" alt="" width="60%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <p>Now paste the the URL you previously copied from GitHub into the
 <code>Repository URL:</code> box. This should then automatically fill
@@ -821,7 +808,7 @@ where you want to create this directory by clicking on the
 where you want the directory created and click OK. I also tick the
 <code>Open in new session</code> option.</p>
 <p> </p>
-<p><img src="images/proj_setup2.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="images/proj_setup2.png" alt="" width="60%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <p>RStudio will now create a new directory with the same name as your
 repository on your local computer and will then <strong>clone</strong>
@@ -836,7 +823,7 @@ GitHub repository set up and this is linked to your local repository
 managed by RStudio. Any changes you make to files in this directory will
 be version controlled by Git.</p>
 <p> </p>
-<p><img src="images/proj_setup3.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="images/proj_setup3.png" alt="" width="60%" style="display: block; margin: auto;" /></p>
 <p> </p>
 </div>
 <div id="opt2" class="section level3">
@@ -854,11 +841,11 @@ follow the instructions below omitting the GitHub bit.</p>
 <code>New Project</code> menu and select the <code>New Directory</code>
 option.</p>
 <p> </p>
-<p><img src="images/new_proj_RS1.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="images/new_proj_RS1.png" alt="" width="60%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <p>In the pop up window select the <code>New Project</code> option</p>
 <p> </p>
-<p><img src="images/proj_setup_RS.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="images/proj_setup_RS.png" alt="" width="60%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <p>In the New Project window specify a <code>Directory name</code>
 (choose <code>second_repo</code> for this tutorial) and select where you
@@ -866,7 +853,7 @@ would like to create this directory on you computer (click the
 <code>Browse</code> button). Make sure the
 <code>Create a git repository</code> option is ticked</p>
 <p> </p>
-<p><img src="images/new_proj_RS2.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="images/new_proj_RS2.png" alt="" width="60%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <p>This will create a version controlled directory called
 <code>second_repo</code> on your computer that contains two files,
@@ -875,7 +862,7 @@ also be a <code>.Rhistory</code> file but ignore this). You can check
 this by looking in the <code>Files</code> tab in RStudio (usually in the
 bottom right pane).</p>
 <p> </p>
-<p><img src="images/new_proj_RS3.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="images/new_proj_RS3.png" alt="" width="60%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <p>OK, before we go on to create a repository on GitHub we need to do
 one more thing - we need to place our <code>second_repo.Rproj</code> and
@@ -886,13 +873,13 @@ href="#use_git">Using Git</a> section of this tutorial.</p>
 <p>To get our two files under version control click on the ‘Git’ tab
 which is usually in the top tight pane in RStudio</p>
 <p> </p>
-<p><img src="images/new_proj_RS4.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="images/new_proj_RS4.png" alt="" width="60%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <p>You can see that both files are listed. Next, tick the boxes under
 the ‘Staged’ column for both files and then click on the ‘Commit’
 button.</p>
 <p> </p>
-<p><img src="images/new_proj_RS5.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="images/new_proj_RS5.png" alt="" width="60%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <p>This will take you to the ‘Review Changes’ window. Type in the commit
 message ‘First commit’ in the ‘Commit message’ window and click on the
@@ -901,7 +888,7 @@ can ignore for now. Click ‘Close’ to close this window and also close
 the ‘Review Changes’ window. The two files should now have disappeared
 from the Git pane in RStudio indicating a successful commit.</p>
 <p> </p>
-<p><img src="images/new_proj_RS6.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="images/new_proj_RS6.png" alt="" width="60%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <p>OK, that’s those two files now under version control. Now we need to
 create a new repository on GitHub. In your browser go to your <a
@@ -913,7 +900,7 @@ This time <strong>do not</strong> tick the ‘Initialize this repository
 with a README’ (this is important) and then click on ‘Create
 repository’.</p>
 <p> </p>
-<p><img src="images/new_proj_RS7.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="images/new_proj_RS7.png" alt="" width="60%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <p>This will take you to a Quick setup page which provides you with some
 code for various situations. The code we are interested in is the code
@@ -921,7 +908,7 @@ under
 <code>...or push an existing repository from the command line</code>
 heading.</p>
 <p> </p>
-<p><img src="images/new_proj_RS8.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="images/new_proj_RS8.png" alt="" width="60%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <p>Highlight and copy the first line of code (note: yours will be
 slightly different as it will include your GitHub username not mine)</p>
@@ -933,7 +920,7 @@ code</p>
 <p>and paste this into the Terminal in RStudio. You should see something
 like this</p>
 <p> </p>
-<p><img src="images/new_prog_RS9.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="images/new_prog_RS9.png" alt="" width="60%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <p>If you take a look at your repo back on GitHub (click on the
 <code>/second_repo</code> link at the top) you will see the
@@ -941,7 +928,7 @@ like this</p>
 now been <strong>pushed</strong> to GitHub from your local
 repository.</p>
 <p> </p>
-<p><img src="images/new_proj_RS10.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="images/new_proj_RS10.png" alt="" width="60%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <p>The last thing we need to do is create and add a
 <strong>README</strong> file to your repository. A README file describes
@@ -953,13 +940,13 @@ or in GitHub. Let’s use the second option.</p>
 <p>In your repository on GitHub click on the green
 <code>Add a README</code> button.</p>
 <p> </p>
-<p><img src="images/new_proj_RS11.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="images/new_proj_RS11.png" alt="" width="60%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <p>Now write a short description of your project in the
 <code>&lt;&gt; Edit new file</code> section and then click on the green
 <code>Commit new file</code> button.</p>
 <p> </p>
-<p><img src="images/new_proj_RS12.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="images/new_proj_RS12.png" alt="" width="60%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <p>You should now see the <code>README.md</code> file listed in your
 repository. It won’t actually exist on your computer yet as you will
@@ -998,7 +985,7 @@ would like to <strong>push</strong> these changes to GitHub</p></li>
 also need to <strong>pull</strong> their changes to your local
 computer</p></li>
 </ol>
-<p><img src="images/workflow_3.png" width="80%" style="display: block; margin: auto;" /></p>
+<p><img src="images/workflow_3.png" alt="" width="80%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <p>OK, let’s go through an example to help clarify this workflow. In
 RStudio open up the <code>first_repo.Rproj</code> you created previously
@@ -1006,7 +993,7 @@ during Option 1. Either use the <code>File</code> -&gt;
 <code>Open Project</code> menu or click on the top right project icon
 and select the appropriate project.</p>
 <p> </p>
-<p><img src="images/first_Rmd0.png" width="80%" style="display: block; margin: auto;" /></p>
+<p><img src="images/first_Rmd0.png" alt="" width="80%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <p>Create an R markdown document inside this project by clicking on the
 <code>File</code> -&gt; <code>New File</code> -&gt;
@@ -1019,14 +1006,14 @@ this. Save this file (cmd + s for Mac or ctrl + s in Windows). Your R
 markdown document should look something like the following (it doesn’t
 matter if it’s not exactly the same).</p>
 <p> </p>
-<p><img src="images/first_Rmd.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="images/first_Rmd.png" alt="" width="60%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <p>Take a look at the ‘Git’ tab which should list your new R markdown
 document (<code>first_doc.Rmd</code> in this example) along with
 <code>first_repo.Rproj</code>, and <code>.gitignore</code> (you created
 these files previously when following Option 1).</p>
 <p> </p>
-<p><img src="images/first_Rmd2.png" width="80%" style="display: block; margin: auto;" /></p>
+<p><img src="images/first_Rmd2.png" alt="" width="80%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <p>Following our workflow, we now need to <strong>stage</strong> these
 files. To do this tick the boxes under the ‘Staged’ column for all
@@ -1034,13 +1021,13 @@ files. Notice that there is a status icon next to the box which gives
 you an indication of how the files were changed. In our case all of the
 files are to be added (capital A) as we have just created them.</p>
 <p> </p>
-<p><img src="images/rstudio_git_cols.png" width="15%" style="display: block; margin: auto;" /></p>
+<p><img src="images/rstudio_git_cols.png" alt="" width="15%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <p>After you have staged the files the next step is to
 <strong>commit</strong> the files. This is done by clicking on the
 ‘Commit’ button.</p>
 <p> </p>
-<p><img src="images/first_Rmd3.png" width="50%" style="display: block; margin: auto;" /></p>
+<p><img src="images/first_Rmd3.png" alt="" width="50%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <p>After clicking on the ‘Commit’ button you will be taken to the
 ‘Review Changes’ window. You should see the three files you staged from
@@ -1059,13 +1046,13 @@ It’s traditional to enter the message ‘First commit’ (or ‘Initial
 commit’) when you commit files for the first time. Now click on the
 ‘Commit’ button to commit these changes.</p>
 <p> </p>
-<p><img src="images/first_Rmd4.png" width="80%" style="display: block; margin: auto;" /></p>
+<p><img src="images/first_Rmd4.png" alt="" width="80%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <p>A summary of the commit you just performed will be shown. Now click
 on the ‘Close’ button to return to the ‘Review Changes’ window. Note
 that the staged files have now been removed.</p>
 <p> </p>
-<p><img src="images/first_Rmd5.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="images/first_Rmd5.png" alt="" width="60%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <p>Now that you have committed your changes the next step is to
 <strong>push</strong> these changes to GitHub. Before you push your
@@ -1080,7 +1067,7 @@ Changes’ window. Once you have pulled any changes click on the green
 you just performed. Hit the ‘Close’ button and then close the ‘Review
 Changes’ window.</p>
 <p> 
-<img src="images/first_Rmd6.png" width="60%" style="display: block; margin: auto;" /></p>
+<img src="images/first_Rmd6.png" alt="" width="60%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <p>To confirm the changes you made to the project have been pushed to
 GitHub, open your GitHub page, click on the Repositories link and then
@@ -1089,12 +1076,12 @@ files listed including the <code>first_doc.Rmd</code> you just pushed.
 Along side the file name you will see your last commit message (‘First
 commit’ in this case) and when you made the last commit.</p>
 <p> </p>
-<p><img src="images/first_Rmd7.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="images/first_Rmd7.png" alt="" width="60%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <p>To see the contents of the file click on the
 <code>first_doc.Rmd</code> file name.</p>
 <p> </p>
-<p><img src="images/first_Rmd8.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="images/first_Rmd8.png" alt="" width="60%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <div id="tracking-changes" class="section level3">
 <h3>Tracking changes</h3>
@@ -1120,7 +1107,7 @@ of the dataframe using the <code>kable()</code> and
 <code>kable()</code> function) and finally render this document to pdf
 by changing the YAML option to <code>output: pdf_document</code>.</p>
 <p> </p>
-<p><img src="images/mod1.png" width="80%" style="display: block; margin: auto;" /></p>
+<p><img src="images/mod1.png" alt="" width="80%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <p>Now save these changes and then click the <code>knit</code> button to
 render to pdf. A new pdf file named <code>first_doc.pdf</code> will be
@@ -1132,12 +1119,12 @@ tab in RStudio. The status icons indicate that the
 <code>first_doc.pdf</code> file is currently untracked (question
 mark).</p>
 <p> </p>
-<p><img src="images/mod2.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="images/mod2.png" alt="" width="60%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <p>To stage these files tick the ‘Staged’ box for each file and click on
 the ‘Commit’ button to take you to the ‘Review Changes’ window</p>
 <p> </p>
-<p><img src="images/mod3.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="images/mod3.png" alt="" width="60%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <p>Before you commit your changes notice the status of
 <code>first_doc.pdf</code> has changed from untracked to added (A). You
@@ -1151,7 +1138,7 @@ operations: the removal of the original line followed by the creation of
 a new line). Once you’re happy, commit these changes by writing a
 suitable commit message and click on the ‘Commit’ button.</p>
 <p> </p>
-<p><img src="images/mod4.png" width="80%" style="display: block; margin: auto;" /></p>
+<p><img src="images/mod4.png" alt="" width="80%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <p>To push the changes to GitHub, click on the ‘Pull’ button first
 (remember this is good practice even though you are only collaborating
@@ -1160,12 +1147,12 @@ your online GitHub repository and you will see your new commits,
 including the <code>first_doc.pdf</code> file you created when you
 rendered your R markdown document.</p>
 <p> </p>
-<p><img src="images/mod5.png" width="80%" style="display: block; margin: auto;" /></p>
+<p><img src="images/mod5.png" alt="" width="80%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <p>To view the changes in <code>first_doc.Rmd</code> click on the file
 name for this file.</p>
 <p> </p>
-<p><img src="images/mod6.png" width="80%" style="display: block; margin: auto;" /></p>
+<p><img src="images/mod6.png" alt="" width="80%" style="display: block; margin: auto;" /></p>
 <p> </p>
 </div>
 <div id="commit-history" class="section level3">
@@ -1183,7 +1170,7 @@ history view in the ‘Review Changes’ window. You can also click on the
 need to additionally click on the ‘History’ button in the ‘Review
 Changes’ window).</p>
 <p> </p>
-<p><img src="images/c_history.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="images/c_history.png" alt="" width="60%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <p>The history window is split into two parts. The top pane lists every
 commit you have made in this repository (with associated commit
@@ -1200,7 +1187,7 @@ href="#undo">below</a>). You can also view the contents of each file by
 clicking on the ‘View file @ SHA key` link (in our case ’View file @
 2b4693d1’).</p>
 <p> </p>
-<p><img src="images/c_history2.png" width="80%" style="display: block; margin: auto;" /></p>
+<p><img src="images/c_history2.png" alt="" width="80%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <p>You can also view your commit history on GitHub website but this will
 be limited to only those commits you have already pushed to GitHub. To
@@ -1208,7 +1195,7 @@ view the commit history navigate to the repository and click on the
 ‘commits’ link (in our case the link will be labelled ‘3 commits’ as we
 have made 3 commits).</p>
 <p> </p>
-<p><img src="images/c_history3.png" width="80%" style="display: block; margin: auto;" /></p>
+<p><img src="images/c_history3.png" alt="" width="80%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <p>You will see a list of all the commits you have made, along with
 commit messages, date of commit and the SHA identifier (these are the
@@ -1217,12 +1204,12 @@ browse the repository at a particular point in time by clicking on the
 <code>&lt;&gt;</code> link. To view the changes in files associated with
 the commit simply click on the relevant commit link in the list.</p>
 <p> </p>
-<p><img src="images/c_history4.png" width="80%" style="display: block; margin: auto;" /></p>
+<p><img src="images/c_history4.png" alt="" width="80%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <p>Which will display changes using the usual format of green for
 additions and red for deletions.</p>
 <p> </p>
-<p><img src="images/c_history5.png" width="80%" style="display: block; margin: auto;" /></p>
+<p><img src="images/c_history5.png" alt="" width="80%" style="display: block; margin: auto;" /></p>
 <p> </p>
 </div>
 <div id="undo" class="section level3">
@@ -1245,7 +1232,7 @@ file in the Git pane and select ‘Revert …’. This will roll back all of
 the changes you have made to the same state as your last commit. Just be
 aware that you cannot undo this operation so use with caution.</p>
 <p> </p>
-<p><img src="images/revert1.png" width="80%" style="display: block; margin: auto;" /></p>
+<p><img src="images/revert1.png" alt="" width="80%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <p>You can also undo changes to just part of a file by opening up the
 ‘Diff’ window (click on the ‘Diff’ button in the Git pane). Select the
@@ -1253,7 +1240,7 @@ line you wish to discard by double clicking on the line and then click
 on the ‘Discard line’ button. In a similar fashion you can discard
 chunks of code by clicking on the ‘Discard chunk’ button.</p>
 <p> </p>
-<p><img src="images/revert2.png" width="80%" style="display: block; margin: auto;" /></p>
+<p><img src="images/revert2.png" alt="" width="80%" style="display: block; margin: auto;" /></p>
 <p> </p>
 </div>
 <div id="staged-but-not-committed-and-not-pushed"
@@ -1274,7 +1261,7 @@ commit. You can do this by staging your file and then tick the ‘Amend
 previous commit` box in the ’Review Changes’ window before
 committing.</p>
 <p> </p>
-<p><img src="images/revert3.png" width="80%" style="display: block; margin: auto;" /></p>
+<p><img src="images/revert3.png" alt="" width="80%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <p>If we check out our commit history you can see that our latest commit
 contains both changes to the file rather than having two separate
@@ -1283,7 +1270,7 @@ understand that you should <strong>not</strong> do this if you have
 already pushed your last commit to GitHub as you are effectively
 rewriting history and all sorts bad things may happen!</p>
 <p> </p>
-<p><img src="images/revert4.png" width="80%" style="display: block; margin: auto;" /></p>
+<p><img src="images/revert4.png" alt="" width="80%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <p>If you spot a mistake that has happened multiple commits back or you
 just want to revert to a previous version of a document you have a
@@ -1293,7 +1280,7 @@ but like, whatever!) is to look in your commit history in RStudio, find
 the commit that you would like to go back to and click on the ‘View file
 @’ button to show the file contents.</p>
 <p> </p>
-<p><img src="images/revert5.png" width="80%" style="display: block; margin: auto;" /></p>
+<p><img src="images/revert5.png" alt="" width="80%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <p>You can then copy the contents of the file to the clipboard and paste
 it into your current file to replace your duff code or text.
@@ -1302,14 +1289,14 @@ with a different file name. Once you have saved your new file you can
 delete your current unwanted file and then carry on working on your new
 file. Don’t forget to stage and commit this new file.</p>
 <p> </p>
-<p><img src="images/revert6.png" width="80%" style="display: block; margin: auto;" /></p>
+<p><img src="images/revert6.png" alt="" width="80%" style="display: block; margin: auto;" /></p>
 <p><br />
 </p>
 <p><strong>Option 2</strong> - (Git like) Go to your Git history, find
 the commit you would like to roll back to and write down (or copy) its
 SHA identifier.</p>
 <p> </p>
-<p><img src="images/revert7.png" width="80%" style="display: block; margin: auto;" /></p>
+<p><img src="images/revert7.png" alt="" width="80%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <p>Now go to the Terminal in RStudio and type
 <code>git checkout &lt;SHA&gt; &lt;filename&gt;</code>. In our case the
@@ -1350,7 +1337,7 @@ commit you wish to go back to (as we did above) and then use the
 back to our ‘First commit’ which has a SHA identifier
 <code>d27e79f1</code>.</p>
 <p> </p>
-<p><img src="images/revert8.png" width="80%" style="display: block; margin: auto;" /></p>
+<p><img src="images/revert8.png" alt="" width="80%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <p>We can use the <code>revert</code> command as shown below in the
 Terminal. The <code>--no-commit</code> option is used to prevent us from
@@ -1366,11 +1353,11 @@ with a new commit message and finally push them to GitHub. Notice that
 if we look at our commit history all of the commits we have made are
 still present.</p>
 <p> </p>
-<p><img src="images/revert9.png" width="80%" style="display: block; margin: auto;" /></p>
+<p><img src="images/revert9.png" alt="" width="80%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <p>and our repo on GitHub also reflects these changes</p>
 <p> </p>
-<p><img src="images/revert10.png" width="80%" style="display: block; margin: auto;" /></p>
+<p><img src="images/revert10.png" alt="" width="80%" style="display: block; margin: auto;" /></p>
 <p> </p>
 </div>
 </div>
@@ -1415,7 +1402,7 @@ too large or transient files) you can get Git to ignore the file by
 right clicking on the filename in the Git pane and selecting
 ‘Ignore…’</p>
 <p> </p>
-<p><img src="images/tip1.png" width="80%" style="display: block; margin: auto;" /></p>
+<p><img src="images/tip1.png" alt="" width="80%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <p>This will add the filename to the <code>.gitignore</code> file. If
 you want to ignore multiple files or a particular type of file you can

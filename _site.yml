@@ -62,7 +62,7 @@ navbar:
           href: "resources.html"
         - text: "Feedback"
           icon: fa-commenting
-          href: https://forms.gle/AvCiephVcG98EtyP7
+          #href: https://forms.gle/AvCiephVcG98EtyP7
         - text: "----"
         - text: "Contact"
           icon: fa-envelope fa-lg
@@ -70,9 +70,7 @@ navbar:
         - text: "Source code"
           icon: fa-github fa-lg
           href: https://github.com/alexd106/PGR-R
-        - text: "Twitter"
-          icon: fa-twitter fa-lg
-          href: https://twitter.com/Scedacity
+
 
 output:
   html_document:

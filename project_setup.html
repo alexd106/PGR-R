@@ -13,7 +13,7 @@
 
 <title>Setting up a reproducible project</title>
 
-<script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.30/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
@@ -33,8 +33,8 @@
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/font-awesome-6.4.2/css/all.min.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.5.2/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet" />
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -56,8 +56,9 @@
   }
 </style>
 <style type="text/css" data-origin="pandoc">
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -68,7 +69,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -546,13 +547,7 @@ div.tocify {
         Resources
       </a>
     </li>
-    <li>
-      <a href="https://forms.gle/AvCiephVcG98EtyP7">
-        <span class="fa fa-commenting"></span>
-         
-        Feedback
-      </a>
-    </li>
+    <li class="dropdown-header">Feedback</li>
     <li class="divider"></li>
     <li>
       <a href="People.html">
@@ -566,13 +561,6 @@ div.tocify {
         <span class="fa fa-github fa-lg"></span>
          
         Source code
-      </a>
-    </li>
-    <li>
-      <a href="https://twitter.com/Scedacity">
-        <span class="fa fa-twitter fa-lg"></span>
-         
-        Twitter
       </a>
     </li>
   </ul>
@@ -653,17 +641,17 @@ controlled project (see the <a href="Github_intro.html">GitHub
 tutorial</a> for further details about this). In this tutorial we will
 create a project in a new directory.</p>
 <p> </p>
-<p><img src="images/new_proj.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="images/new_proj.png" alt="" width="60%" style="display: block; margin: auto;" /></p>
 <p><br />
 </p>
 <p>You can also create a new project by clicking on the ‘Project’ button
 in the top right of RStudio and selecting ‘New Project…’</p>
 <p> </p>
-<p><img src="images/new_proj1.png" width="30%" style="display: block; margin: auto;" /></p>
+<p><img src="images/new_proj1.png" alt="" width="30%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <p>In the next window select ‘New Project’.</p>
 <p> </p>
-<p><img src="images/new_proj2.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="images/new_proj2.png" alt="" width="60%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <p>Now enter the name of the directory you want to create in the
 ‘Directory name:’ field (we’ll call it <code>first_project</code> for
@@ -673,7 +661,7 @@ like to create the directory. I always tick the ‘Open in new session’
 box as well. Finally, hit the ‘Create Project’ to create the new
 project.</p>
 <p> </p>
-<p><img src="images/new_proj3.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="images/new_proj3.png" alt="" width="60%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <p>Once your new project has been created you will now have a new folder
 on your computer that contains an RStudio project file called
@@ -684,7 +672,7 @@ file system (just double click on it). You can check this out in the
 ‘Files’ tab in RStudio (or in Finder if you’re on a Mac or File Explorer
 in Windows).</p>
 <p> </p>
-<p><img src="images/new_proj4.png" width="80%" style="display: block; margin: auto;" /></p>
+<p><img src="images/new_proj4.png" alt="" width="80%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <p>The last thing I suggest you do is select <code>Tools</code> -&gt;
 <code>Project Options...</code> from the menu. Click on the ‘General’
@@ -697,7 +685,7 @@ I open my projects to avoid any potential conflicts with things I did in
 previous sessions. The downside to this is that you will need to rerun
 your R code every time you open you project.</p>
 <p> </p>
-<p><img src="images/new_proj5.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="images/new_proj5.png" alt="" width="60%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <p>Now that you have an RStudio project set up you can start creating R
 scripts (or <a href="Rmarkdown_intro.html">R markdown</a> documents) or
@@ -718,12 +706,12 @@ directory by looking at bar at the top of the Console pane. Note: the
 <code>~</code> symbol above is shorthand for <code>/Users/nhy163/</code>
 on my Mac computer (the same on Linux computers).</p>
 <p> </p>
-<p><img src="images/dir_struct.png" width="80%" style="display: block; margin: auto;" /></p>
+<p><img src="images/dir_struct.png" alt="" width="80%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <p>You can also use the <code>getwd()</code> function in the Console
 which returns the file path of the current working directory.</p>
 <p> </p>
-<p><img src="images/dir_struct2.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="images/dir_struct2.png" alt="" width="60%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <p>In the example above, my working directory is a folder called
 ‘first_project’ which is a subfolder of “Teaching’ in my ‘Alex’ folder
@@ -860,7 +848,7 @@ required.</p>
 Finder on a Mac) or within RStudio by clicking on the ‘New folder’
 button in the ‘Files’ pane.</p>
 <p> </p>
-<p><img src="images/dir_struct3.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="images/dir_struct3.png" alt="" width="60%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <p>An alternative approach is to use the <code>dir.create()</code>
 function in the R Console</p>
@@ -1028,16 +1016,16 @@ Once installed, you can highlight the code you want to restyle, click on
 the ‘Addins’ button at the top of RStudio and select the ‘Style
 Selection’ option. Here is an example of poorly formatted R code</p>
 <p> </p>
-<p><img src="images/before_rcode.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="images/before_rcode.png" alt="" width="75%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <p>Now highlight the code and use the <code>styler</code> package to
 reformat</p>
 <p> </p>
-<p><img src="images/styler.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="images/styler.png" alt="" width="60%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <p>To produce some nicely formatted code</p>
 <p> </p>
-<p><img src="images/after_rcode.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="images/after_rcode.png" alt="" width="75%" style="display: block; margin: auto;" /></p>
 <p> </p>
 </div>
 <div id="backing-up-projects" class="section level2">
