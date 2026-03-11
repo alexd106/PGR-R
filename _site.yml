@@ -62,7 +62,7 @@ navbar:
           href: "resources.html"
         - text: "Feedback"
           icon: fa-commenting
-          #href: https://forms.gle/AvCiephVcG98EtyP7
+          href: https://forms.gle/X7baXcvmKCGpGEe16
         - text: "----"
         - text: "Contact"
           icon: fa-envelope fa-lg
